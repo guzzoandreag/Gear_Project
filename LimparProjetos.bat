@@ -1,0 +1,1 @@
+RMDIR "D:\Gear_Project\Gear_CodeAPI\Gear_API\bin" /S /Q
