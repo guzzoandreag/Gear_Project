@@ -5,21 +5,25 @@ namespace Gear_API.Data
 {
     public class DataContext : DbContext
     {
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    base.OnConfiguring(optionsBuilder);
-        //    optionsBuilder.UseSqlServer("Server=172.17.0.3,1433;Database=dbGear;User Id=sa;Password=Gear5038;"
-        //        ,options => options.EnableRetryOnFailure());
-        //}
+        // Conexao com SQLServer local
+        private const string ConnectionString = "Server=LOCALHOST,1433;Database=dbGear;User Id=sa;Password=Gear5038;";
+
+        // Conexao com SQLServer em tempo de desenvolvimento quando executado em Docker.
+        //private const string ConnectionString = "Server=LOCALHOST,1401;Database=dbGear;User Id=sa;Password=Gear5038;";
+
+        // Conexao com SQLServer em tempo de execucao quando executado em Docker.
+        //private const string ConnectionString = "Server=172.17.0.2,1433;Database=dbGear;User Id=sa;Password=Gear5038;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=LOCALHOST,1401;Database=dbGear;User Id=sa;Password=Gear5038;"
+            optionsBuilder.UseSqlServer(ConnectionString
                 , options => options.EnableRetryOnFailure());
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Produto_00> Produtos_00 { get; set; }
+        public DbSet<Estoque_00> Estoque_00 { get; set; }
+        public DbSet<Deposito_00> Deposito_00 { get; set; }
     }
 }

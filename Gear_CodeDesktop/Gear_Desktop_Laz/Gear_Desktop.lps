@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Gear_Desktop.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="55" Y="10"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Frm\frm_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Frm_Login"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="48" Y="38"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="3">
+      <Position>
+        <Filename Value="Frm\frm_login.pas"/>
+        <Caret Line="11" Column="62" TopLine="2"/>
+      </Position>
+      <Position>
+        <Filename Value="Frm\frm_login.pas"/>
+        <Caret Line="25" TopLine="2"/>
+      </Position>
+      <Position>
+        <Filename Value="Frm\frm_login.pas"/>
+        <Caret Line="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Frm\frm_login.pas"/>
+        <Caret Line="38" Column="61"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

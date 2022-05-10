@@ -21,50 +21,94 @@ namespace Gear_API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Gear_API.Models.Produto", b =>
+            modelBuilder.Entity("Gear_API.Models.Deposito_00", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Dep_code")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Dep_code"), 1L, 1);
 
-                    b.Property<string>("Categoria")
+                    b.Property<string>("Dep_name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("Dep_code");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Produtos", (string)null);
+                    b.ToTable("Deposito_00");
                 });
 
-            modelBuilder.Entity("Gear_API.Models.User", b =>
+            modelBuilder.Entity("Gear_API.Models.Estoque_00", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Etq_code")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Etq_code"), 1L, 1);
 
-                    b.Property<string>("Email")
+                    b.Property<int>("Dep_code")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Etq_quantity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.HasKey("Etq_code");
+
+                    b.ToTable("Estoque_00");
+                });
+
+            modelBuilder.Entity("Gear_API.Models.Produto_00", b =>
+                {
+                    b.Property<int>("Pro_code")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Pro_code"), 1L, 1);
+
+                    b.Property<int>("Etq_code")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Pro_name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Password")
+                    b.Property<double>("Pro_value")
+                        .HasColumnType("float");
+
+                    b.HasKey("Pro_code");
+
+                    b.ToTable("Produtos_00");
+                });
+
+            modelBuilder.Entity("Gear_API.Models.Users", b =>
+                {
+                    b.Property<int>("Use_code")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Use_code"), 1L, 1);
+
+                    b.Property<string>("Use_email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Use_name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.ToTable("Users", (string)null);
+                    b.Property<string>("Usu_password")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Use_code");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

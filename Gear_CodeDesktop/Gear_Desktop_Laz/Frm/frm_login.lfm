@@ -1,0 +1,11 @@
+object FrmLogin: TFrmLogin
+  Left = 341
+  Height = 405
+  Top = 106
+  Width = 778
+  Caption = 'FrmLogin'
+  Color = clWindowFrame
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+end

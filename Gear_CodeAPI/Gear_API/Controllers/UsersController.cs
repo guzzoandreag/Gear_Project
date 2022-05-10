@@ -15,112 +15,113 @@ namespace Gear_API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        //[HttpGet]
-        //[Route("")]
-        //public async Task<ActionResult<List<User>>> Get([FromServices] DataContext context)
+        //private readonly DataContext _context;
+
+        //public UsersController(DataContext context)
         //{
-        //    var users = await context.Users.ToListAsync();
-        //    return users;
+        //    _context = context;
         //}
 
-        //[HttpGet]
-        //[Route("{id:int}")]
-        //public async Task<ActionResult<User>> GetById([FromServices] DataContext context, int id)
-        //{
-        //    var users = await context.Users
-        //        .AsNoTracking()
-        //        .FirstOrDefaultAsync(x => x.Id == id);
-        //    return users;
-        //}
-        private readonly DataContext _context;
-
-        public UsersController(DataContext context)
-        {
-            _context = context;
-        }
-
-        // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        [Route("")]
+        public async Task<ActionResult<List<Users>>> Get([FromServices] DataContext context)
         {
-            return await _context.Users.ToListAsync();
+            var users = await context.Users.ToListAsync();
+            return users;
         }
 
-        //GET: api/Users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        [HttpGet]
+        [Route("{email}")]
+        public async Task<ActionResult<Users>> GetByEmail([FromServices] DataContext context, string email)
         {
-            var user = await _context.Users.FindAsync(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return user;
+            var users = await context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Use_email == email);
+            return users;
         }
 
-        //PUT: api/Users/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
-        {
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
+        //// GET: api/Users
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+        //{
+        //    return await _context.Users.ToListAsync();
+        //}
 
-            _context.Entry(user).State = EntityState.Modified;
+        //// GET: api/Users/5
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Users>> GetUsers(int id)
+        //{
+        //    var Users = await _context.Users.FindAsync(id);
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    if (Users == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return NoContent();
-        }
+        //    return Users;
+        //}
 
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
-        {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+        //// PUT: api/Users/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutUsers(int id, Users Users)
+        //{
+        //    if (id != Users.Use_code)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
-        }
+        //    _context.Entry(Users).State = EntityState.Modified;
 
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
-        {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!UsersExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
+        //    return NoContent();
+        //}
 
-            return NoContent();
-        }
+        //// POST: api/Users
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Users>> PostUsers(Users Users)
+        //{
+        //    _context.Users.Add(Users);
+        //    await _context.SaveChangesAsync();
 
-        private bool UserExists(int id)
-        {
-            return _context.Users.Any(e => e.Id == id);
-        }
+        //    return CreatedAtAction("GetUsers", new { id = Users.Use_code }, Users);
+        //}
+
+        //// DELETE: api/Users/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteUsers(int id)
+        //{
+        //    var Users = await _context.Users.FindAsync(id);
+        //    if (Users == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _context.Users.Remove(Users);
+        //    await _context.SaveChangesAsync();
+
+        //    return NoContent();
+        //}
+
+        //private bool UsersExists(int id)
+        //{
+        //    return _context.Users.Any(e => e.Use_code == id);
+        //}
     }
 }
