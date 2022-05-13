@@ -5,8 +5,6 @@ namespace Gear_Desktop
 {
     public partial class Form1 : Form
     {
-
-        // teste
         public Form1()
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -61,7 +59,7 @@ namespace Gear_Desktop
             using (var client = new HttpClient())
             {
                 BindingSource bsDados = new BindingSource();
-                var URI = txtURL_API.Text + use_email;
+                var URI = txtURL_API.Text + "/" + use_email;
 
                 HttpResponseMessage response = await client.GetAsync(URI);
                 if (response.IsSuccessStatusCode)
@@ -88,6 +86,12 @@ namespace Gear_Desktop
                     MessageBox.Show("Falha ao logar no sistema : " + response.StatusCode);
                 }
             }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2(txtURL_API.Text,txtEmail.Text);
+            frm2.ShowDialog();
         }
     }
 }

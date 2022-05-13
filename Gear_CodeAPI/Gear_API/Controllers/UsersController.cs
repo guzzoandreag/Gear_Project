@@ -15,12 +15,12 @@ namespace Gear_API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        //private readonly DataContext _context;
+        private readonly DataContext _context;
 
-        //public UsersController(DataContext context)
-        //{
-        //    _context = context;
-        //}
+        public UsersController(DataContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
         [Route("")]
@@ -37,6 +37,10 @@ namespace Gear_API.Controllers
             var users = await context.Users
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Use_email == email);
+            if (users == null)
+            {
+                return NotFound();
+            }
             return users;
         }
 
@@ -92,16 +96,16 @@ namespace Gear_API.Controllers
         //    return NoContent();
         //}
 
-        //// POST: api/Users
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Users>> PostUsers(Users Users)
-        //{
-        //    _context.Users.Add(Users);
-        //    await _context.SaveChangesAsync();
+        // POST: api/Users
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Users>> PostUsers(Users Users)
+        {
+            _context.Users.Add(Users);
+            await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetUsers", new { id = Users.Use_code }, Users);
-        //}
+            return CreatedAtAction("GetUsers", new { id = Users.Use_code }, Users);
+        }
 
         //// DELETE: api/Users/5
         //[HttpDelete("{id}")]

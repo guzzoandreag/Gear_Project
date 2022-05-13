@@ -31,20 +31,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtURL_API = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -67,9 +67,9 @@
             // 
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.panel8);
-            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panel7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 30);
             this.panel4.Name = "panel4";
@@ -88,7 +88,16 @@
             this.panel9.Location = new System.Drawing.Point(250, 100);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(284, 301);
-            this.panel9.TabIndex = 4;
+            this.panel9.TabIndex = 9;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(111, 32);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 17);
+            this.lblName.TabIndex = 4;
+            this.lblName.Visible = false;
             // 
             // txtSenha
             // 
@@ -124,7 +133,6 @@
             this.btnEntrar.TabIndex = 1;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = false;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnCadastrar
             // 
@@ -141,6 +149,7 @@
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // panel8
             // 
@@ -148,24 +157,16 @@
             this.panel8.Location = new System.Drawing.Point(534, 100);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(250, 301);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 100);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(250, 301);
-            this.panel7.TabIndex = 2;
+            this.panel8.TabIndex = 8;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.txtURL_API);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 401);
+            this.panel6.Location = new System.Drawing.Point(250, 401);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(784, 110);
-            this.panel6.TabIndex = 1;
+            this.panel6.Size = new System.Drawing.Size(534, 110);
+            this.panel6.TabIndex = 6;
             // 
             // txtURL_API
             // 
@@ -175,15 +176,23 @@
             this.txtURL_API.Name = "txtURL_API";
             this.txtURL_API.Size = new System.Drawing.Size(272, 23);
             this.txtURL_API.TabIndex = 4;
-            this.txtURL_API.Text = "https://localhost:44388/api/Users/";
+            this.txtURL_API.Text = "https://localhost:44388/api/Users";
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Location = new System.Drawing.Point(250, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(784, 100);
-            this.panel5.TabIndex = 0;
+            this.panel5.Size = new System.Drawing.Size(534, 100);
+            this.panel5.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(250, 511);
+            this.panel7.TabIndex = 7;
             // 
             // panel3
             // 
@@ -239,15 +248,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(111, 32);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 17);
-            this.lblName.TabIndex = 4;
-            this.lblName.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -280,15 +280,15 @@
         private Button button1;
         private Panel panel4;
         private Panel panel9;
-        private Panel panel8;
-        private Panel panel7;
-        private Panel panel6;
-        private Panel panel5;
+        private Label lblName;
+        private TextBox txtSenha;
+        private TextBox txtEmail;
         private Button btnEntrar;
         private Button btnCadastrar;
-        private TextBox txtEmail;
-        private TextBox txtSenha;
+        private Panel panel8;
+        private Panel panel6;
         private TextBox txtURL_API;
-        private Label lblName;
+        private Panel panel5;
+        private Panel panel7;
     }
 }
