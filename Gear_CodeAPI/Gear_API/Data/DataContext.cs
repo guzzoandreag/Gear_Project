@@ -6,7 +6,7 @@ namespace Gear_API.Data
     public class DataContext : DbContext
     {
         // Conexao com SQLServer local
-        private const string ConnectionString = "Server=LOCALHOST,1433;Database=dbGear;User Id=sa;Password=Gear5038;";
+        private const string ConnectionString = @"Server=.\SQLEXPRESS;Database=dbGear;User Id=sa;Password=Gear5038;";
 
         // Conexao com SQLServer em tempo de desenvolvimento quando executado em Docker.
         //private const string ConnectionString = "Server=LOCALHOST,1401;Database=dbGear;User Id=sa;Password=Gear5038;";
