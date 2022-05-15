@@ -40,7 +40,13 @@ namespace Gear_Desktop.View
                 if (users.Usu_password.Trim() == txtSenha.Text.Trim())
                 {
                     FrmDesktop frmDesktop = new FrmDesktop();
+                    this.Visible = false;
                     frmDesktop.ShowDialog();
+                    this.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Senha incorreta !!");
                 }
             }
         }

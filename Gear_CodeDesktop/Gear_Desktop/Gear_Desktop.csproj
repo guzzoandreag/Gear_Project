@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>GearIcon48x.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,10 @@
     <Compile Remove="Estoque_00.cs" />
     <Compile Remove="Produto_00.cs" />
     <Compile Remove="Users.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="GearIcon48x.ico" />
   </ItemGroup>
 
   <ItemGroup>

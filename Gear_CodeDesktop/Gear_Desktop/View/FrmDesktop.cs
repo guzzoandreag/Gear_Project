@@ -16,5 +16,20 @@ namespace Gear_Desktop.View
         {
             InitializeComponent();
         }
+
+        private void FrmDesktop_Load(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

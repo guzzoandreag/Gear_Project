@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -35,44 +37,60 @@
             // 
             // panel4
             // 
-            this.panel4.Size = new System.Drawing.Size(800, 550);
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Size = new System.Drawing.Size(1000, 650);
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(0, 580);
-            this.panel3.Size = new System.Drawing.Size(800, 20);
+            this.panel3.Location = new System.Drawing.Point(0, 680);
+            this.panel3.Size = new System.Drawing.Size(1000, 20);
             // 
             // BaseFormRodape
             // 
-            this.BaseFormRodape.Size = new System.Drawing.Size(800, 20);
+            this.BaseFormRodape.Size = new System.Drawing.Size(1000, 20);
             this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(800, 600);
+            this.panel1.Size = new System.Drawing.Size(1000, 700);
             // 
             // panel5
             // 
-            this.panel5.Size = new System.Drawing.Size(800, 30);
+            this.panel5.Size = new System.Drawing.Size(1000, 30);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(688, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(888, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Location = new System.Drawing.Point(744, 0);
+            this.btnClose.Location = new System.Drawing.Point(944, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(678, 30);
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(878, 30);
             this.BaseFormCabecalho.Text = "Desktop - Gear Project";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrange;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(888, 587);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 41);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "Deslogar";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // FrmDesktop
             // 
@@ -80,10 +98,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Desktop - Gear Project";
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDesktop";
             this.Text = "FrmDesktop";
+            this.Load += new System.EventHandler(this.FrmDesktop_Load);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -92,5 +112,7 @@
         }
 
         #endregion
+
+        private Button btnLogout;
     }
 }
