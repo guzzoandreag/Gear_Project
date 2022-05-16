@@ -81,6 +81,7 @@
             // BaseFormCabecalho
             // 
             this.BaseFormCabecalho.Size = new System.Drawing.Size(678, 30);
+            this.BaseFormCabecalho.Text = "Login - Gear Project";
             // 
             // txtSenha
             // 
@@ -133,12 +134,14 @@
             this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Login - Gear Project";
+            this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";

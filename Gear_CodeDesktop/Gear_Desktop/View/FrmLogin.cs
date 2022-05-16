@@ -55,5 +55,13 @@ namespace Gear_Desktop.View
         {
             // Destroyer
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmCadastroUsers frmCadastroUsers = new FrmCadastroUsers();
+            this.Visible = false;
+            frmCadastroUsers.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

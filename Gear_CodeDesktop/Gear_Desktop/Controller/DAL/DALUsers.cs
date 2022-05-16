@@ -51,7 +51,26 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        ~DALUsers()
+        public async Task<string> PostUsers(Users usersParameter)
+        {
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new HttpClient(clientHandler);
+            var serializedCadastro = JsonConvert.SerializeObject(usersParameter);
+            var content = new StringContent(serializedCadastro, Encoding.UTF8, "application/json");
+            var result = await client.PostAsync(restConnection.Url, content);
+            if (result.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Fail";
+            }
+        }
+
+            ~DALUsers()
         {
             // Destroyer
         }

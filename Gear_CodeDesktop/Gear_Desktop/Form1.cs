@@ -90,8 +90,8 @@ namespace Gear_Desktop
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Form2 frm2 = new Form2(txtURL_API.Text,txtEmail.Text);
-            frm2.ShowDialog();
+            //Form2 frm2 = new Form2(txtURL_API.Text,txtEmail.Text);
+            //frm2.ShowDialog();
         }
     }
 }

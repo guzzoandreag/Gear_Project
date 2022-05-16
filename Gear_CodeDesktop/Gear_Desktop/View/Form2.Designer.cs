@@ -1,6 +1,6 @@
-﻿namespace Gear_Desktop
+﻿namespace Gear_Desktop.View
 {
-    public partial class Form2
+    public partial class FrmCadastroUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -35,23 +35,51 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // panel4
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.None;
-            this.panel2.Size = new System.Drawing.Size(663, 28);
+            this.panel4.Size = new System.Drawing.Size(800, 570);
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.None;
             this.panel3.Size = new System.Drawing.Size(663, 20);
             // 
-            // panel7
+            // BaseFormRodape
             // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.None;
-            this.panel7.Location = new System.Drawing.Point(0, 28);
-            this.panel7.Size = new System.Drawing.Size(681, 404);
+            this.BaseFormRodape.Size = new System.Drawing.Size(663, 20);
+            this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(800, 600);
+            // 
+            // panel5
+            // 
+            this.panel5.Size = new System.Drawing.Size(800, 30);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnMinimizar.Location = new System.Drawing.Point(688, 0);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btnClose.Location = new System.Drawing.Point(744, 0);
+            // 
+            // BaseFormCabecalho
+            // 
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(678, 30);
+            this.BaseFormCabecalho.Text = "Cadastro - Gear Project";
             // 
             // label3
             // 
@@ -59,7 +87,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label3.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.World);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(228, 237);
+            this.label3.Location = new System.Drawing.Point(336, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 16;
@@ -68,7 +96,7 @@
             // txt_senha
             // 
             this.txt_senha.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.World);
-            this.txt_senha.Location = new System.Drawing.Point(228, 257);
+            this.txt_senha.Location = new System.Drawing.Point(296, 260);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(208, 22);
             this.txt_senha.TabIndex = 17;
@@ -79,7 +107,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.World);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(228, 125);
+            this.label2.Location = new System.Drawing.Point(296, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 17);
             this.label2.TabIndex = 14;
@@ -88,7 +116,7 @@
             // txt_nome
             // 
             this.txt_nome.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.World);
-            this.txt_nome.Location = new System.Drawing.Point(228, 145);
+            this.txt_nome.Location = new System.Drawing.Point(296, 150);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(208, 22);
             this.txt_nome.TabIndex = 15;
@@ -102,7 +130,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(250, 291);
+            this.btnConfirmar.Location = new System.Drawing.Point(325, 290);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(150, 35);
             this.btnConfirmar.TabIndex = 11;
@@ -116,7 +144,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.World);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(228, 183);
+            this.label1.Location = new System.Drawing.Point(300, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 17);
             this.label1.TabIndex = 12;
@@ -125,16 +153,18 @@
             // txt_email
             // 
             this.txt_email.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.World);
-            this.txt_email.Location = new System.Drawing.Point(228, 203);
+            this.txt_email.Location = new System.Drawing.Point(296, 205);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(208, 22);
             this.txt_email.TabIndex = 13;
             // 
-            // Form2
+            // FrmCadastroUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 450);
+            this.CaptionCabecalho = "Cadastro - Gear Project";
+            this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.label2);
@@ -142,11 +172,10 @@
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_email);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.panel7, 0);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmCadastroUsers";
+            this.Text = "";
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.txt_email, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnConfirmar, 0);
@@ -154,6 +183,9 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txt_senha, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
