@@ -90,7 +90,7 @@
             this.txtSenha.Location = new System.Drawing.Point(264, 246);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(272, 23);
-            this.txtSenha.TabIndex = 8;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.Text = "1234";
             // 
             // txtEmail
@@ -100,7 +100,7 @@
             this.txtEmail.Location = new System.Drawing.Point(264, 196);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 23);
-            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TabIndex = 0;
             this.txtEmail.Text = "guzzoandre.ag@outlook.com";
             // 
             // btnEntrar
@@ -114,7 +114,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(325, 322);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(150, 35);
-            this.btnEntrar.TabIndex = 6;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -131,7 +131,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(325, 363);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(150, 35);
-            this.btnCadastrar.TabIndex = 5;
+            this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);

@@ -31,7 +31,7 @@ namespace Gear_Desktop.Controller.BLL
 
         }
 
-        public string PostUser(Users usersParameter)
+        public async Task<string> PostUser(Users usersParameter)
         {            
             if (usersParameter.Use_name.Trim().Length == 0)
             {
@@ -52,7 +52,8 @@ namespace Gear_Desktop.Controller.BLL
 
 
             DALUsers objDALUsers = new DALUsers(restConnection);
-            var result = objDALUsers.PostUsers(usersParameter);
+            //objDALUsers.PostUsers(usersParameter);
+            var result = await objDALUsers.PostUsers(usersParameter);
             return Convert.ToString(result);
 
         }

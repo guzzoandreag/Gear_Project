@@ -15,13 +15,7 @@ namespace Gear_API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly DataContext _context;
-
-        public UsersController(DataContext context)
-        {
-            _context = context;
-        }
-
+        // GET: api/Users
         [HttpGet]
         [Route("")]
         public async Task<ActionResult<List<Users>>> Get([FromServices] DataContext context)
@@ -30,40 +24,44 @@ namespace Gear_API.Controllers
             return users;
         }
 
-        [HttpGet]
-        [Route("{email}")]
-        public async Task<ActionResult<Users>> GetByEmail([FromServices] DataContext context, string email)
+        // GET: api/Users/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Users>> GetUsers([FromServices] DataContext context, int id)
         {
-            var users = await context.Users
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Use_email == email);
-            if (users == null)
+            var Users = await context.Users.FindAsync(id);
+
+            if (Users == null)
             {
                 return NotFound();
             }
-            return users;
+
+            return Users;
         }
 
-        //// GET: api/Users
+        //// GET: api/Users/user@user.com
         //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+        //[Route("{email}")]
+        //public async Task<ActionResult<Users>> GetByEmail([FromServices] DataContext context, string email)
         //{
-        //    return await _context.Users.ToListAsync();
-        //}
-
-        //// GET: api/Users/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Users>> GetUsers(int id)
-        //{
-        //    var Users = await _context.Users.FindAsync(id);
-
-        //    if (Users == null)
+        //    var users = await context.Users
+        //        .AsNoTracking()
+        //        .FirstOrDefaultAsync(x => x.Use_email == email);
+        //    if (users == null)
         //    {
         //        return NotFound();
         //    }
-
-        //    return Users;
+        //    return users;
         //}
+
+        // POST: api/Users
+        [HttpPost]
+        public async Task<ActionResult<Users>> PostUsers([FromServices] DataContext context, Users Users)
+        {
+            context.Users.Add(Users);
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction("GetUsers", new { id = Users.Use_code }, Users);
+        }
 
         //// PUT: api/Users/5
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -95,17 +93,6 @@ namespace Gear_API.Controllers
 
         //    return NoContent();
         //}
-
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Users>> PostUsers(Users Users)
-        {
-            _context.Users.Add(Users);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetUsers", new { id = Users.Use_code }, Users);
-        }
 
         //// DELETE: api/Users/5
         //[HttpDelete("{id}")]

@@ -58,10 +58,10 @@ namespace Gear_Desktop.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FrmCadastroUsers frmCadastroUsers = new FrmCadastroUsers();
-            this.Visible = false;
+            FrmCadUsers frmCadastroUsers = new FrmCadUsers();
+            //this.Visible = false;
             frmCadastroUsers.ShowDialog();
-            this.Visible = true;
+            //this.Visible = true;
         }
     }
 }
