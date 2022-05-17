@@ -22,6 +22,25 @@ namespace Gear_API.Data
         }
 
         public DbSet<Users> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Configurações do field.
+            //modelBuilder.Entity<Users>()
+            //    .Property(u => u.Use_email)
+            //        .HasMaxLength(30)
+            //        .IsRequired();
+
+            // Add dados ao executar a migration.
+            //modelBuilder.Entity<Users>()
+            //    .HasData(
+            //        new Users {Use_code = 0,
+            //                   Use_name = "André Guzzo",
+            //                   Use_email = "guzzoandre.ag@outlook.com",
+            //                   Usu_password = "99345038"}
+            //    );
+        }
+
         public DbSet<Produto_00> Produtos_00 { get; set; }
         public DbSet<Estoque_00> Estoque_00 { get; set; }
         public DbSet<Deposito_00> Deposito_00 { get; set; }

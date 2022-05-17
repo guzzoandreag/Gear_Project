@@ -38,20 +38,20 @@ namespace Gear_API.Controllers
             return Users;
         }
 
-        //// GET: api/Users/user@user.com
-        //[HttpGet]
-        //[Route("{email}")]
-        //public async Task<ActionResult<Users>> GetByEmail([FromServices] DataContext context, string email)
-        //{
-        //    var users = await context.Users
-        //        .AsNoTracking()
-        //        .FirstOrDefaultAsync(x => x.Use_email == email);
-        //    if (users == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return users;
-        //}
+        // GET: api/Users/email/user@user.com
+        [HttpGet]
+        [Route("email/{email}")]
+        public async Task<ActionResult<Users>> GetByEmail([FromServices] DataContext context, string email)
+        {
+            var users = await context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Use_email == email);
+            if (users == null)
+            {
+                return NotFound();
+            }
+            return users;
+        }
 
         // POST: api/Users
         [HttpPost]
