@@ -15,12 +15,15 @@ namespace Gear_Desktop.View
 {
     public partial class FrmCadUsers : FrmBase
     {
-        public FrmCadUsers()
+        string URL;
+
+        public FrmCadUsers(string URLParameter)
         {
             InitializeComponent();
-            txt_nome.Text = "Andre Guzzo";
-            txt_email.Text = "guzzoandre@gmail.com";
-            txt_senha.Text = "1234567";
+            this.URL = URLParameter;
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtSenha.Text = "";
 
         }
 
@@ -31,18 +34,15 @@ namespace Gear_Desktop.View
 
         private async void PostUser()
         {
-            DALConnectionREST restConnection = new DALConnectionREST("https://localhost:44388/api/");
-            //https://localhost:44388/api/Users
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
             BLLUsers objBLLUsers = new BLLUsers(restConnection);
-            Users users = null;
-            //Users users = await objBLLUsers.GetUsersByEmail(txt_email.Text.Trim());
+            Users users = await objBLLUsers.GetUsersByEmail(txtEmail.Text.Trim());
             if (users == null)
             {
                 users = new Users();
-                users.Use_name = txt_nome.Text.Trim();
-                users.Use_email = txt_email.Text.Trim();
-                users.Usu_password = txt_senha.Text.Trim();
-                //objBLLUsers.PostUser(users);
+                users.Use_name = txtName.Text.Trim();
+                users.Use_email = txtEmail.Text.Trim();
+                users.Usu_password = txtSenha.Text.Trim();
                 var result = await objBLLUsers.PostUser(users);
                 if (result == "Ok")
                 {

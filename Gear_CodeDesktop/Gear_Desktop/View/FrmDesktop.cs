@@ -12,9 +12,11 @@ namespace Gear_Desktop.View
 {
     public partial class FrmDesktop : FrmBase
     {
-        public FrmDesktop()
+        string URL;
+        public FrmDesktop(string URLParameter)
         {
             InitializeComponent();
+            this.URL = URLParameter;
         }
 
         private void FrmDesktop_Load(object sender, EventArgs e)

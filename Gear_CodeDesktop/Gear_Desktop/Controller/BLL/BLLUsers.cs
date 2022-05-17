@@ -52,7 +52,6 @@ namespace Gear_Desktop.Controller.BLL
 
 
             DALUsers objDALUsers = new DALUsers(restConnection);
-            //objDALUsers.PostUsers(usersParameter);
             var result = await objDALUsers.PostUsers(usersParameter);
             return Convert.ToString(result);
 

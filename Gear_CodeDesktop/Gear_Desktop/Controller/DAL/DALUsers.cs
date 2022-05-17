@@ -17,7 +17,10 @@ namespace Gear_Desktop.Controller.DAL
         {
             // Construtor
             restConnection = restConnectionParameter;
-            restConnection.Url = restConnection.Url + "Users";
+            if (!restConnection.Url.Contains("Users"))
+            {
+                restConnection.Url = restConnection.Url + "Users";
+            }
         }
 
         public async Task<Users?> GetUsersByEmail(string email)
@@ -26,7 +29,7 @@ namespace Gear_Desktop.Controller.DAL
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new HttpClient(clientHandler);
-            var URL = restConnection.Url + "/" + email;
+            var URL = restConnection.Url + "/email/" + email;
             try
             {
                 HttpResponseMessage response = await client.GetAsync(URL);
@@ -57,9 +60,10 @@ namespace Gear_Desktop.Controller.DAL
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new HttpClient(clientHandler);
+            var URL = restConnection.Url;
             var serializedCadastro = JsonConvert.SerializeObject(usersParameter);
             var content = new StringContent(serializedCadastro, Encoding.UTF8, "application/json");
-            var result = await client.PostAsync(restConnection.Url, content);
+            var result = await client.PostAsync(URL, content);
             if (result.IsSuccessStatusCode)
             {
                 return "Ok";

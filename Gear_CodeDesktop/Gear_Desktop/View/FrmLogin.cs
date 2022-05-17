@@ -23,23 +23,26 @@ namespace Gear_Desktop.View
             InitializeComponent();
         }
 
-        private async void btnEntrar_Click(object sender, EventArgs e)
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
-            DALConnectionREST restConnection = new DALConnectionREST();
+            GetUsersByEmail();
+        }
+
+        private async void GetUsersByEmail()
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(txtURL.Text);
             BLLUsers objBLLUsers = new BLLUsers(restConnection);
             Users users = await objBLLUsers.GetUsersByEmail(txtEmail.Text.Trim());
             if (users == null)
             {
                 MessageBox.Show("Usuario não encontrado. \n" +
                                 "Favor realizar o cadastramento.");
-                //throw new Exception("Usuario não encontrado. \n" +
-                //                    "Favor realizar o cadastramento.");
             }
             else
             {
                 if (users.Usu_password.Trim() == txtSenha.Text.Trim())
                 {
-                    FrmDesktop frmDesktop = new FrmDesktop();
+                    FrmDesktop frmDesktop = new FrmDesktop(txtURL.Text);
                     this.Visible = false;
                     frmDesktop.ShowDialog();
                     this.Visible = true;
@@ -58,10 +61,8 @@ namespace Gear_Desktop.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FrmCadUsers frmCadastroUsers = new FrmCadUsers();
-            //this.Visible = false;
+            FrmCadUsers frmCadastroUsers = new FrmCadUsers(txtURL.Text);
             frmCadastroUsers.ShowDialog();
-            //this.Visible = true;
         }
     }
 }

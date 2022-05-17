@@ -8,7 +8,7 @@ namespace Gear_Desktop.Controller.DAL
 {
     public class DALConnectionREST
     {
-        private string url = "http://localhost:8091/api/";
+        private string url = "https://localhost:8091/api/";
 
         public string Url { get => url; set => url = value; }
 

@@ -32,6 +32,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txtURL = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -40,6 +43,9 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.txtURL);
             this.panel4.Controls.Add(this.txtSenha);
             this.panel4.Controls.Add(this.txtEmail);
             this.panel4.Controls.Add(this.btnEntrar);
@@ -91,7 +97,6 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(272, 23);
             this.txtSenha.TabIndex = 1;
-            this.txtSenha.Text = "1234";
             // 
             // txtEmail
             // 
@@ -101,7 +106,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 23);
             this.txtEmail.TabIndex = 0;
-            this.txtEmail.Text = "guzzoandre.ag@outlook.com";
             // 
             // btnEntrar
             // 
@@ -136,6 +140,40 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // txtURL
+            // 
+            this.txtURL.BackColor = System.Drawing.Color.DimGray;
+            this.txtURL.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtURL.Location = new System.Drawing.Point(12, 16);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(272, 23);
+            this.txtURL.TabIndex = 4;
+            this.txtURL.Text = "https://localhost:8091/api/";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.label2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(340, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Usuario(Email)";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.label1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(376, 224);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Senha";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -161,5 +199,8 @@
         private TextBox txtEmail;
         private Button btnEntrar;
         private Button btnCadastrar;
+        private TextBox txtURL;
+        private Label label1;
+        private Label label2;
     }
 }
