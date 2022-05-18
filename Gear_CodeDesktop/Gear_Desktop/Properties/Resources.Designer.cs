@@ -63,6 +63,26 @@ namespace Gear_Desktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnDeslogar {
+            get {
+                object obj = ResourceManager.GetObject("btnDeslogar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnDeslogar32x {
+            get {
+                object obj = ResourceManager.GetObject("btnDeslogar32x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FarmIcon512x {
             get {
                 object obj = ResourceManager.GetObject("FarmIcon512x", resourceCulture);

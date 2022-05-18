@@ -87,17 +87,17 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrange;
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Gear_Desktop.Properties.Resources.btnDeslogar32x;
             this.btnLogout.Location = new System.Drawing.Point(0, 609);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(165, 41);
             this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Deslogar";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
