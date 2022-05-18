@@ -17,6 +17,10 @@ namespace Gear_Desktop.View
         {
             InitializeComponent();
             this.URL = URLParameter;
+            this.btnCadDeposito.Text = "Deposito\nFazenda";
+            this.btnCadProduto.Text = "Produto";
+            this.btnMovTransferencia.Text = "Transferencia\nDeposito";
+            this.btnMovDespesa.Text = "Despesa";
         }
 
         private void FrmDesktop_Load(object sender, EventArgs e)

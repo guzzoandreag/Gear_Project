@@ -41,7 +41,7 @@
             this.pnlCabecalho.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel4
+            // pnlCenterCabecalhoRodape
             // 
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label3);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtSenha);
@@ -60,7 +60,7 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label3, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             // 
-            // panel3
+            // pnlRodape
             // 
             this.pnlRodape.Location = new System.Drawing.Point(0, 346);
             this.pnlRodape.Size = new System.Drawing.Size(400, 20);
@@ -70,11 +70,11 @@
             this.BaseFormRodape.Size = new System.Drawing.Size(400, 20);
             this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
             // 
-            // panel1
+            // pnlCenterMain
             // 
             this.pnlCenterMain.Size = new System.Drawing.Size(400, 366);
             // 
-            // panel5
+            // pnlCabecalho
             // 
             this.pnlCabecalho.Size = new System.Drawing.Size(400, 30);
             // 
@@ -117,6 +117,7 @@
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.Color.DarkGray;
+            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSenha.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(96, 153);
             this.txtSenha.Name = "txtSenha";
@@ -141,6 +142,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.DarkGray;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(96, 43);
             this.txtName.Name = "txtName";
@@ -152,8 +154,8 @@
             // btnConfirmar
             // 
             this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConfirmar.FlatAppearance.BorderSize = 2;
             this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -181,6 +183,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.Location = new System.Drawing.Point(96, 98);
             this.txtEmail.Name = "txtEmail";
@@ -194,6 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Cad. Usuario - Gear Project";
+            this.CaptionMsgVisible = true;
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
             this.ClientSize = new System.Drawing.Size(400, 366);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

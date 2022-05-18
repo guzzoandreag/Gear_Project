@@ -47,12 +47,12 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.pnlCenterLogin);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtURL);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.pnlCenterLogin);
             this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(800, 550);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.pnlCenterLogin, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtURL, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.pnlCenterLogin, 0);
             // 
             // pnlRodape
             // 
@@ -99,6 +99,7 @@
             // txtURL
             // 
             this.txtURL.BackColor = System.Drawing.Color.DimGray;
+            this.txtURL.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtURL.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtURL.Location = new System.Drawing.Point(12, 16);
             this.txtURL.Name = "txtURL";
@@ -118,7 +119,7 @@
             this.pnlCenterLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCenterLogin.Location = new System.Drawing.Point(0, 0);
             this.pnlCenterLogin.Name = "pnlCenterLogin";
-            this.pnlCenterLogin.Size = new System.Drawing.Size(800, 441);
+            this.pnlCenterLogin.Size = new System.Drawing.Size(800, 550);
             this.pnlCenterLogin.TabIndex = 5;
             // 
             // pictureBox1
@@ -158,6 +159,7 @@
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.Color.DimGray;
+            this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSenha.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(264, 287);
             this.txtSenha.Name = "txtSenha";
@@ -170,6 +172,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.DimGray;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.Location = new System.Drawing.Point(264, 217);
             this.txtEmail.Name = "txtEmail";
@@ -181,8 +184,10 @@
             // btnEntrar
             // 
             this.btnEntrar.BackColor = System.Drawing.Color.White;
+            this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
-            this.btnEntrar.FlatAppearance.BorderSize = 2;
+            this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
@@ -197,8 +202,8 @@
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCadastrar.FlatAppearance.BorderSize = 2;
             this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
