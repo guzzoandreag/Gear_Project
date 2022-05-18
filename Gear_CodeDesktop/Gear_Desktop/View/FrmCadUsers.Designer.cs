@@ -50,11 +50,19 @@
             this.panel4.Controls.Add(this.btnConfirmar);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.txtEmail);
-            this.panel4.Size = new System.Drawing.Size(400, 250);
+            this.panel4.Size = new System.Drawing.Size(400, 316);
+            this.panel4.Controls.SetChildIndex(this.txtEmail, 0);
+            this.panel4.Controls.SetChildIndex(this.label1, 0);
+            this.panel4.Controls.SetChildIndex(this.btnConfirmar, 0);
+            this.panel4.Controls.SetChildIndex(this.txtName, 0);
+            this.panel4.Controls.SetChildIndex(this.label2, 0);
+            this.panel4.Controls.SetChildIndex(this.txtSenha, 0);
+            this.panel4.Controls.SetChildIndex(this.label3, 0);
+            this.panel4.Controls.SetChildIndex(this.lblMsg, 0);
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(0, 280);
+            this.panel3.Location = new System.Drawing.Point(0, 346);
             this.panel3.Size = new System.Drawing.Size(400, 20);
             // 
             // BaseFormRodape
@@ -64,7 +72,7 @@
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(400, 300);
+            this.panel1.Size = new System.Drawing.Size(400, 366);
             // 
             // panel5
             // 
@@ -89,6 +97,11 @@
             this.BaseFormCabecalho.Size = new System.Drawing.Size(278, 30);
             this.BaseFormCabecalho.Text = "Cad. Usuario - Gear Project";
             // 
+            // lblMsg
+            // 
+            this.lblMsg.Location = new System.Drawing.Point(0, 254);
+            this.lblMsg.Size = new System.Drawing.Size(400, 62);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -107,8 +120,11 @@
             this.txtSenha.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(96, 153);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(208, 23);
             this.txtSenha.TabIndex = 2;
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             // 
             // label2
             // 
@@ -130,6 +146,8 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(208, 23);
             this.txtName.TabIndex = 0;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             // 
             // btnConfirmar
             // 
@@ -168,6 +186,8 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(208, 23);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // FrmCadUsers
             // 
@@ -175,7 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Cad. Usuario - Gear Project";
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
-            this.ClientSize = new System.Drawing.Size(400, 300);
+            this.ClientSize = new System.Drawing.Size(400, 366);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadUsers";
             this.Text = "FrmCadUsers";

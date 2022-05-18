@@ -51,6 +51,14 @@
             this.panel4.Controls.Add(this.btnEntrar);
             this.panel4.Controls.Add(this.btnCadastrar);
             this.panel4.Size = new System.Drawing.Size(800, 550);
+            this.panel4.Controls.SetChildIndex(this.btnCadastrar, 0);
+            this.panel4.Controls.SetChildIndex(this.btnEntrar, 0);
+            this.panel4.Controls.SetChildIndex(this.txtEmail, 0);
+            this.panel4.Controls.SetChildIndex(this.txtSenha, 0);
+            this.panel4.Controls.SetChildIndex(this.txtURL, 0);
+            this.panel4.Controls.SetChildIndex(this.label2, 0);
+            this.panel4.Controls.SetChildIndex(this.label1, 0);
+            this.panel4.Controls.SetChildIndex(this.lblMsg, 0);
             // 
             // panel3
             // 
@@ -89,14 +97,22 @@
             this.BaseFormCabecalho.Size = new System.Drawing.Size(678, 30);
             this.BaseFormCabecalho.Text = "Login - Gear Project";
             // 
+            // lblMsg
+            // 
+            this.lblMsg.Location = new System.Drawing.Point(0, 441);
+            this.lblMsg.Size = new System.Drawing.Size(800, 109);
+            // 
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.Color.DimGray;
             this.txtSenha.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(264, 246);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(272, 23);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             // 
             // txtEmail
             // 
@@ -106,6 +122,8 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 23);
             this.txtEmail.TabIndex = 0;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // btnEntrar
             // 
@@ -148,7 +166,7 @@
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(272, 23);
             this.txtURL.TabIndex = 4;
-            this.txtURL.Text = "https://localhost:8091/api/";
+            this.txtURL.Text = "http://localhost:8091/api/";
             // 
             // label2
             // 

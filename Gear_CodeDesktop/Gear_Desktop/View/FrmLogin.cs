@@ -25,6 +25,8 @@ namespace Gear_Desktop.View
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            txtSenha.Clear();
+            ClearMessageInfo();
             GetUsersByEmail();
         }
 
@@ -35,8 +37,8 @@ namespace Gear_Desktop.View
             Users users = await objBLLUsers.GetUsersByEmail(txtEmail.Text.Trim());
             if (users == null)
             {
-                MessageBox.Show("Usuario não encontrado. \n" +
-                                "Favor realizar o cadastramento.");
+                MessageInfo("Usuario não encontrado. \n" +
+                            "Favor realizar o cadastramento.");
             }
             else
             {
@@ -49,7 +51,7 @@ namespace Gear_Desktop.View
                 }
                 else
                 {
-                    MessageBox.Show("Senha incorreta !!");
+                    MessageInfo("Senha incorreta !!");
                 }
             }
         }
@@ -61,8 +63,20 @@ namespace Gear_Desktop.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FrmCadUsers frmCadastroUsers = new FrmCadUsers(txtURL.Text);
+            txtSenha.Clear();
+            ClearMessageInfo();
+            FrmCadUsers frmCadastroUsers = new FrmCadUsers(txtURL.Text, txtEmail.Text);
             frmCadastroUsers.ShowDialog();
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            ClearMessageInfo();
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            ClearMessageInfo();
         }
     }
 }

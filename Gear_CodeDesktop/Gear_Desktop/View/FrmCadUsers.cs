@@ -17,18 +17,26 @@ namespace Gear_Desktop.View
     {
         string URL;
 
-        public FrmCadUsers(string URLParameter)
+        public FrmCadUsers(string URLParameter, string emailCadastrarParameter)
         {
             InitializeComponent();
             this.URL = URLParameter;
             txtName.Text = "";
-            txtEmail.Text = "";
+            txtEmail.Text = emailCadastrarParameter;
             txtSenha.Text = "";
 
         }
 
+        private void ClearFields()
+        {
+            txtName.Clear();
+            txtEmail.Clear();
+            txtSenha.Clear();
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            ClearMessageInfo();
             PostUser();
         }
 
@@ -46,17 +54,33 @@ namespace Gear_Desktop.View
                 var result = await objBLLUsers.PostUser(users);
                 if (result == "Ok")
                 {
-                    MessageBox.Show("Usuario cadastrado com sucesso !!");
+                    ClearFields();
+                    MessageInfo("Usuario cadastrado com sucesso !!","Green");
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao cadastar usuario !!");
+                    MessageInfo("Erro ao cadastar usuario !!");
                 }
             }
             else
             {
-                MessageBox.Show("Usuario já existe !!");
+                MessageInfo("Usuario já existe !!");
             }
+        }
+
+        private void txtName_Enter(object sender, EventArgs e)
+        {
+            ClearMessageInfo();
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            ClearMessageInfo();
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            ClearMessageInfo();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblMsg = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BaseFormRodape = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -38,6 +39,7 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +57,24 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lblMsg);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 30);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(984, 631);
             this.panel4.TabIndex = 5;
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblMsg.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(0, 522);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(984, 109);
+            this.lblMsg.TabIndex = 2;
+            this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMsg.Visible = false;
             // 
             // panel3
             // 
@@ -166,6 +181,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBase";
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -183,5 +199,6 @@
         public Button btnClose;
         public Label BaseFormCabecalho;
         private Panel panel2;
+        public Label lblMsg;
     }
 }

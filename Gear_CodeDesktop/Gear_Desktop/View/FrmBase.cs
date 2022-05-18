@@ -17,6 +17,9 @@ namespace Gear_Desktop.View
 
         private string captionRodape;
         private string captionCabecalho;
+        private bool captionMsgVisible;
+        private string captionMsg;
+        private Color captionMsgColor;
 
         public string CaptionRodape
         {
@@ -34,6 +37,50 @@ namespace Gear_Desktop.View
             {
                 this.BaseFormCabecalho.Text = value;
             }
+        }
+
+        public string CaptionMsg 
+        {
+            get => captionMsg = this.lblMsg.Text;
+            set
+            {
+                this.lblMsg.Text = value;
+            }
+        }
+
+        public bool CaptionMsgVisible 
+        { 
+            get => captionMsgVisible = this.lblMsg.Visible; 
+            set => this.lblMsg.Visible = value; 
+        }
+        public Color CaptionMsgColor 
+        { 
+            get => captionMsgColor = this.lblMsg.ForeColor; 
+            set => this.lblMsg.ForeColor = value; 
+        }
+
+        public void MessageInfo(string message, string messageColor = "Yellow")
+        {
+            this.CaptionMsgVisible = true;
+            this.CaptionMsg = message;
+            if (messageColor == "Red")
+            {
+                this.CaptionMsgColor = Color.Red;
+            }
+            else if (messageColor == "Green")
+            {
+                this.CaptionMsgColor = Color.Green;
+            }
+            else
+            {
+                this.CaptionMsgColor = Color.Yellow;
+            }
+        }
+
+        public void ClearMessageInfo()
+        {
+            this.CaptionMsgVisible = false;
+            this.CaptionMsg = "";
         }
 
         public FrmBase()

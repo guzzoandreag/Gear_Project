@@ -26,7 +26,7 @@ namespace Gear_Desktop.Controller.DAL
         public async Task<Users?> GetUsersByEmail(string email)
         {
             HttpClientHandler clientHandler = new HttpClientHandler();
-            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new HttpClient(clientHandler);
             var URL = restConnection.Url + "/email/" + email;
@@ -57,7 +57,7 @@ namespace Gear_Desktop.Controller.DAL
         public async Task<string> PostUsers(Users usersParameter)
         {
             HttpClientHandler clientHandler = new HttpClientHandler();
-            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new HttpClient(clientHandler);
             var URL = restConnection.Url;
