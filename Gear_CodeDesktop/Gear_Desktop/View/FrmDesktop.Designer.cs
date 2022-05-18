@@ -28,66 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
+            this.pnlCenterCabecalhoRodape.SuspendLayout();
+            this.pnlRodape.SuspendLayout();
+            this.pnlCenterMain.SuspendLayout();
+            this.pnlCabecalho.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel4
+            // pnlMenu
             // 
-            this.panel4.Controls.Add(this.btnLogout);
-            this.panel4.Size = new System.Drawing.Size(1000, 650);
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(0, 680);
-            this.panel3.Size = new System.Drawing.Size(1000, 20);
-            // 
-            // BaseFormRodape
-            // 
-            this.BaseFormRodape.Size = new System.Drawing.Size(1000, 20);
-            this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
-            // 
-            // panel1
-            // 
-            this.panel1.Size = new System.Drawing.Size(1000, 700);
-            // 
-            // panel5
-            // 
-            this.panel5.Size = new System.Drawing.Size(1000, 30);
+            this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Controls.Add(this.splitter1);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(888, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Location = new System.Drawing.Point(944, 0);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(878, 30);
             this.BaseFormCabecalho.Text = "Desktop - Gear Project";
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.Location = new System.Drawing.Point(166, 541);
+            this.lblMsg.Size = new System.Drawing.Size(834, 109);
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.Black;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(165, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(1, 650);
+            this.splitter1.TabIndex = 9;
+            this.splitter1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(165, 650);
+            this.panel1.TabIndex = 10;
             // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrange;
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(888, 587);
+            this.btnLogout.Location = new System.Drawing.Point(0, 609);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 41);
-            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Size = new System.Drawing.Size(165, 41);
+            this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Deslogar";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -97,22 +106,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Desktop - Gear Project";
-            this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
+            this.CaptionMsgVisible = true;
             this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDesktop";
             this.Text = "FrmDesktop";
             this.Load += new System.EventHandler(this.FrmDesktop_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlCenterCabecalhoRodape.ResumeLayout(false);
+            this.pnlRodape.ResumeLayout(false);
+            this.pnlCenterMain.ResumeLayout(false);
+            this.pnlCabecalho.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private Panel panel1;
         private Button btnLogout;
+        private Splitter splitter1;
     }
 }

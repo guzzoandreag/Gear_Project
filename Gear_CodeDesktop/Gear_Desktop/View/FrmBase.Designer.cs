@@ -28,63 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlCenterMain = new System.Windows.Forms.Panel();
+            this.pnlCenterCabecalhoRodape = new System.Windows.Forms.Panel();
             this.lblMsg = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlRodape = new System.Windows.Forms.Panel();
             this.BaseFormRodape = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlCabecalho = new System.Windows.Forms.Panel();
             this.BaseFormCabecalho = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSpaceRightCaption = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pTop = new System.Windows.Forms.Panel();
+            this.pButtom = new System.Windows.Forms.Panel();
+            this.pLeft = new System.Windows.Forms.Panel();
+            this.pRight = new System.Windows.Forms.Panel();
+            this.pnlCenterMain.SuspendLayout();
+            this.pnlCenterCabecalhoRodape.SuspendLayout();
+            this.pnlRodape.SuspendLayout();
+            this.pnlCabecalho.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlCenterMain
             // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 681);
-            this.panel1.TabIndex = 0;
+            this.pnlCenterMain.Controls.Add(this.pnlCenterCabecalhoRodape);
+            this.pnlCenterMain.Controls.Add(this.pnlRodape);
+            this.pnlCenterMain.Controls.Add(this.pnlCabecalho);
+            this.pnlCenterMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCenterMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlCenterMain.Name = "pnlCenterMain";
+            this.pnlCenterMain.Size = new System.Drawing.Size(984, 681);
+            this.pnlCenterMain.TabIndex = 0;
             // 
-            // panel4
+            // pnlCenterCabecalhoRodape
             // 
-            this.panel4.Controls.Add(this.lblMsg);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 30);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(984, 631);
-            this.panel4.TabIndex = 5;
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.lblMsg);
+            this.pnlCenterCabecalhoRodape.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCenterCabecalhoRodape.Location = new System.Drawing.Point(0, 30);
+            this.pnlCenterCabecalhoRodape.Name = "pnlCenterCabecalhoRodape";
+            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(984, 631);
+            this.pnlCenterCabecalhoRodape.TabIndex = 5;
             // 
             // lblMsg
             // 
             this.lblMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblMsg.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(0, 522);
+            this.lblMsg.Location = new System.Drawing.Point(0, 531);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(984, 109);
-            this.lblMsg.TabIndex = 2;
+            this.lblMsg.Size = new System.Drawing.Size(984, 100);
+            this.lblMsg.TabIndex = 4;
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMsg.Visible = false;
             // 
-            // panel3
+            // pnlRodape
             // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Controls.Add(this.BaseFormRodape);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 661);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(984, 20);
-            this.panel3.TabIndex = 4;
+            this.pnlRodape.BackColor = System.Drawing.Color.DimGray;
+            this.pnlRodape.Controls.Add(this.BaseFormRodape);
+            this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlRodape.Location = new System.Drawing.Point(0, 661);
+            this.pnlRodape.Name = "pnlRodape";
+            this.pnlRodape.Size = new System.Drawing.Size(984, 20);
+            this.pnlRodape.TabIndex = 4;
             // 
             // BaseFormRodape
             // 
@@ -96,18 +100,18 @@
             this.BaseFormRodape.Text = "Year © Gear Project - All Rights Reserved.";
             this.BaseFormRodape.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
+            // pnlCabecalho
             // 
-            this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Controls.Add(this.BaseFormCabecalho);
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Controls.Add(this.btnMinimizar);
-            this.panel5.Controls.Add(this.btnClose);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(984, 30);
-            this.panel5.TabIndex = 1;
+            this.pnlCabecalho.BackColor = System.Drawing.Color.DimGray;
+            this.pnlCabecalho.Controls.Add(this.BaseFormCabecalho);
+            this.pnlCabecalho.Controls.Add(this.pnlSpaceRightCaption);
+            this.pnlCabecalho.Controls.Add(this.btnMinimizar);
+            this.pnlCabecalho.Controls.Add(this.btnClose);
+            this.pnlCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCabecalho.Location = new System.Drawing.Point(0, 0);
+            this.pnlCabecalho.Name = "pnlCabecalho";
+            this.pnlCabecalho.Size = new System.Drawing.Size(984, 30);
+            this.pnlCabecalho.TabIndex = 1;
             // 
             // BaseFormCabecalho
             // 
@@ -121,15 +125,15 @@
             this.BaseFormCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BaseFormCabecalho_MouseDown);
             this.BaseFormCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BaseFormCabecalho_MouseMove);
             // 
-            // panel2
+            // pnlSpaceRightCaption
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 30);
-            this.panel2.TabIndex = 3;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.pnlSpaceRightCaption.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSpaceRightCaption.Location = new System.Drawing.Point(0, 0);
+            this.pnlSpaceRightCaption.Name = "pnlSpaceRightCaption";
+            this.pnlSpaceRightCaption.Size = new System.Drawing.Size(10, 30);
+            this.pnlSpaceRightCaption.TabIndex = 3;
+            this.pnlSpaceRightCaption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.pnlSpaceRightCaption.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
             // btnMinimizar
             // 
@@ -167,38 +171,82 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pTop
+            // 
+            this.pTop.BackColor = System.Drawing.Color.White;
+            this.pTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pTop.Location = new System.Drawing.Point(0, 0);
+            this.pTop.Name = "pTop";
+            this.pTop.Size = new System.Drawing.Size(984, 2);
+            this.pTop.TabIndex = 1;
+            // 
+            // pButtom
+            // 
+            this.pButtom.BackColor = System.Drawing.Color.White;
+            this.pButtom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pButtom.Location = new System.Drawing.Point(0, 679);
+            this.pButtom.Name = "pButtom";
+            this.pButtom.Size = new System.Drawing.Size(984, 2);
+            this.pButtom.TabIndex = 2;
+            // 
+            // pLeft
+            // 
+            this.pLeft.BackColor = System.Drawing.Color.White;
+            this.pLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pLeft.Location = new System.Drawing.Point(0, 2);
+            this.pLeft.Name = "pLeft";
+            this.pLeft.Size = new System.Drawing.Size(2, 677);
+            this.pLeft.TabIndex = 3;
+            // 
+            // pRight
+            // 
+            this.pRight.BackColor = System.Drawing.Color.White;
+            this.pRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pRight.Location = new System.Drawing.Point(982, 2);
+            this.pRight.Name = "pRight";
+            this.pRight.Size = new System.Drawing.Size(2, 677);
+            this.pRight.TabIndex = 4;
+            // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(984, 681);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pRight);
+            this.Controls.Add(this.pLeft);
+            this.Controls.Add(this.pButtom);
+            this.Controls.Add(this.pTop);
+            this.Controls.Add(this.pnlCenterMain);
             this.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MaximumSize = new System.Drawing.Size(1000, 900);
             this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "FrmBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBase";
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.pnlCenterMain.ResumeLayout(false);
+            this.pnlCenterCabecalhoRodape.ResumeLayout(false);
+            this.pnlRodape.ResumeLayout(false);
+            this.pnlCabecalho.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public Panel panel4;
-        public Panel panel3;
+        public Panel pnlCenterCabecalhoRodape;
+        public Panel pnlRodape;
         public Label BaseFormRodape;
-        public Panel panel1;
-        public Panel panel5;
+        public Panel pnlCenterMain;
+        public Panel pnlCabecalho;
         public Button btnMinimizar;
         public Button btnClose;
         public Label BaseFormCabecalho;
-        private Panel panel2;
+        private Panel pTop;
+        private Panel pButtom;
+        private Panel pLeft;
+        private Panel pRight;
+        private Panel pnlSpaceRightCaption;
         public Label lblMsg;
     }
 }

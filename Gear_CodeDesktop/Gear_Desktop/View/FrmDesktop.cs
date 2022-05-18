@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Gear_Desktop.View
 {
-    public partial class FrmDesktop : FrmBase
+    public partial class FrmDesktop : FrmBaseDesktop
     {
         string URL;
         public FrmDesktop(string URLParameter)

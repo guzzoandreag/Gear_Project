@@ -35,35 +35,35 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pnlCenterCabecalhoRodape.SuspendLayout();
+            this.pnlRodape.SuspendLayout();
+            this.pnlCenterMain.SuspendLayout();
+            this.pnlCabecalho.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.txtSenha);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.txtName);
-            this.panel4.Controls.Add(this.btnConfirmar);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.txtEmail);
-            this.panel4.Size = new System.Drawing.Size(400, 316);
-            this.panel4.Controls.SetChildIndex(this.txtEmail, 0);
-            this.panel4.Controls.SetChildIndex(this.label1, 0);
-            this.panel4.Controls.SetChildIndex(this.btnConfirmar, 0);
-            this.panel4.Controls.SetChildIndex(this.txtName, 0);
-            this.panel4.Controls.SetChildIndex(this.label2, 0);
-            this.panel4.Controls.SetChildIndex(this.txtSenha, 0);
-            this.panel4.Controls.SetChildIndex(this.label3, 0);
-            this.panel4.Controls.SetChildIndex(this.lblMsg, 0);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label3);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtSenha);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtName);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnConfirmar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label1);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtEmail);
+            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(400, 316);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtEmail, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label1, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnConfirmar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtName, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label2, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtSenha, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label3, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(0, 346);
-            this.panel3.Size = new System.Drawing.Size(400, 20);
+            this.pnlRodape.Location = new System.Drawing.Point(0, 346);
+            this.pnlRodape.Size = new System.Drawing.Size(400, 20);
             // 
             // BaseFormRodape
             // 
@@ -72,11 +72,11 @@
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(400, 366);
+            this.pnlCenterMain.Size = new System.Drawing.Size(400, 366);
             // 
             // panel5
             // 
-            this.panel5.Size = new System.Drawing.Size(400, 30);
+            this.pnlCabecalho.Size = new System.Drawing.Size(400, 30);
             // 
             // btnMinimizar
             // 
@@ -199,11 +199,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadUsers";
             this.Text = "FrmCadUsers";
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.pnlCenterCabecalhoRodape.ResumeLayout(false);
+            this.pnlCenterCabecalhoRodape.PerformLayout();
+            this.pnlRodape.ResumeLayout(false);
+            this.pnlCenterMain.ResumeLayout(false);
+            this.pnlCabecalho.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

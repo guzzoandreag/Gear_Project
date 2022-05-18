@@ -28,7 +28,6 @@ namespace Gear_Desktop.Controller.BLL
 
             DALUsers objDALUsers = new DALUsers(restConnection);
             return objDALUsers.GetUsersByEmail(email);
-
         }
 
         public async Task<string> PostUser(Users usersParameter)
@@ -50,11 +49,9 @@ namespace Gear_Desktop.Controller.BLL
                 throw new Exception("Senha não pode ser menor do q 6 (seis) caracteres !!");
             }
 
-
             DALUsers objDALUsers = new DALUsers(restConnection);
             var result = await objDALUsers.PostUsers(usersParameter);
             return Convert.ToString(result);
-
         }
 
         ~BLLUsers()

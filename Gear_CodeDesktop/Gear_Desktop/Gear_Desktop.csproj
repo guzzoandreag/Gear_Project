@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>GearIcon48x.ico</ApplicationIcon>
+    <ApplicationIcon>FarmIcon512x.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="GearIcon48x.ico" />
+    <Content Include="FarmIcon512x.ico" />
   </ItemGroup>
 
   <ItemGroup>
