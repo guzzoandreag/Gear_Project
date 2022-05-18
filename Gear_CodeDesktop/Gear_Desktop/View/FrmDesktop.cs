@@ -37,5 +37,11 @@ namespace Gear_Desktop.View
         {
             this.Close();
         }
+
+        private void btnCadDeposito_Click(object sender, EventArgs e)
+        {
+            FrmDeposito frmDeposito = new FrmDeposito();
+                frmDeposito.ShowDialog();
+        }
     }
 }

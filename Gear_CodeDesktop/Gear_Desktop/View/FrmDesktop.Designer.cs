@@ -257,6 +257,7 @@
             this.btnCadDeposito.TabIndex = 30;
             this.btnCadDeposito.Text = "Deposito \\n Fazenda";
             this.btnCadDeposito.UseVisualStyleBackColor = false;
+            this.btnCadDeposito.Click += new System.EventHandler(this.btnCadDeposito_Click);
             // 
             // label1
             // 
