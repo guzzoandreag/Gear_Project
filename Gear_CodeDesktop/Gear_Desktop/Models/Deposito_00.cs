@@ -12,5 +12,18 @@ namespace Gear_Desktop.Models
         [Required]
         [StringLength(50)]
         public string Dep_name { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string typ_of_planting { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string farm_size { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string structure { get; set; }
+        
     }
 }

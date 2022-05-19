@@ -19,7 +19,7 @@ namespace Gear_Desktop.Controller.DAL
             restConnection = restConnectionParameter;
             if (!restConnection.Url.Contains("Users"))
             {
-                restConnection.Url = restConnection.Url + "Users";
+                restConnection.Url = restConnection.Url + "Users/";
             }
         }
 
@@ -29,7 +29,7 @@ namespace Gear_Desktop.Controller.DAL
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new HttpClient(clientHandler);
-            var URL = restConnection.Url + "/email/" + email;
+            var URL = restConnection.Url + email;
             try
             {
                 HttpResponseMessage response = await client.GetAsync(URL);

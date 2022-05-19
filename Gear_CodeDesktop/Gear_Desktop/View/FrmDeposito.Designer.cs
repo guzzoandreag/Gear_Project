@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cb_dep_faz = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtURL = new System.Windows.Forms.TextBox();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtURL);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnConfirmar);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label4);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.cb_dep_faz);
@@ -65,6 +67,7 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cb_dep_faz, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label4, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnConfirmar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtURL, 0);
             // 
             // pnlRodape
             // 
@@ -198,6 +201,14 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // txtURL
+            // 
+            this.txtURL.Location = new System.Drawing.Point(31, 371);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(256, 23);
+            this.txtURL.TabIndex = 14;
+            this.txtURL.Text = "http://localhost:8091/api/";
+            // 
             // FrmDeposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -229,5 +240,6 @@
         private Label label4;
         private ComboBox cb_dep_faz;
         public Button btnConfirmar;
+        private TextBox txtURL;
     }
 }

@@ -20,7 +20,7 @@ namespace Gear_Desktop.Controller.DAL
             restConnection = restConnectionParameter;
             if (!restConnection.Url.Contains("Deposito"))
             {
-                restConnection.Url = restConnection.Url + "Deposito";
+                restConnection.Url = restConnection.Url + "Deposito_00/";
             }
         }
 
@@ -30,7 +30,7 @@ namespace Gear_Desktop.Controller.DAL
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new HttpClient(clientHandler);
-            var URL = restConnection.Url + "/Deposito/" + Nome;
+            var URL = restConnection.Url + Nome;
 
             try
             {

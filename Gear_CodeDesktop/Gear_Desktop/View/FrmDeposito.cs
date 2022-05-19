@@ -17,11 +17,11 @@ namespace Gear_Desktop.View
     {
         string URL;
 
-        public FrmDeposito(string URLParameter,string depositoCadastrarParameter)
+        public FrmDeposito(string URLParameter)
         {
             InitializeComponent();
             this.URL = URLParameter;
-            txt_nome_dep_faz.Text = depositoCadastrarParameter;
+            txt_nome_dep_faz.Text = "";
             txt_tamanho.Text = "";
 
         }
@@ -33,7 +33,7 @@ namespace Gear_Desktop.View
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-
+            PostDeposito();
         }
 
         private async void PostDeposito()
