@@ -7,23 +7,18 @@ namespace Gear_Desktop.Models
     public class Deposito_00
     {
         [Key]
-        public int Dep_code { get; set; }
+        public int Dep_codigo { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Dep_name { get; set; }
+        public string Dep_nome { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string typ_of_planting { get; set; }
+        public int Dep_tipocadastro { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string farm_size { get; set; }
+        public int? Dep_tipoplantio { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string structure { get; set; }
-        
+        [StringLength(10)]
+        public string? Dep_tamanhofazenda { get; set; }
     }
 }

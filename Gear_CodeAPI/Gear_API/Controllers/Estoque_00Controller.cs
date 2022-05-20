@@ -48,7 +48,7 @@ namespace Gear_API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEstoque_00(int id, Estoque_00 estoque_00)
         {
-            if (id != estoque_00.Etq_code)
+            if (id != estoque_00.Etq_codigo)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace Gear_API.Controllers
             _context.Estoque_00.Add(estoque_00);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEstoque_00", new { id = estoque_00.Etq_code }, estoque_00);
+            return CreatedAtAction("GetEstoque_00", new { id = estoque_00.Etq_codigo }, estoque_00);
         }
 
         // DELETE: api/Estoque_00/5
@@ -103,7 +103,7 @@ namespace Gear_API.Controllers
 
         private bool Estoque_00Exists(int id)
         {
-            return _context.Estoque_00.Any(e => e.Etq_code == id);
+            return _context.Estoque_00.Any(e => e.Etq_codigo == id);
         }
     }
 }

@@ -12,25 +12,25 @@ namespace Gear_Desktop.Controller.DAL
 {
     internal class DALDeposito
     {
-        DALConnectionREST restConnection;
+        private readonly DALConnectionREST restConnection;
 
         public DALDeposito(DALConnectionREST restConnectionParameter)
         {
             //Construtor
             restConnection = restConnectionParameter;
-            if (!restConnection.Url.Contains("Deposito"))
+            if (!restConnection.Url.Contains("Deposito_00"))
             {
-                restConnection.Url = restConnection.Url + "Deposito_00/";
+                restConnection.Url += "Deposito_00";
             }
         }
 
-        public async Task<Deposito_00?> GetDeposito(string Nome)
+        public async Task<Deposito_00?> GetDeposito(int depCodigo)
         {
-            HttpClientHandler clientHandler = new HttpClientHandler();
+            HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
-            HttpClient client = new HttpClient(clientHandler);
-            var URL = restConnection.Url + Nome;
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + depCodigo;
 
             try
             {
@@ -38,7 +38,7 @@ namespace Gear_Desktop.Controller.DAL
                 if (response.IsSuccessStatusCode)
                 {
                     var DepositoJsonString = await response.Content.ReadAsStringAsync();
-                    Deposito_00 deposito = new Deposito_00();
+                    Deposito_00 deposito = new();
                     deposito = JsonConvert.DeserializeObject<Deposito_00>(DepositoJsonString);
                     return deposito;
                 }
@@ -56,14 +56,15 @@ namespace Gear_Desktop.Controller.DAL
                     ex.Message);
             }
         }
-        public async Task<string> PostDeposito(Deposito_00 DepositoParameter)
+
+        public async Task<string> PostDeposito(Deposito_00 depositoParameter)
         {
-            HttpClientHandler clientHandler = new HttpClientHandler();
+            HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
-            HttpClient client = new HttpClient(clientHandler);
+            HttpClient client = new(clientHandler);
             var URL = restConnection.Url;
-            var serializedCadastro = JsonConvert.SerializeObject(DepositoParameter);
+            var serializedCadastro = JsonConvert.SerializeObject(depositoParameter);
             var content = new StringContent(serializedCadastro, Encoding.UTF8, "application/json");
             var result = await client.PostAsync(URL, content);
             if (result.IsSuccessStatusCode)
@@ -76,9 +77,9 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        //~DALUsers()
-        //{
-        //     //Destroyer
-        //}
+        ~DALDeposito()
+        {
+            //Destroyer
+        }
     }
 }

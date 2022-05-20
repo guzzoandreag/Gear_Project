@@ -26,8 +26,8 @@ namespace Gear_Desktop.View
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            txtEmail.Text = "diogo@neski.com.br";
-            txtSenha.Text = "12345678";
+            txtEmail.Text = "guzzoandre.ag@outlook.com  ";
+            txtSenha.Text = "123456";
             ClearMessageInfo();
             GetUsersByEmail();
         }
@@ -44,7 +44,7 @@ namespace Gear_Desktop.View
             }
             else
             {
-                if (users.Usu_password.Trim() == txtSenha.Text.Trim())
+                if (users.Usu_senha.Trim() == txtSenha.Text.Trim())
                 {
                     this.txtSenha.Clear();
                     FrmDesktop frmDesktop = new FrmDesktop(txtURL.Text);

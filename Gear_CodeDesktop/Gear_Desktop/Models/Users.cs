@@ -5,11 +5,11 @@ namespace Gear_Desktop.Models
     public class Users
     {
         [Key]
-        public int Use_code { get; set; }
+        public int Use_codigo { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string Use_name { get; set; }
+        public string Use_nome { get; set; }
 
         [Required]
         [StringLength(30)]
@@ -17,6 +17,6 @@ namespace Gear_Desktop.Models
 
         [Required]
         [StringLength(20)]
-        public string Usu_password { get; set; }
+        public string Usu_senha { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using Newtonsoft.Json;
 namespace Gear_Desktop.Controller.DAL
 {
     internal class DALUsers
-    {   
-        DALConnectionREST restConnection;
+    {
+        private readonly DALConnectionREST restConnection;
 
         public DALUsers(DALConnectionREST restConnectionParameter)
         {
@@ -19,24 +19,24 @@ namespace Gear_Desktop.Controller.DAL
             restConnection = restConnectionParameter;
             if (!restConnection.Url.Contains("Users"))
             {
-                restConnection.Url = restConnection.Url + "Users/";
+                restConnection.Url += "Users";
             }
         }
 
         public async Task<Users?> GetUsersByEmail(string email)
         {
-            HttpClientHandler clientHandler = new HttpClientHandler();
+            HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
-            HttpClient client = new HttpClient(clientHandler);
-            var URL = restConnection.Url + email;
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/email/" + email;
             try
             {
                 HttpResponseMessage response = await client.GetAsync(URL);
                 if (response.IsSuccessStatusCode)
                 {
                     var UsersJsonString = await response.Content.ReadAsStringAsync();
-                    Users users = new Users();
+                    Users users = new();
                     users = JsonConvert.DeserializeObject<Users>(UsersJsonString);
                     return users;
                 }
@@ -56,10 +56,10 @@ namespace Gear_Desktop.Controller.DAL
 
         public async Task<string> PostUsers(Users usersParameter)
         {
-            HttpClientHandler clientHandler = new HttpClientHandler();
+            HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
-            HttpClient client = new HttpClient(clientHandler);
+            HttpClient client = new(clientHandler);
             var URL = restConnection.Url;
             var serializedCadastro = JsonConvert.SerializeObject(usersParameter);
             var content = new StringContent(serializedCadastro, Encoding.UTF8, "application/json");

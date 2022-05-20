@@ -10,7 +10,7 @@ namespace Gear_Desktop.Controller.BLL
 {
     public class BLLDeposito
     {
-        DALConnectionREST restConnection;
+        private readonly DALConnectionREST restConnection;
 
         public BLLDeposito(DALConnectionREST restConnectionParameter)
         {
@@ -18,48 +18,55 @@ namespace Gear_Desktop.Controller.BLL
             restConnection = restConnectionParameter;
         }
 
-        public Task<Deposito_00?> GetDeposito(string Nome)
+        public Task<Deposito_00?> GetDeposito(int depCodigo)
         {
-            Nome = Nome.Trim();
-            if (Nome.Length == 0)
-            {
-                throw new Exception("O campo Nome do Deposito/Fazenda não pode ficar em branco !!");
-            }
+            //Nome = Nome.Trim();
+            //if (Nome.Length == 0)
+            //{
+            //    // resultar a exceção com a mensagem para o formulario
+            //    throw new Exception("O campo Nome do Deposito/Fazenda não pode ficar em branco !!");
+            //}
 
-            DALDeposito objDALDeposito = new DALDeposito(restConnection);
-            return objDALDeposito.GetDeposito(Nome);
+            DALDeposito objDALDeposito = new(restConnection);
+            return objDALDeposito.GetDeposito(depCodigo);
         }
-        public async Task<string> PostDeposito(Deposito_00 DepositoParameter)
-        {
-            if (DepositoParameter.structure.Trim().Length == 0)
-            {
-                throw new Exception("Favor inserir o Modelo de Estrutura");
-            }
 
-            if (DepositoParameter.Dep_name.Trim().Length == 0)
+        public async Task<string> PostDeposito(Deposito_00 depositoParameter)
+        {
+            var result = "";
+            if (depositoParameter.Dep_nome.Trim().Length == 0)
             {
+                // resultar a exceção com a mensagem para o formulario
                 throw new Exception("Favor inserir o nome do Deposito / Fazenda usuario !!");
             }
 
-            if (DepositoParameter.typ_of_planting.Trim().Length == 0)
+            if (Convert.ToString(depositoParameter.Dep_tipocadastro).Trim().Length == 0)
             {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o tipo !!");
+            }
+
+            if ((depositoParameter.Dep_tipocadastro == 2) && (Convert.ToString(depositoParameter.Dep_tipoplantio).Trim().Length == 0))
+            {
+                // resultar a exceção com a mensagem para o formulario
                 throw new Exception("Favor inserir o Tipo de Plantio !!");
             }
 
-            if (DepositoParameter.farm_size.Trim().Length == 0)
+            if ((depositoParameter.Dep_tipocadastro == 2) && (depositoParameter.Dep_tamanhofazenda.Trim().Length == 0))
             {
+                // resultar a exceção com a mensagem para o formulario
                 throw new Exception("Favor inserir o Tamanho da Fazenda !!");
             }
 
-            DALDeposito objDALDeposito = new DALDeposito(restConnection);
-            var result = await objDALDeposito.PostDeposito(DepositoParameter);
+            DALDeposito objDALDeposito = new(restConnection);
+            result = await objDALDeposito.PostDeposito(depositoParameter);
             return Convert.ToString(result);
         }
 
-        //~BLLUsers()
-        //{
-        //    // Destroyer
-        //}
+        ~BLLDeposito()
+        {
+            // Destroyer
+        }
 
     }
 }

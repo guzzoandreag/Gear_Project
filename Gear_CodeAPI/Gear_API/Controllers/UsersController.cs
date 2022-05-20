@@ -62,14 +62,14 @@ namespace Gear_API.Controllers
         {
             _context.Users.Add(Users);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetUsers", new { id = Users.Use_code }, Users);
+            return CreatedAtAction("GetUsers", new { id = Users.Use_codigo }, Users);
         }
 // PUT'S #########################################################################################################
         // PUT: api/Users/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsers(int id, Users Users)
         {
-            if (id != Users.Use_code)
+            if (id != Users.Use_codigo)
             {
                 return BadRequest();
             }
@@ -108,7 +108,7 @@ namespace Gear_API.Controllers
 // EXIST'S #######################################################################################################
         private bool UsersExists(int id)
         {
-            return _context.Users.Any(e => e.Use_code == id);
+            return _context.Users.Any(e => e.Use_codigo == id);
         }
     }
 }

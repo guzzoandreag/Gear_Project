@@ -48,13 +48,13 @@ namespace Gear_Desktop.View
             if (users == null)
             {
                 users = new Users();
-                users.Use_name = txtName.Text.Trim();
+                users.Use_nome = txtName.Text.Trim();
                 users.Use_email = txtEmail.Text.Trim();
-                users.Usu_password = txtSenha.Text.Trim();
+                users.Usu_senha = txtSenha.Text.Trim();
                 var result = await objBLLUsers.PostUser(users);
                 if (result == "Ok")
                 {
-                    ClearFields();
+                    this.ClearFields();
                     MessageInfo("Usuario cadastrado com sucesso !!","Green");
                 }
                 else

@@ -48,7 +48,7 @@ namespace Gear_API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDeposito_00(int id, Deposito_00 deposito_00)
         {
-            if (id != deposito_00.Dep_code)
+            if (id != deposito_00.Dep_codigo)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace Gear_API.Controllers
             _context.Deposito_00.Add(deposito_00);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDeposito_00", new { id = deposito_00.Dep_code }, deposito_00);
+            return CreatedAtAction("GetDeposito_00", new { id = deposito_00.Dep_codigo }, deposito_00);
         }
 
         // DELETE: api/Deposito_00/5
@@ -103,7 +103,7 @@ namespace Gear_API.Controllers
 
         private bool Deposito_00Exists(int id)
         {
-            return _context.Deposito_00.Any(e => e.Dep_code == id);
+            return _context.Deposito_00.Any(e => e.Dep_codigo == id);
         }
     }
 }
