@@ -42,6 +42,7 @@ namespace Gear_Desktop.View
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             PostDeposito();
+
         }
 
         private async void PostDeposito()
@@ -50,13 +51,13 @@ namespace Gear_Desktop.View
             BLLDeposito objBLLDeposito = new BLLDeposito(restConnection);
             Deposito_00 deposito = new Deposito_00();
             deposito.Dep_nome = txtNome.Text.Trim();
-            deposito.Dep_tipocadastro = cbTipoCadastro.SelectedIndex;
-            deposito.Dep_tipoplantio = cbTipoPlantio.SelectedIndex;
+            deposito.Dep_tipocadastro = cbTipoCadastro.SelectedIndex + 1;
+            deposito.Dep_tipoplantio = cbTipoPlantio.SelectedIndex + 1;
             deposito.Dep_tamanhofazenda = txtTamanhoFazenda.Text;
             var result = await objBLLDeposito.PostDeposito(deposito);
             if (result == "Ok")
             {
-                //ClearFields();
+                ClearFields();
                 MessageInfo("Usuario cadastrado com sucesso !!", "Green");
             }
             else

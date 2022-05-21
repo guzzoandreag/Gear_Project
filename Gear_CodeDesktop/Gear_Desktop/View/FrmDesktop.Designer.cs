@@ -229,6 +229,7 @@
             this.btnCadProduto.TabIndex = 31;
             this.btnCadProduto.Text = "Produto";
             this.btnCadProduto.UseVisualStyleBackColor = false;
+            this.btnCadProduto.Click += new System.EventHandler(this.btnCadProduto_Click);
             // 
             // panel4
             // 

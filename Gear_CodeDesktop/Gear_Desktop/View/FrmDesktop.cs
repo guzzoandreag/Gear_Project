@@ -40,8 +40,15 @@ namespace Gear_Desktop.View
 
         private void btnCadDeposito_Click(object sender, EventArgs e)
         {
-            FrmCadDeposito frmDeposito = new FrmCadDeposito(URL);
+            FrmCadDeposito frmDeposito = new(URL);
                 frmDeposito.ShowDialog();
+        }
+
+        private void btnCadProduto_Click(object sender, EventArgs e)
+        {
+            FrmProdutos frmProdutos = new();
+            frmProdutos.ShowDialog();
+
         }
     }
 }
