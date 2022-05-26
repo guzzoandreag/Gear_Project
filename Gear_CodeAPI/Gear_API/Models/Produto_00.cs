@@ -17,6 +17,14 @@ namespace Gear_API.Models
         [DefaultValue(0)]
         public double Pro_valorcusto { get; set; }
 
+        [Required]
+        [DefaultValue(0)]
+        public double Pro_Medida { get; set; }
+
+        [Required]
+        [DefaultValue(0)]
+        public double Pro_Grupo { get; set; }
+
         [ForeignKey("Estoque_00")]
         public int Etq_codigo { get; set; }
         //public Estoque_00 Estoque_00 { get; set; }

@@ -32,12 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbTipoPlantio = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
+            this.cbMedida = new System.Windows.Forms.ComboBox();
+            this.txtCusto = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -46,12 +49,15 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.textBox3);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnCadastrar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label5);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtQuantidade);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtNome);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnConfirmar);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.textBox2);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.textBox1);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.comboBox1);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.cbTipoPlantio);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCodigo);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCusto);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.cbMedida);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.cbGrupo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label4);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label1);
@@ -62,12 +68,15 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label1, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label2, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label4, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cbTipoPlantio, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.comboBox1, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.textBox1, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.textBox2, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cbGrupo, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cbMedida, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCusto, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCodigo, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnConfirmar, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.textBox3, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtNome, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtQuantidade, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label5, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnCadastrar, 0);
             // 
             // pnlRodape
             // 
@@ -155,49 +164,49 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Preço de Custo";
             // 
-            // cbTipoPlantio
+            // cbGrupo
             // 
-            this.cbTipoPlantio.BackColor = System.Drawing.Color.DimGray;
-            this.cbTipoPlantio.FormattingEnabled = true;
-            this.cbTipoPlantio.Items.AddRange(new object[] {
+            this.cbGrupo.BackColor = System.Drawing.Color.DimGray;
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Items.AddRange(new object[] {
             "1 - ADUBO",
             "2 - HERBICIDA",
             "3 - FUNGICIDA"});
-            this.cbTipoPlantio.Location = new System.Drawing.Point(26, 191);
-            this.cbTipoPlantio.Name = "cbTipoPlantio";
-            this.cbTipoPlantio.Size = new System.Drawing.Size(217, 23);
-            this.cbTipoPlantio.TabIndex = 14;
+            this.cbGrupo.Location = new System.Drawing.Point(26, 191);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(217, 23);
+            this.cbGrupo.TabIndex = 14;
             // 
-            // comboBox1
+            // cbMedida
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.DimGray;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbMedida.BackColor = System.Drawing.Color.DimGray;
+            this.cbMedida.FormattingEnabled = true;
+            this.cbMedida.Items.AddRange(new object[] {
             "1 - KILO ( KG )",
             "2 - CAIXA ( CX )",
             "3 - METRO ( MT ) ",
             "4 - LITROS ( LT )"});
-            this.comboBox1.Location = new System.Drawing.Point(170, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(217, 23);
-            this.comboBox1.TabIndex = 18;
+            this.cbMedida.Location = new System.Drawing.Point(170, 130);
+            this.cbMedida.Name = "cbMedida";
+            this.cbMedida.Size = new System.Drawing.Size(217, 23);
+            this.cbMedida.TabIndex = 18;
             // 
-            // textBox1
+            // txtCusto
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(26, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 23);
-            this.textBox1.TabIndex = 19;
+            this.txtCusto.BackColor = System.Drawing.Color.DimGray;
+            this.txtCusto.Location = new System.Drawing.Point(26, 130);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Size = new System.Drawing.Size(121, 23);
+            this.txtCusto.TabIndex = 19;
             // 
-            // textBox2
+            // txtCodigo
             // 
-            this.textBox2.BackColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(27, 38);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(50, 31);
-            this.textBox2.TabIndex = 21;
+            this.txtCodigo.BackColor = System.Drawing.Color.DimGray;
+            this.txtCodigo.Location = new System.Drawing.Point(27, 38);
+            this.txtCodigo.Multiline = true;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(50, 31);
+            this.txtCodigo.TabIndex = 21;
             // 
             // btnConfirmar
             // 
@@ -217,14 +226,50 @@
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // txtNome
             // 
-            this.textBox3.BackColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(27, 75);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(360, 23);
-            this.textBox3.TabIndex = 23;
+            this.txtNome.BackColor = System.Drawing.Color.DimGray;
+            this.txtNome.Location = new System.Drawing.Point(27, 75);
+            this.txtNome.Multiline = true;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(360, 23);
+            this.txtNome.TabIndex = 23;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.BackColor = System.Drawing.Color.DimGray;
+            this.txtQuantidade.Location = new System.Drawing.Point(229, 46);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(158, 23);
+            this.txtQuantidade.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(229, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 17);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Quantidade Estoque";
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Location = new System.Drawing.Point(26, 236);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(150, 35);
+            this.btnCadastrar.TabIndex = 29;
+            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // FrmProdutos
             // 
@@ -252,11 +297,14 @@
         private Label label2;
         private Label label1;
         private Label label3;
-        private ComboBox cbTipoPlantio;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox3;
+        private ComboBox cbGrupo;
+        private ComboBox cbMedida;
+        private TextBox txtCodigo;
+        private TextBox txtCusto;
+        private TextBox txtNome;
         public Button btnConfirmar;
+        private Label label5;
+        private TextBox txtQuantidade;
+        private Button btnCadastrar;
     }
 }
