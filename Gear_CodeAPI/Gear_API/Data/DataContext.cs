@@ -6,7 +6,7 @@ namespace Gear_API.Data
     public class DataContext : DbContext
     {
         // Conexao com SQLServer local
-        private const string ConnectionString = @"Server=LOCALHOST\NESKI;Database=dbGear;User Id=sa;Password=Neski5500*;";
+        private const string ConnectionString = @"Server=.\SQLEXPRESS;Database=dbGear;User Id=sa;Password=Gear5038;";
 
         // Conexao com SQLServer em tempo de desenvolvimento quando executado em Docker.
         //private const string ConnectionString = "Server=LOCALHOST,1401;Database=dbGear;User Id=sa;Password=Gear5038;";
@@ -20,8 +20,6 @@ namespace Gear_API.Data
             optionsBuilder.UseSqlServer(ConnectionString
                 , options => options.EnableRetryOnFailure());
         }
-
-        public DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +39,7 @@ namespace Gear_API.Data
             //    );
         }
 
+        public DbSet<Users> Users { get; set; }
         public DbSet<Produto_00> Produtos_00 { get; set; }
         public DbSet<Estoque_00> Estoque_00 { get; set; }
         public DbSet<Deposito_00> Deposito_00 { get; set; }

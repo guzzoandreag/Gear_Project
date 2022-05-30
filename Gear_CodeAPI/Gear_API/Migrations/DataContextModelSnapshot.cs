@@ -81,16 +81,19 @@ namespace Gear_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Pro_codigo"), 1L, 1);
 
-                    b.Property<int>("Etq_codigo")
-                        .HasColumnType("int");
+                    b.Property<double>("Pro_Grupo")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Pro_Medida")
+                        .HasColumnType("float");
 
                     b.Property<string>("Pro_nome")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<double>("Pro_valorcusto")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Pro_valorcusto")
+                        .HasColumnType("decimal(18,10)");
 
                     b.HasKey("Pro_codigo");
 

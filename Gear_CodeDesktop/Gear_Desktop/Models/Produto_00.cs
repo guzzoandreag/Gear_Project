@@ -14,8 +14,9 @@ namespace Gear_Desktop.Models
         public string Pro_nome { get; set; }
 
         [Required]
+        [Column(TypeName = "decimal(18, 10)")]
         [DefaultValue(0)]
-        public double Pro_valorcusto { get; set; }
+        public decimal Pro_valorcusto { get; set; }
 
         [Required]
         [DefaultValue(0)]
@@ -24,9 +25,5 @@ namespace Gear_Desktop.Models
         [Required]
         [DefaultValue(0)]
         public double Pro_Grupo { get; set; }
-
-        [ForeignKey("Estoque_00")]
-        public int Etq_codigo { get; set; }
-        //public Estoque_00 Estoque_00 { get; set; }
     }
 }
