@@ -35,6 +35,7 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -43,6 +44,7 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.button1);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label3);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtSenha);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
@@ -59,6 +61,7 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtSenha, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label3, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.button1, 0);
             // 
             // pnlRodape
             // 
@@ -192,6 +195,16 @@
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(313, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmCadUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -221,5 +234,6 @@
         public Button btnConfirmar;
         private Label label1;
         public TextBox txtEmail;
+        private Button button1;
     }
 }

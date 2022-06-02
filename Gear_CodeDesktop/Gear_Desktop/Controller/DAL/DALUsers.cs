@@ -23,6 +23,35 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
+        public async Task<List<Users>> GetAllUsers()
+        {
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url;
+
+            try
+            {
+                List<Users> listUsers = new();
+                HttpResponseMessage response = await client.GetAsync(URL);
+                if (response.IsSuccessStatusCode)
+                {
+                    var UsersJsonString = await response.Content.ReadAsStringAsync();
+                    listUsers = JsonConvert.DeserializeObject<Users[]>(UsersJsonString).ToList();
+
+                }
+                return listUsers;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +
+                                    "Class : DALUsers \n" +
+                                    "Function : GetAllUsers \n\n" +
+                                    ex.Message);
+            }
+        }
+
         public async Task<Users?> GetUsersByEmail(string email)
         {
             HttpClientHandler clientHandler = new();

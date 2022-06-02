@@ -15,10 +15,11 @@ namespace Gear_Desktop.View
 {
     public partial class FrmProdutos : FrmBase
     {
-        string URL;
+        private readonly string URL;
 
-        public FrmProdutos()
+        public FrmProdutos(string URLParameter)
         {
+            URL = URLParameter;
             InitializeComponent();
         }
 

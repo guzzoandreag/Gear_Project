@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbTipoCadastro = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.button1);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnConfirmar);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label4);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.cbTipoCadastro);
@@ -65,6 +67,7 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cbTipoCadastro, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label4, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnConfirmar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.button1, 0);
             // 
             // pnlRodape
             // 
@@ -195,7 +198,6 @@
             this.cbTipoCadastro.Name = "cbTipoCadastro";
             this.cbTipoCadastro.Size = new System.Drawing.Size(217, 23);
             this.cbTipoCadastro.TabIndex = 11;
-            this.cbTipoCadastro.SelectedValueChanged += new System.EventHandler(this.cb_dep_faz_SelectedValueChanged);
             // 
             // btnConfirmar
             // 
@@ -213,6 +215,16 @@
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(635, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmCadDeposito
             // 
@@ -246,5 +258,6 @@
         private Label label4;
         private ComboBox cbTipoCadastro;
         public Button btnConfirmar;
+        private Button button1;
     }
 }

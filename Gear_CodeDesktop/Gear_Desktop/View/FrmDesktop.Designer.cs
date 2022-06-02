@@ -176,6 +176,7 @@
             this.btnMovTransferencia.TabIndex = 30;
             this.btnMovTransferencia.Text = "Transferencia Depositos";
             this.btnMovTransferencia.UseVisualStyleBackColor = false;
+            this.btnMovTransferencia.Click += new System.EventHandler(this.btnMovTransferencia_Click);
             // 
             // label2
             // 

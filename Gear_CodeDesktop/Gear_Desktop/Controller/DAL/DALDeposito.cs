@@ -24,6 +24,35 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
+        public async Task<List<Deposito_00>> GetAllDeposito()
+        {
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url;
+
+            try
+            {
+                List<Deposito_00> listDeposito = new();
+                HttpResponseMessage response = await client.GetAsync(URL);
+                if (response.IsSuccessStatusCode)
+                {
+                    var DepositoJsonString = await response.Content.ReadAsStringAsync();                    
+                    listDeposito = JsonConvert.DeserializeObject<Deposito_00[]>(DepositoJsonString).ToList();
+
+                }
+                return listDeposito;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +
+                                    "Class : DALDeposito \n" +
+                                    "Function : GetAllDeposito \n\n" +
+                                    ex.Message);
+            }
+        }
+
         public async Task<Deposito_00?> GetDeposito(int depCodigo)
         {
             HttpClientHandler clientHandler = new();
@@ -47,7 +76,6 @@ namespace Gear_Desktop.Controller.DAL
                     return null;
                 }
             }
-
             catch (Exception ex)
             {
                 throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +

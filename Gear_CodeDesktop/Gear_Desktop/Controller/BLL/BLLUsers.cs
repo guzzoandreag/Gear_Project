@@ -18,6 +18,14 @@ namespace Gear_Desktop.Controller.BLL
             restConnection = restConnectionParameter;
         }
 
+        public async Task<List<Users>> GetAllUsers()
+        {
+            List<Users> listUsers = new();
+            DALUsers objDALUsers = new(restConnection);
+            listUsers = await objDALUsers.GetAllUsers();
+            return listUsers;
+        }
+
         public Task<Users?> GetUsersByEmail(string email)
         {
             email = email.Trim();

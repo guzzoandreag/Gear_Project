@@ -16,6 +16,7 @@ namespace Gear_Desktop.View
     public partial class FrmCadUsers : FrmBase
     {
         string URL;
+        Users _users;
 
         public FrmCadUsers(string URLParameter, string emailCadastrarParameter)
         {
@@ -44,14 +45,14 @@ namespace Gear_Desktop.View
         {
             DALConnectionREST restConnection = new DALConnectionREST(URL);
             BLLUsers objBLLUsers = new BLLUsers(restConnection);
-            Users users = await objBLLUsers.GetUsersByEmail(txtEmail.Text.Trim());
-            if (users == null)
+            _users = await objBLLUsers.GetUsersByEmail(txtEmail.Text.Trim());
+            if (_users == null)
             {
-                users = new Users();
-                users.Use_nome = txtName.Text.Trim();
-                users.Use_email = txtEmail.Text.Trim();
-                users.Usu_senha = txtSenha.Text.Trim();
-                var result = await objBLLUsers.PostUser(users);
+                _users = new Users();
+                _users.Use_nome = txtName.Text.Trim();
+                _users.Use_email = txtEmail.Text.Trim();
+                _users.Usu_senha = txtSenha.Text.Trim();
+                var result = await objBLLUsers.PostUser(_users);
                 if (result == "Ok")
                 {
                     this.ClearFields();
@@ -81,6 +82,12 @@ namespace Gear_Desktop.View
         private void txtSenha_Enter(object sender, EventArgs e)
         {
             ClearMessageInfo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmPSQ<Users> frmPSQ = new(_users = new(), URL);
+            frmPSQ.ShowDialog();
         }
     }
 }

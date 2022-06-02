@@ -18,6 +18,14 @@ namespace Gear_Desktop.Controller.BLL
             restConnection = restConnectionParameter;
         }
 
+        public async Task<List<Deposito_00>> GetAllDeposito()
+        {
+            List<Deposito_00> listDeposito= new();
+            DALDeposito objDALDeposito = new(restConnection);
+            listDeposito = await objDALDeposito.GetAllDeposito();
+            return listDeposito;
+        }
+
         public Task<Deposito_00?> GetDeposito(int depCodigo)
         {
             //Nome = Nome.Trim();
