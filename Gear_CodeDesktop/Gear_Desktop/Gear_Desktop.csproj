@@ -12,6 +12,8 @@
   <ItemGroup>
     <Compile Remove="Deposito_00.cs" />
     <Compile Remove="Estoque_00.cs" />
+    <Compile Remove="PlaceHolderComboBox.cs" />
+    <Compile Remove="PlaceHolderTextBox.cs" />
     <Compile Remove="Produto_00.cs" />
     <Compile Remove="Users.cs" />
   </ItemGroup>
