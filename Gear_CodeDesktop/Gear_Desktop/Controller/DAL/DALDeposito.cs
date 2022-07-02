@@ -27,7 +27,8 @@ namespace Gear_Desktop.Controller.DAL
         public async Task<List<Deposito_00>> GetAllDeposito()
         {
             HttpClientHandler clientHandler = new();
-            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) 
+            => { return true; };
 
             HttpClient client = new(clientHandler);
             var URL = restConnection.Url;

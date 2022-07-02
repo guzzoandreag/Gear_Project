@@ -9,14 +9,24 @@ namespace Gear_API.Models
         [Key]
         public int Etq_codigo { get; set; }
 
-        [Required]
-        [DefaultValue(0)]
-        public string Etq_quantidade { get; set; }
-
-        public DateTime? Etq_validade { get; set; }
+        [ForeignKey("Produto_00")]
+        public int Pro_codigo { get; set; }
+        //public Produto_00 Produto_00 { get; set; }
 
         [ForeignKey("Deposito_00")]
         public int Dep_codigo { get; set; }
         //public Deposito_00 Deposito_00 { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18, 10)")]
+        [DefaultValue(0)]
+        public decimal Etq_quantidade { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18, 10)")]
+        [DefaultValue(0)]
+        public decimal Etq_valorcusto { get; set; }
+
+        public DateTime? Etq_validade { get; set; }
     }
 }

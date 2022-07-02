@@ -18,6 +18,14 @@ namespace Gear_Desktop.Controller.BLL
             restConnection = restConnectionParameter;
         }
 
+        public async Task<List<Produto_00>> GetAllProdutos()
+        {
+            List<Produto_00> listProdutos = new();
+            DALProdutos objDALProdutos = new(restConnection);
+            listProdutos = await objDALProdutos.GetAllProdutos();
+            return listProdutos;
+        }
+
         public Task<Produto_00?> GetProduto(int proCodigo)
         {
             //Nome = Nome.Trim();
@@ -38,12 +46,6 @@ namespace Gear_Desktop.Controller.BLL
             {
                 // resultar a exceção com a mensagem para o formulario
                 throw new Exception("Favor inserir o nome do Produto !!");
-            }
-
-            if (Convert.ToString(ProdutoParameter.Pro_valorcusto).Trim().Length == 0)
-            {
-                // resultar a exceção com a mensagem para o formulario
-                throw new Exception("Favor inserir o Valor (R$) de Custo !!");
             }
             if (Convert.ToString(ProdutoParameter.Pro_Grupo).Trim().Length == 0)
             {

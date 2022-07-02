@@ -14,11 +14,6 @@ namespace Gear_API.Models
         public string Pro_nome { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18, 10)")]
-        [DefaultValue(0)]
-        public decimal Pro_valorcusto { get; set; }
-
-        [Required]
         [DefaultValue(0)]
         public double Pro_Medida { get; set; }
 

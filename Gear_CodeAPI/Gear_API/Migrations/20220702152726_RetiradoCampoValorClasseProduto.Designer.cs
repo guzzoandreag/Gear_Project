@@ -4,6 +4,7 @@ using Gear_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gear_API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220702152726_RetiradoCampoValorClasseProduto")]
+    partial class RetiradoCampoValorClasseProduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,17 +63,12 @@ namespace Gear_API.Migrations
                     b.Property<int>("Dep_codigo")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Etq_quantidade")
-                        .HasColumnType("decimal(18,10)");
+                    b.Property<string>("Etq_quantidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Etq_validade")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Etq_valorcusto")
-                        .HasColumnType("decimal(18,10)");
-
-                    b.Property<int>("Pro_codigo")
-                        .HasColumnType("int");
 
                     b.HasKey("Etq_codigo");
 

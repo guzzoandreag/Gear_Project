@@ -46,14 +46,15 @@ namespace Gear_Desktop.View
 
         private void btnCadProduto_Click(object sender, EventArgs e)
         {
-            FrmProdutos frmProdutos = new(URL);
+            FrmCadProdutos frmProdutos = new(URL);
             frmProdutos.ShowDialog();
 
         }
 
         private void btnMovTransferencia_Click(object sender, EventArgs e)
         {
-
+            DlgMovEstoque dlgEstoque = new(URL);
+            dlgEstoque.ShowDialog();
         }
     }
 }

@@ -8,67 +8,67 @@ using Newtonsoft.Json;
 
 namespace Gear_Desktop.Controller.DAL
 {
-    internal class DALProdutos
+    internal class DALEstoque
     {
         private readonly DALConnectionREST restConnection;
 
-        public DALProdutos(DALConnectionREST restConnectionParameter)
+        public DALEstoque(DALConnectionREST restConnectionParameter)
         {
             //Construtor
             restConnection = restConnectionParameter;
-            if (!restConnection.Url.Contains("Produto_00"))
+            if (!restConnection.Url.Contains("Estoque_00"))
             {
-                restConnection.Url += "Produto_00";
+                restConnection.Url += "Estoque_00";
             }
         }
 
-        public async Task<List<Produto_00>> GetAllProdutos()
+        public async Task<List<Estoque_00>> GetAllEstoque()
         {
             HttpClientHandler clientHandler = new();
-            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors)
-            => { return true; };
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
             var URL = restConnection.Url;
 
             try
             {
-                List<Produto_00> listProdutos = new();
+                List<Estoque_00> listEstoque = new();
                 HttpResponseMessage response = await client.GetAsync(URL);
                 if (response.IsSuccessStatusCode)
                 {
-                    var ProdutosJsonString = await response.Content.ReadAsStringAsync();
-                    listProdutos = JsonConvert.DeserializeObject<Produto_00[]>(ProdutosJsonString).ToList();
+                    var EstoqueJsonString = await response.Content.ReadAsStringAsync();
+                    listEstoque = JsonConvert.DeserializeObject<Estoque_00[]>(EstoqueJsonString).ToList();
 
                 }
-                return listProdutos;
+                return listEstoque;
             }
             catch (Exception ex)
             {
                 throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +
-                                    "Class : DALProdutos \n" +
-                                    "Function : GetAllProdutos \n\n" +
+                                    "Class : DALEstoque \n" +
+                                    "Function : GetAllEstoque \n\n" +
                                     ex.Message);
             }
         }
 
-        public async Task<Produto_00?> GetProduto(int Procodigo)
+        public async Task<Estoque_00?> GetEstoque(int Etqcodigo)
+
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
-            var URL = restConnection.Url + "/" + Procodigo;
+            var URL = restConnection.Url + Etqcodigo;
 
             try
             {
                 HttpResponseMessage response = await client.GetAsync(URL);
                 if (response.IsSuccessStatusCode)
                 {
-                    var ProdutoJsonString = await response.Content.ReadAsStringAsync();
-                    Produto_00 produto = new();
-                    produto = JsonConvert.DeserializeObject<Produto_00>(ProdutoJsonString);
-                    return produto;
+                    var EstoqueJsonString = await response.Content.ReadAsStringAsync();
+                    Estoque_00 estoque = new();
+                    estoque = JsonConvert.DeserializeObject<Estoque_00>(EstoqueJsonString);
+                    return estoque;
                 }
                 else
                 {
@@ -79,21 +79,21 @@ namespace Gear_Desktop.Controller.DAL
             catch (Exception ex)
             {
                 throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +
-                    "Class : DALProduto \n" +
-                    "Function : GetProduto \n\n" +
-                    ex.Message);
+                                    "Class : DALEstoque \n" +
+                                    "Function : GetEstoque \n\n" +
+                                    ex.Message);
             }
         }
 
-        public async Task<string> PostProduto(Produto_00 ProdutoParameter)
+        public async Task<string> PostEstoque(Estoque_00 EstoqueParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
             var URL = restConnection.Url;
-            var serializedCadastroProduto = JsonConvert.SerializeObject(ProdutoParameter);
-            var content = new StringContent(serializedCadastroProduto, Encoding.UTF8, "application/json");
+            var serializedCadastroEstoque = JsonConvert.SerializeObject(EstoqueParameter);
+            var content = new StringContent(serializedCadastroEstoque, Encoding.UTF8, "application/json");
             var result = await client.PostAsync(URL, content);
             if (result.IsSuccessStatusCode)
             {
@@ -105,7 +105,7 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        ~DALProdutos()
+        ~DALEstoque()
         {
             //Destroyer
         }
