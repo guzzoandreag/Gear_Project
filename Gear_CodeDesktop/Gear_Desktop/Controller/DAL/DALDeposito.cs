@@ -60,7 +60,7 @@ namespace Gear_Desktop.Controller.DAL
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
-            var URL = restConnection.Url + depCodigo;
+            var URL = restConnection.Url + "/" +  depCodigo;
 
             try
             {
@@ -80,9 +80,9 @@ namespace Gear_Desktop.Controller.DAL
             catch (Exception ex)
             {
                 throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +
-                    "Class : DALDeposito \n" +
-                    "Function : GetDeposito \n\n" +
-                    ex.Message);
+                                    "Class : DALDeposito \n" +
+                                    "Function : GetDeposito \n\n" +
+                                    ex.Message);
             }
         }
 

@@ -52,13 +52,13 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<Produto_00?> GetProduto(int Procodigo)
+        public async Task<Produto_00?> GetProduto(int ProCodigo)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
-            var URL = restConnection.Url + "/" + Procodigo;
+            var URL = restConnection.Url + "/" + ProCodigo;
 
             try
             {
@@ -79,13 +79,13 @@ namespace Gear_Desktop.Controller.DAL
             catch (Exception ex)
             {
                 throw new Exception("Falha ao comunicar-se com o servidor. \n\n" +
-                    "Class : DALProduto \n" +
-                    "Function : GetProduto \n\n" +
-                    ex.Message);
+                                    "Class : DALProduto \n" +
+                                    "Function : GetProduto \n\n" +
+                                    ex.Message);
             }
         }
 
-        public async Task<string> PostProduto(Produto_00 ProdutoParameter)
+        public async Task<Produto_00> PostProduto(Produto_00 ProdutoParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -94,14 +94,36 @@ namespace Gear_Desktop.Controller.DAL
             var URL = restConnection.Url;
             var serializedCadastroProduto = JsonConvert.SerializeObject(ProdutoParameter);
             var content = new StringContent(serializedCadastroProduto, Encoding.UTF8, "application/json");
-            var result = await client.PostAsync(URL, content);
-            if (result.IsSuccessStatusCode)
+            HttpResponseMessage response = await client.PostAsync(URL, content);
+            if (response.IsSuccessStatusCode)
+            {
+                var produtoString = await response.Content.ReadAsStringAsync();
+                Produto_00 produto = JsonConvert.DeserializeObject<Produto_00>(produtoString);
+                return produto;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> PutProduto(Produto_00 ProdutoParameter)
+        {
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + ProdutoParameter.Pro_codigo;
+            var serializedCadastroProduto = JsonConvert.SerializeObject(ProdutoParameter);
+            var content = new StringContent(serializedCadastroProduto, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync(URL, content);
+            if (response.IsSuccessStatusCode)
             {
                 return "Ok";
             }
             else
             {
-                return "Fail";
+                return "Erro : " + response.StatusCode;
             }
         }
 

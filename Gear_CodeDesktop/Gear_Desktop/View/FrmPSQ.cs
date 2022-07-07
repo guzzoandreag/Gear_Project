@@ -215,7 +215,6 @@ namespace Gear_Desktop.View
                     {
                         column.HeaderText = "Grupo";
                     }
-
                 };
             }
             else if (tipoModel.Contains("Estoque_00"))
@@ -271,6 +270,8 @@ namespace Gear_Desktop.View
                 this.ReturnProdutos = produtoReturn;
                 this.ReturnProdutos.Pro_codigo = Convert.ToInt32(dgvGridPesquisa.CurrentRow.Cells["Pro_codigo"].Value);
                 this.ReturnProdutos.Pro_nome = dgvGridPesquisa.CurrentRow.Cells["Pro_nome"].Value.ToString();
+                this.ReturnProdutos.Pro_Medida = Convert.ToInt32(dgvGridPesquisa.CurrentRow.Cells["Pro_Medida"].Value) - 1;
+                this.ReturnProdutos.Pro_Grupo = Convert.ToInt32(dgvGridPesquisa.CurrentRow.Cells["Pro_Grupo"].Value) - 1;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

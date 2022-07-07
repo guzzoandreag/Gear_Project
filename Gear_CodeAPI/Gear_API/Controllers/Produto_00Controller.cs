@@ -82,8 +82,10 @@ namespace Gear_API.Controllers
             _context.Produtos_00.Add(produto_00);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduto_00", new { id = produto_00.Pro_codigo }, produto_00);
+            var result = CreatedAtAction("GetProduto_00", new { id = produto_00.Pro_codigo }, produto_00);
+            return result;
         }
+
 
         // DELETE: api/Produto_00/5
         [HttpDelete("{id}")]

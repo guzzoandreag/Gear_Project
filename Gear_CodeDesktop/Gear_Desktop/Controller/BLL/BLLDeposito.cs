@@ -26,7 +26,7 @@ namespace Gear_Desktop.Controller.BLL
             return listDeposito;
         }
 
-        public Task<Deposito_00?> GetDeposito(int depCodigo)
+        public async Task<Deposito_00?> GetDeposito(int depCodigo)
         {
             //Nome = Nome.Trim();
             //if (Nome.Length == 0)
@@ -36,7 +36,7 @@ namespace Gear_Desktop.Controller.BLL
             //}
 
             DALDeposito objDALDeposito = new(restConnection);
-            return objDALDeposito.GetDeposito(depCodigo);
+            return await objDALDeposito.GetDeposito(depCodigo);
         }
 
         public async Task<string> PostDeposito(Deposito_00 depositoParameter)
