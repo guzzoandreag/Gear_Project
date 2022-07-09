@@ -26,7 +26,7 @@ namespace Gear_Desktop.Controller.BLL
             return listProdutos;
         }
 
-        public Task<Produto_00?> GetProduto(int proCodigo)
+        public async Task<Produto_00?> GetProduto(int proCodigo)
         {
             //Nome = Nome.Trim();
             //if (Nome.Length == 0)
@@ -36,29 +36,7 @@ namespace Gear_Desktop.Controller.BLL
             //}
 
             DALProdutos objDALProduto = new(restConnection);
-            return objDALProduto.GetProduto(proCodigo);
-        }
-
-        public async Task<Produto_00> PostProdutos(Produto_00 ProdutoParameter)
-        {
-            if (ProdutoParameter.Pro_nome.Trim().Length == 0)
-            {
-                // resultar a exceção com a mensagem para o formulario
-                throw new Exception("Favor inserir o nome do Produto !!");
-            }
-            if (Convert.ToString(ProdutoParameter.Pro_Grupo).Trim().Length == 0)
-            {
-                // resultar a exceção com a mensagem para o formulario
-                throw new Exception("Favor inserir o Grupo!!");
-            }
-            if (Convert.ToString(ProdutoParameter.Pro_Medida).Trim().Length == 0)
-            {
-                // resultar a exceção com a mensagem para o formulario
-                throw new Exception("Favor inserir a Unidade de Medida !!");
-            }
-
-            DALProdutos objDALProduto = new(restConnection);
-            return await objDALProduto.PostProduto(ProdutoParameter);
+            return await objDALProduto.GetProduto(proCodigo);
         }
 
         public async Task<string> PutProdutos(Produto_00 ProdutoParameter)
@@ -83,5 +61,31 @@ namespace Gear_Desktop.Controller.BLL
             return await objDALProduto.PutProduto(ProdutoParameter);
         }
 
+        public async Task<Produto_00> PostProdutos(Produto_00 ProdutoParameter)
+        {
+            if (ProdutoParameter.Pro_nome.Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o nome do Produto !!");
+            }
+            if (Convert.ToString(ProdutoParameter.Pro_Grupo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Grupo!!");
+            }
+            if (Convert.ToString(ProdutoParameter.Pro_Medida).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir a Unidade de Medida !!");
+            }
+
+            DALProdutos objDALProduto = new(restConnection);
+            return await objDALProduto.PostProduto(ProdutoParameter);
+        }
+
+        ~BLLProdutos()
+        {
+            // Destroyer
+        }
     }
 }

@@ -62,7 +62,7 @@
             this.pnlCenterCabecalhoRodape.Controls.Add(this.cbGrupo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label1);
-            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(636, 400);
+            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(700, 400);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label1, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label2, 0);
@@ -81,51 +81,51 @@
             // pnlRodape
             // 
             this.pnlRodape.Location = new System.Drawing.Point(0, 430);
-            this.pnlRodape.Size = new System.Drawing.Size(636, 20);
+            this.pnlRodape.Size = new System.Drawing.Size(700, 20);
             // 
             // BaseFormRodape
             // 
-            this.BaseFormRodape.Size = new System.Drawing.Size(636, 20);
+            this.BaseFormRodape.Size = new System.Drawing.Size(700, 20);
             this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
             // 
             // pnlCenterMain
             // 
-            this.pnlCenterMain.Size = new System.Drawing.Size(636, 450);
+            this.pnlCenterMain.Size = new System.Drawing.Size(700, 450);
             // 
             // pnlCabecalho
             // 
-            this.pnlCabecalho.Size = new System.Drawing.Size(636, 30);
+            this.pnlCabecalho.Size = new System.Drawing.Size(700, 30);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(524, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(588, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Location = new System.Drawing.Point(580, 0);
+            this.btnClose.Location = new System.Drawing.Point(644, 0);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(514, 30);
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(578, 30);
             this.BaseFormCabecalho.Text = "Cadastro de Produto - Gear Project";
             // 
             // lblMsg
             // 
-            this.lblMsg.Location = new System.Drawing.Point(0, 353);
-            this.lblMsg.Size = new System.Drawing.Size(636, 47);
+            this.lblMsg.Location = new System.Drawing.Point(0, 350);
+            this.lblMsg.Size = new System.Drawing.Size(700, 50);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(260, 64);
+            this.label1.Location = new System.Drawing.Point(116, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 10;
@@ -136,7 +136,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(90, 64);
+            this.label2.Location = new System.Drawing.Point(108, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 11;
@@ -150,9 +150,9 @@
             "1 - ADUBO",
             "2 - HERBICIDA",
             "3 - FUNGICIDA"});
-            this.cbGrupo.Location = new System.Drawing.Point(260, 84);
+            this.cbGrupo.Location = new System.Drawing.Point(169, 114);
             this.cbGrupo.Name = "cbGrupo";
-            this.cbGrupo.Size = new System.Drawing.Size(162, 23);
+            this.cbGrupo.Size = new System.Drawing.Size(192, 23);
             this.cbGrupo.TabIndex = 8;
             // 
             // cbMedida
@@ -165,15 +165,15 @@
             "3 - CAIXA ( CX )",
             "4 - METRO ( MT ) ",
             "5 - LITROS ( LT )"});
-            this.cbMedida.Location = new System.Drawing.Point(90, 84);
+            this.cbMedida.Location = new System.Drawing.Point(169, 85);
             this.cbMedida.Name = "cbMedida";
-            this.cbMedida.Size = new System.Drawing.Size(164, 23);
+            this.cbMedida.Size = new System.Drawing.Size(192, 23);
             this.cbMedida.TabIndex = 7;
             // 
             // txtNome
             // 
             this.txtNome.BackColor = System.Drawing.Color.DimGray;
-            this.txtNome.Location = new System.Drawing.Point(153, 28);
+            this.txtNome.Location = new System.Drawing.Point(232, 56);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(360, 23);
@@ -185,7 +185,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label3.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(153, 8);
+            this.label3.Location = new System.Drawing.Point(232, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 45;
@@ -197,7 +197,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label4.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(28, 31);
+            this.label4.Location = new System.Drawing.Point(108, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 44;
@@ -212,7 +212,7 @@
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Location = new System.Drawing.Point(505, 297);
+            this.btnPesquisar.Location = new System.Drawing.Point(537, 293);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
             this.btnPesquisar.TabIndex = 4;
@@ -224,13 +224,12 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Enabled = false;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(383, 297);
+            this.btnCancelar.Location = new System.Drawing.Point(415, 293);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
             this.btnCancelar.TabIndex = 3;
@@ -242,13 +241,12 @@
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(260, 297);
+            this.btnSalvar.Location = new System.Drawing.Point(292, 293);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
             this.btnSalvar.TabIndex = 2;
@@ -265,7 +263,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(137, 297);
+            this.btnAlterar.Location = new System.Drawing.Point(169, 293);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
             this.btnAlterar.TabIndex = 1;
@@ -282,7 +280,7 @@
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(14, 297);
+            this.btnNovo.Location = new System.Drawing.Point(46, 293);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(117, 35);
             this.btnNovo.TabIndex = 0;
@@ -293,7 +291,7 @@
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.Location = new System.Drawing.Point(89, 28);
+            this.txtCodigo.Location = new System.Drawing.Point(169, 56);
             this.txtCodigo.Multiline = true;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(57, 23);
@@ -306,7 +304,7 @@
             this.CaptionCabecalho = "Cadastro de Produto - Gear Project";
             this.CaptionMsgVisible = true;
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
-            this.ClientSize = new System.Drawing.Size(636, 450);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadProdutos";
             this.Text = "FrmProdutos";
