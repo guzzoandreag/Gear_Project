@@ -177,7 +177,6 @@
             // 
             this.txtNomeDeposito.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeDeposito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNomeDeposito.Enabled = false;
             this.txtNomeDeposito.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtNomeDeposito.Location = new System.Drawing.Point(229, 93);
             this.txtNomeDeposito.Name = "txtNomeDeposito";
@@ -298,7 +297,6 @@
             // 
             this.txtNomeProduto.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNomeProduto.Enabled = false;
             this.txtNomeProduto.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtNomeProduto.Location = new System.Drawing.Point(229, 50);
             this.txtNomeProduto.Name = "txtNomeProduto";

@@ -24,6 +24,8 @@ namespace Gear_Desktop.View
         {
             InitializeComponent();
             this.URL = URLParameter;
+            txtNomeProduto.ReadOnly = true;
+            txtNomeDeposito.ReadOnly = true;
         }
 
         private void txtPro_codigo_Leave(object sender, EventArgs e)
