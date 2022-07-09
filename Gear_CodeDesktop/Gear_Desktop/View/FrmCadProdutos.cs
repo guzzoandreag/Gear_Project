@@ -20,12 +20,27 @@ namespace Gear_Desktop.View
 
         public FrmCadProdutos(string URLParameter)
         {
-            URL = URLParameter;
             InitializeComponent();
+            this.URL = URLParameter;
+           
             txtCodigo.ReadOnly = true;
             txtNome.ReadOnly = true;
             cbMedida.Enabled = false;
             cbGrupo.Enabled = false;
+
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnPesquisar.Enabled = true;
+        }
+
+        private void ClearFields()
+        {
+            txtCodigo.Clear();
+            txtNome.Clear();
+            cbMedida.ResetText();
+            cbGrupo.ResetText();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -35,9 +50,9 @@ namespace Gear_Desktop.View
             txtNome.ReadOnly = false;
             txtNome.Clear();
             cbMedida.Enabled = true;
-            cbMedida.SelectedIndex = -1;
+            cbMedida.ResetText();
             cbGrupo.Enabled = true;
-            cbGrupo.SelectedIndex = -1;
+            cbGrupo.ResetText();
 
             btnNovo.Enabled = false;
             btnAlterar.Enabled = false;
@@ -91,9 +106,9 @@ namespace Gear_Desktop.View
                 txtNome.ReadOnly = true;
                 txtNome.Clear();
                 cbMedida.Enabled = false;
-                cbMedida.SelectedIndex = -1;
+                cbMedida.ResetText();
                 cbGrupo.Enabled = false;
-                cbGrupo.SelectedIndex = -1;
+                cbGrupo.ResetText();
 
                 btnNovo.Enabled = true;
                 btnAlterar.Enabled = true;
@@ -149,7 +164,7 @@ namespace Gear_Desktop.View
             }
             else
             {
-                MessageInfo("Erro ao alterar o Produto !!" + result);
+                MessageInfo("Erro ao alterar o Produto !! - " + result);
             }
         }
 
@@ -159,7 +174,6 @@ namespace Gear_Desktop.View
             BLLProdutos objBLLProdutos = new(restConnection);
             _produto = new()
             {
-                //Pro_codigo = Convert.ToInt32(txtCodigo.Text.Trim()),
                 Pro_nome = txtNome.Text.Trim(),
                 Pro_Grupo = cbGrupo.SelectedIndex + 1,
                 Pro_Medida = cbMedida.SelectedIndex + 1

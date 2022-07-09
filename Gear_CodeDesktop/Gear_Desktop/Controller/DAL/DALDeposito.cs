@@ -41,7 +41,6 @@ namespace Gear_Desktop.Controller.DAL
                 {
                     var DepositoJsonString = await response.Content.ReadAsStringAsync();                    
                     listDeposito = JsonConvert.DeserializeObject<Deposito_00[]>(DepositoJsonString).ToList();
-
                 }
                 return listDeposito;
             }
@@ -54,13 +53,13 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<Deposito_00?> GetDeposito(int depCodigo)
+        public async Task<Deposito_00?> GetDeposito(int DepCodigo)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
-            var URL = restConnection.Url + "/" +  depCodigo;
+            var URL = restConnection.Url + "/" +  DepCodigo;
 
             try
             {
@@ -86,23 +85,45 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<string> PostDeposito(Deposito_00 depositoParameter)
+        public async Task<string> PutDeposito(Deposito_00 DepositoParameter)
+        {
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + DepositoParameter.Dep_codigo;
+            var serializedCadastroDeposito = JsonConvert.SerializeObject(DepositoParameter);
+            var content = new StringContent(serializedCadastroDeposito, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync(URL, content);
+            if (response.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Erro : " + response.StatusCode;
+            }
+        }
+
+        public async Task<Deposito_00> PostDeposito(Deposito_00 DepositoParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
             var URL = restConnection.Url;
-            var serializedCadastro = JsonConvert.SerializeObject(depositoParameter);
-            var content = new StringContent(serializedCadastro, Encoding.UTF8, "application/json");
-            var result = await client.PostAsync(URL, content);
-            if (result.IsSuccessStatusCode)
+            var serializedCadastroDeposito = JsonConvert.SerializeObject(DepositoParameter);
+            var content = new StringContent(serializedCadastroDeposito, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(URL, content);
+            if (response.IsSuccessStatusCode)
             {
-                return "Ok";
+                var depositoString = await response.Content.ReadAsStringAsync();
+                Deposito_00 deposito = JsonConvert.DeserializeObject<Deposito_00>(depositoString);
+                return deposito;
             }
             else
             {
-                return "Fail";
+                return null;
             }
         }
 

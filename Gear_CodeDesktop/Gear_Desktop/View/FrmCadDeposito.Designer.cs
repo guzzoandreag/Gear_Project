@@ -30,14 +30,19 @@
         {
             this.cbTipoPlantio = new System.Windows.Forms.ComboBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTamanhoFazenda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbTipoCadastro = new System.Windows.Forms.ComboBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -46,70 +51,80 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.button1);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnConfirmar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label1);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCodigo);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label5);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnPesquisar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnCancelar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnSalvar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnAlterar);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.btnNovo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label4);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.cbTipoCadastro);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label3);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtTamanhoFazenda);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.label1);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtNome);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.cbTipoPlantio);
-            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(800, 400);
+            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(700, 400);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cbTipoPlantio, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtNome, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label1, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtTamanhoFazenda, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label2, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label3, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.cbTipoCadastro, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label4, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnConfirmar, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.button1, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnNovo, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnAlterar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnSalvar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnPesquisar, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label5, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCodigo, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label1, 0);
             // 
             // pnlRodape
             // 
             this.pnlRodape.Location = new System.Drawing.Point(0, 430);
-            this.pnlRodape.Size = new System.Drawing.Size(800, 20);
+            this.pnlRodape.Size = new System.Drawing.Size(700, 20);
             // 
             // BaseFormRodape
             // 
-            this.BaseFormRodape.Size = new System.Drawing.Size(800, 20);
+            this.BaseFormRodape.Size = new System.Drawing.Size(700, 20);
             this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
             // 
             // pnlCenterMain
             // 
-            this.pnlCenterMain.Size = new System.Drawing.Size(800, 450);
+            this.pnlCenterMain.Size = new System.Drawing.Size(700, 450);
             // 
             // pnlCabecalho
             // 
-            this.pnlCabecalho.Size = new System.Drawing.Size(800, 30);
+            this.pnlCabecalho.Size = new System.Drawing.Size(700, 30);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(688, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(588, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Location = new System.Drawing.Point(744, 0);
+            this.btnClose.Location = new System.Drawing.Point(644, 0);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(678, 30);
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(578, 30);
             this.BaseFormCabecalho.Text = "Cadastro de Deposito/Fazenda - Gear Project";
             // 
             // lblMsg
             // 
-            this.lblMsg.Location = new System.Drawing.Point(0, 300);
-            this.lblMsg.Size = new System.Drawing.Size(800, 100);
+            this.lblMsg.Location = new System.Drawing.Point(0, 350);
+            this.lblMsg.Size = new System.Drawing.Size(700, 50);
             // 
             // cbTipoPlantio
             // 
@@ -120,36 +135,25 @@
             "2 - BANANA",
             "3 - SERINGA",
             "4 - PIMENTA"});
-            this.cbTipoPlantio.Location = new System.Drawing.Point(292, 150);
+            this.cbTipoPlantio.Location = new System.Drawing.Point(168, 97);
             this.cbTipoPlantio.Name = "cbTipoPlantio";
-            this.cbTipoPlantio.Size = new System.Drawing.Size(217, 23);
+            this.cbTipoPlantio.Size = new System.Drawing.Size(240, 23);
             this.cbTipoPlantio.TabIndex = 5;
             // 
             // txtNome
             // 
             this.txtNome.BackColor = System.Drawing.Color.DimGray;
-            this.txtNome.Location = new System.Drawing.Point(292, 38);
+            this.txtNome.Location = new System.Drawing.Point(231, 39);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(217, 23);
+            this.txtNome.Size = new System.Drawing.Size(396, 23);
             this.txtNome.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(380, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nome";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(324, 181);
+            this.label2.Location = new System.Drawing.Point(11, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 17);
             this.label2.TabIndex = 9;
@@ -158,9 +162,9 @@
             // txtTamanhoFazenda
             // 
             this.txtTamanhoFazenda.BackColor = System.Drawing.Color.DimGray;
-            this.txtTamanhoFazenda.Location = new System.Drawing.Point(292, 206);
+            this.txtTamanhoFazenda.Location = new System.Drawing.Point(168, 126);
             this.txtTamanhoFazenda.Name = "txtTamanhoFazenda";
-            this.txtTamanhoFazenda.Size = new System.Drawing.Size(217, 23);
+            this.txtTamanhoFazenda.Size = new System.Drawing.Size(240, 23);
             this.txtTamanhoFazenda.TabIndex = 8;
             // 
             // label3
@@ -168,7 +172,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(336, 125);
+            this.label3.Location = new System.Drawing.Point(35, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 10;
@@ -179,7 +183,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(380, 69);
+            this.label4.Location = new System.Drawing.Point(123, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 12;
@@ -194,37 +198,128 @@
             "2 - FAZENDA",
             "3 - DEPOSITO",
             "4 - SECADOR"});
-            this.cbTipoCadastro.Location = new System.Drawing.Point(292, 94);
+            this.cbTipoCadastro.Location = new System.Drawing.Point(168, 68);
             this.cbTipoCadastro.Name = "cbTipoCadastro";
-            this.cbTipoCadastro.Size = new System.Drawing.Size(217, 23);
+            this.cbTipoCadastro.Size = new System.Drawing.Size(240, 23);
             this.cbTipoCadastro.TabIndex = 11;
             // 
-            // btnConfirmar
+            // btnPesquisar
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
-            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(324, 251);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(150, 35);
-            this.btnConfirmar.TabIndex = 13;
-            this.btnConfirmar.Text = "CONFIRMAR";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Location = new System.Drawing.Point(536, 278);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
+            this.btnPesquisar.TabIndex = 19;
+            this.btnPesquisar.Text = "PESQUISAR";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(635, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(414, 278);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(117, 35);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Location = new System.Drawing.Point(291, 278);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(117, 35);
+            this.btnSalvar.TabIndex = 17;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
+            this.btnAlterar.Location = new System.Drawing.Point(168, 278);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(117, 35);
+            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(35)))), ((int)(((byte)(89)))));
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(33)))), ((int)(((byte)(122)))));
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNovo.ForeColor = System.Drawing.Color.White;
+            this.btnNovo.Location = new System.Drawing.Point(45, 278);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(117, 35);
+            this.btnNovo.TabIndex = 15;
+            this.btnNovo.Text = "NOVO";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BackColor = System.Drawing.Color.DimGray;
+            this.txtCodigo.Location = new System.Drawing.Point(168, 39);
+            this.txtCodigo.Multiline = true;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(57, 23);
+            this.txtCodigo.TabIndex = 50;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.label5.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(107, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 17);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Código";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.label1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(231, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 17);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Nome do Deposito / Fazenda";
             // 
             // FrmCadDeposito
             // 
@@ -233,11 +328,10 @@
             this.CaptionCabecalho = "Cadastro de Deposito/Fazenda - Gear Project";
             this.CaptionMsgVisible = true;
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadDeposito";
             this.Text = "FrmDeposito";
-            this.Load += new System.EventHandler(this.FrmDeposito_Load);
             this.pnlCenterCabecalhoRodape.ResumeLayout(false);
             this.pnlCenterCabecalhoRodape.PerformLayout();
             this.pnlRodape.ResumeLayout(false);
@@ -252,12 +346,17 @@
         private Label label3;
         private Label label2;
         private TextBox txtTamanhoFazenda;
-        private Label label1;
         private TextBox txtNome;
         private ComboBox cbTipoPlantio;
         private Label label4;
         private ComboBox cbTipoCadastro;
-        public Button btnConfirmar;
-        private Button button1;
+        public Button btnPesquisar;
+        public Button btnCancelar;
+        public Button btnSalvar;
+        public Button btnAlterar;
+        public Button btnNovo;
+        private TextBox txtCodigo;
+        private Label label5;
+        private Label label1;
     }
 }

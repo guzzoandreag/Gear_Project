@@ -39,9 +39,35 @@ namespace Gear_Desktop.Controller.BLL
             return await objDALDeposito.GetDeposito(depCodigo);
         }
 
-        public async Task<string> PostDeposito(Deposito_00 depositoParameter)
+        public async Task<string> PutDeposito(Deposito_00 DepositoParameter)
         {
-            var result = "";
+            if (DepositoParameter.Dep_nome.Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o nome do Deposito !!");
+            }
+            if (Convert.ToString(DepositoParameter.Dep_tipocadastro).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Tipo do Cadastro!!");
+            }
+            if (Convert.ToString(DepositoParameter.Dep_tipoplantio).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Tipo de Plantio !!");
+            }
+            if (Convert.ToString(DepositoParameter.Dep_tamanhofazenda).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Tipo de Plantio !!");
+            }
+
+            DALDeposito objDALDeposito = new(restConnection);
+            return await objDALDeposito.PutDeposito(DepositoParameter);
+        }
+
+        public async Task<Deposito_00> PostDeposito(Deposito_00 depositoParameter)
+        {
             if (depositoParameter.Dep_nome.Trim().Length == 0)
             {
                 // resultar a exceção com a mensagem para o formulario
@@ -67,14 +93,12 @@ namespace Gear_Desktop.Controller.BLL
             }
 
             DALDeposito objDALDeposito = new(restConnection);
-            result = await objDALDeposito.PostDeposito(depositoParameter);
-            return Convert.ToString(result);
+            return await objDALDeposito.PostDeposito(depositoParameter);
         }
 
         ~BLLDeposito()
         {
             // Destroyer
         }
-
     }
 }
