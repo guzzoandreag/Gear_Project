@@ -82,13 +82,21 @@ namespace Gear_Desktop.View
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            txtPro_codigo.Enabled = true;
+            ClearMessageInfo();
+            txtCodigo.Clear();
+            txtPro_codigo.ReadOnly = false;
+            txtPro_codigo.Clear();
+            txtDep_codigo.ReadOnly = false;
+            txtDep_codigo.Clear();
+            txtEtq_quantidade.ReadOnly = false;
+            txtEtq_quantidade.Clear();
+            txtEtq_valorcusto.ReadOnly = false;
+            txtEtq_valorcusto.Clear();
+            txtEtq_validade.ReadOnly = false;
+            txtEtq_validade.Clear();
+
             btnPSQProduto.Enabled = true;
-            txtDep_codigo.Enabled = true;
             btnPSQDeposito.Enabled = true;
-            txtEtq_quantidade.Enabled = true;
-            txtEtq_valorcusto.Enabled = true;
-            txtEtq_validade.Enabled = true;
             btnNovo.Enabled = false;
             btnAlterar.Enabled = false;
             btnSalvar.Enabled = true;
@@ -117,13 +125,15 @@ namespace Gear_Desktop.View
         {
             if (txtCodigo.Text.Length != 0)
             {
-                txtPro_codigo.Enabled = true;
+                ClearMessageInfo();
+                txtPro_codigo.ReadOnly = false;
+                txtDep_codigo.ReadOnly = false;
+                txtEtq_quantidade.ReadOnly = false;
+                txtEtq_valorcusto.ReadOnly = false;
+                txtEtq_validade.ReadOnly = false;
+
                 btnPSQProduto.Enabled = true;
-                txtDep_codigo.Enabled = true;
                 btnPSQDeposito.Enabled = true;
-                txtEtq_quantidade.Enabled = true;
-                txtEtq_valorcusto.Enabled = true;
-                txtEtq_validade.Enabled = true;
                 btnNovo.Enabled = false;
                 btnAlterar.Enabled = false;
                 btnSalvar.Enabled = true;
@@ -134,33 +144,122 @@ namespace Gear_Desktop.View
             {
                 MessageInfo("Não é permitido alterar movimento em branco! \n Favor selecionar um através da pesquisa!!");
             }
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            ClearMessageInfo();
+            if (txtCodigo.Text.Length > 0)
+            {
+                PutEstoque();
+            }
+            else
+            {
+                PostEstoque();
+            }           
+            txtPro_codigo.ReadOnly = true;
+            txtDep_codigo.ReadOnly = true;
+            txtEtq_quantidade.ReadOnly = true;
+            txtEtq_valorcusto.ReadOnly = true;
+            txtEtq_validade.ReadOnly = true;
 
+            btnPSQProduto.Enabled = false;
+            btnPSQDeposito.Enabled = false;
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnPesquisar.Enabled = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtPro_codigo.Enabled = false;
-            txtPro_codigo.Clear();
-            btnPSQProduto.Enabled = false;
-            txtDep_codigo.Enabled = false;
-            txtDep_codigo.Clear();
-            btnPSQDeposito.Enabled = false;
-            txtEtq_quantidade.Enabled = false;
-            txtEtq_quantidade.Clear();
-            txtEtq_valorcusto.Enabled = false;
-            txtEtq_valorcusto.Clear();
-            txtEtq_validade.Enabled = false;
-            txtEtq_validade.Clear();
-            btnNovo.Enabled = true;
-            btnAlterar.Enabled = false;
-            btnSalvar.Enabled = false;
-            btnCancelar.Enabled = false;
-            btnPesquisar.Enabled = true;
+            ClearMessageInfo();
+            if (txtCodigo.Text.Length == 0)
+            {
+                txtCodigo.Clear();
+                txtPro_codigo.ReadOnly = true;
+                txtPro_codigo.Clear();
+                txtDep_codigo.ReadOnly = true;
+                txtDep_codigo.Clear();
+                txtEtq_quantidade.ReadOnly = true;
+                txtEtq_quantidade.Clear();
+                txtEtq_valorcusto.ReadOnly = true;
+                txtEtq_valorcusto.Clear();
+                txtEtq_validade.ReadOnly = true;
+                txtEtq_validade.Clear();
+
+                btnPSQProduto.Enabled = false;
+                btnPSQDeposito.Enabled = false;
+                btnNovo.Enabled = true;
+                btnAlterar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnPesquisar.Enabled = true;
+            }
+            else
+            {
+                txtPro_codigo.ReadOnly = true;
+                txtDep_codigo.ReadOnly = true;
+                txtEtq_quantidade.ReadOnly = true;
+                txtEtq_valorcusto.ReadOnly = true;
+                txtEtq_validade.ReadOnly = true;
+
+                btnPSQProduto.Enabled = false;
+                btnPSQDeposito.Enabled = false;
+                btnNovo.Enabled = true;
+                btnAlterar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnPesquisar.Enabled = true;
+            }
+        }
+
+        private async void PostEstoque()
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLEstoque objBLLEstoque = new(restConnection);
+            _estoque = new()
+            {                
+                Pro_codigo = Convert.ToInt32(txtPro_codigo.Text.Trim()),
+                Dep_codigo = Convert.ToInt32(txtDep_codigo.Text.Trim()),
+                Etq_quantidade = Convert.ToDecimal(txtEtq_quantidade.Text.Trim()),
+                Etq_valorcusto = Convert.ToDecimal(txtEtq_valorcusto.Text.Trim()),
+                Etq_validade = Convert.ToDateTime(txtEtq_validade.Text.Trim())
+            };
+            var result = await objBLLEstoque.PostEstoque(_estoque);
+            if (result.Etq_codigo.ToString().Length > 0)
+            {
+                MessageInfo("Movimento cadastrado com sucesso !! ", "Green");
+                txtCodigo.Text = result.Etq_codigo.ToString();
+            }
+            else
+            {
+                MessageInfo("Erro ao cadastar o movimento !!");
+            }
+        }
+
+        private async void PutEstoque()
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLEstoque objBLLEstoque = new(restConnection);
+            _estoque = new()
+            {
+                Pro_codigo = Convert.ToInt32(txtPro_codigo.Text.Trim()),
+                Dep_codigo = Convert.ToInt32(txtDep_codigo.Text.Trim()),
+                Etq_quantidade = Convert.ToDecimal(txtEtq_quantidade.Text.Trim()),
+                Etq_valorcusto = Convert.ToDecimal(txtEtq_valorcusto.Text.Trim()),
+                Etq_validade = Convert.ToDateTime(txtEtq_validade.Text.Trim())
+            };
+            var result = await objBLLEstoque.PutEstoque(_estoque);
+            if (result == "Ok")
+            {
+                MessageInfo("Movimento alterado com sucesso !! ", "Green");
+            }
+            else
+            {
+                MessageInfo("Erro ao alterar o movimento !! - " + result);
+            }
         }
     }
 }

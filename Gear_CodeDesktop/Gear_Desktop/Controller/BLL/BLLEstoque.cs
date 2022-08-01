@@ -39,7 +39,7 @@ namespace Gear_Desktop.Controller.BLL
             return objDALEstoque.GetEstoque(etqCodigo);
         }
 
-        public async Task<string> PostEstoque(Estoque_00 EstoqueParameter)
+        public async Task<string> PutEstoque(Estoque_00 EstoqueParameter)
         {
             var result = "";
             if (Convert.ToString(EstoqueParameter.Pro_codigo).Trim().Length == 0)
@@ -69,8 +69,40 @@ namespace Gear_Desktop.Controller.BLL
             }
 
             DALEstoque objDALEstoque = new(restConnection);
-            result = await objDALEstoque.PostEstoque(EstoqueParameter);
-            return Convert.ToString(result);
+            return await objDALEstoque.PutEstoque(EstoqueParameter);
+        }
+
+        public async Task<Estoque_00> PostEstoque(Estoque_00 EstoqueParameter)
+        {
+            var result = "";
+            if (Convert.ToString(EstoqueParameter.Pro_codigo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o codigo do Produto !!");
+            }
+            if (Convert.ToString(EstoqueParameter.Dep_codigo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o codigo do Deposito !!");
+            }
+            if (Convert.ToString(EstoqueParameter.Etq_quantidade).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir a quantidade de estoque do Produto !!");
+            }
+            if (Convert.ToString(EstoqueParameter.Etq_valorcusto).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o custo do Produto !!");
+            }
+            if (Convert.ToString(EstoqueParameter.Etq_validade).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir a data de validade do Produto !!");
+            }
+
+            DALEstoque objDALEstoque = new(restConnection);
+            return await objDALEstoque.PostEstoque(EstoqueParameter);
         }
 
     }

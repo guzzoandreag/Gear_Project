@@ -85,23 +85,45 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<string> PostEstoque(Estoque_00 EstoqueParameter)
+        public async Task<string> PutEstoque(Estoque_00 EstoqueParameter)
+        {
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + EstoqueParameter.Etq_codigo;
+            var serializedMovEstoque = JsonConvert.SerializeObject(EstoqueParameter);
+            var content = new StringContent(serializedMovEstoque, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync(URL, content);
+            if (response.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Erro : " + response.StatusCode;
+            }
+        }
+
+        public async Task<Estoque_00> PostEstoque(Estoque_00 EstoqueParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
 
             HttpClient client = new(clientHandler);
             var URL = restConnection.Url;
-            var serializedCadastroEstoque = JsonConvert.SerializeObject(EstoqueParameter);
-            var content = new StringContent(serializedCadastroEstoque, Encoding.UTF8, "application/json");
-            var result = await client.PostAsync(URL, content);
-            if (result.IsSuccessStatusCode)
+            var serializedMovEstoque = JsonConvert.SerializeObject(EstoqueParameter);
+            var content = new StringContent(serializedMovEstoque, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(URL, content);
+            if (response.IsSuccessStatusCode)
             {
-                return "Ok";
+                var estoqueString = await response.Content.ReadAsStringAsync();
+                Estoque_00 estoque = JsonConvert.DeserializeObject<Estoque_00>(estoqueString);
+                return estoque;
             }
             else
             {
-                return "Fail";
+                return null;
             }
         }
 

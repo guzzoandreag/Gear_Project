@@ -33,6 +33,9 @@ namespace Gear_Desktop.View
         private Estoque_00 returnEstoque;
         public Estoque_00 ReturnEstoque { get => returnEstoque; set => returnEstoque = value; }
 
+        private Despesa_00 returnEstoque;
+        public Estoque_00 ReturnEstoque { get => returnEstoque; set => returnEstoque = value; }
+
 
         private async void CreateGetAllModelObject()
         {
