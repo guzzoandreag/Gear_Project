@@ -1,4 +1,5 @@
-﻿using Gear_API.Models;
+﻿using Gear_Desktop.Controller.BLL;
+using Gear_Desktop.Controller.DAL;
 using Gear_Desktop.Models;
 using System;
 using System.Collections.Generic;
@@ -86,11 +87,11 @@ namespace Gear_Desktop.View
             ClearMessageInfo();
             if (txtCodigo.Text.Length > 0)
             {
-                //PutDespesa();
+                PutDespesa();
             }
             else
             {
-                //PostDespesa();
+                PostDespesa();
             }
             txtDep_codigo.ReadOnly = true;
             txtDes_datalancamento.ReadOnly = true;
@@ -150,12 +151,57 @@ namespace Gear_Desktop.View
                 DialogResult dialogResult = frmPSQ.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
-                    //txtCodigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Des_codigo);
-                    //txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Dep_codigo);
-                    //txtDes_datalancamento.Text = Convert.ToString(frmPSQ.ReturnEstoque.Dev_datalancamento);
-                    //txtDes_valor.Text = Convert.ToString(frmPSQ.ReturnEstoque.Des_valor);
-                    //txtDes_observacao.Text = Convert.ToString(frmPSQ.ReturnEstoque.Des_observacao);
+                    txtCodigo.Text = Convert.ToString(frmPSQ.ReturnDespesa.Des_codigo);
+                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnDespesa.Dep_codigo);
+                    txtDes_datalancamento.Text = Convert.ToString(frmPSQ.ReturnDespesa.Des_datalancamento);
+                    txtDes_valor.Text = Convert.ToString(frmPSQ.ReturnDespesa.Des_valor);
+                    txtDes_observacao.Text = Convert.ToString(frmPSQ.ReturnDespesa.Des_observacao);
                 }
+            }
+        }
+
+        private async void PutDespesa()
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLDespesa objBLLDespesa = new(restConnection);
+            _despesa = new()
+            {
+                Des_codigo = Convert.ToInt32(txtCodigo.Text.Trim()),
+                Des_datalancamento = Convert.ToDateTime(txtDes_datalancamento.Text.Trim()),
+                Des_valor = Convert.ToDecimal(txtDes_valor.Text.Trim()),
+                Des_observacao = txtDes_observacao.Text.Trim()
+            };
+            var result = await objBLLDespesa.PutDespesa(_despesa);
+            if (result == "Ok")
+            {
+                MessageInfo("Despesa alterada com sucesso !! ", "Green");
+            }
+            else
+            {
+                MessageInfo("Erro ao alterar a Despesa !! - " + result);
+            }
+        }
+
+        private async void PostDespesa()
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLDespesa objBLLDespesa = new(restConnection);
+            _despesa = new()
+            {
+                Des_codigo = Convert.ToInt32(txtCodigo.Text.Trim()),
+                Des_datalancamento = Convert.ToDateTime(txtDes_datalancamento.Text.Trim()),
+                Des_valor = Convert.ToDecimal(txtDes_valor.Text.Trim()),
+                Des_observacao = txtDes_observacao.Text.Trim()
+            };
+            var result = await objBLLDespesa.PostDespesa(_despesa);
+            if (result.Des_codigo.ToString().Length > 0)
+            {
+                MessageInfo("Despesa salva com sucesso !! ", "Green");
+                txtCodigo.Text = result.Des_codigo.ToString();
+            }
+            else
+            {
+                MessageInfo("Erro ao salvar Despesa !!");
             }
         }
     }

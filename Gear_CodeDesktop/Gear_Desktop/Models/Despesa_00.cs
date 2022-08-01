@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Gear_API.Models
+namespace Gear_Desktop.Models
 {
     public class Despesa_00
     {

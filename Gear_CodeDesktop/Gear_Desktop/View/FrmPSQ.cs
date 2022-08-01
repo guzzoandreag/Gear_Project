@@ -22,7 +22,7 @@ namespace Gear_Desktop.View
         private BLLUsers objBLLUsers;
         private BLLProdutos objBLLProdutos;
         private BLLEstoque objBLLEstoque;
-
+        private BLLDespesa objBLLDespesa;
 
         private Deposito_00 returnDeposito;
         public Deposito_00 ReturnDeposito { get => returnDeposito; set => returnDeposito = value; }
@@ -33,8 +33,8 @@ namespace Gear_Desktop.View
         private Estoque_00 returnEstoque;
         public Estoque_00 ReturnEstoque { get => returnEstoque; set => returnEstoque = value; }
 
-        private Despesa_00 returnEstoque;
-        public Estoque_00 ReturnEstoque { get => returnEstoque; set => returnEstoque = value; }
+        private Despesa_00 returnDespesa;
+        public Despesa_00 ReturnDespesa { get => returnDespesa; set => returnDespesa = value; }
 
 
         private async void CreateGetAllModelObject()
@@ -86,6 +86,18 @@ namespace Gear_Desktop.View
                 if ((listEstoque != null) && (listEstoque.Count > 0))
                 {
                     dgvGridPesquisa.DataSource = listEstoque;
+                    CustomizeGridViewAndNameHeadersFromModels(dgvGridPesquisa);
+                }
+            }
+            else if (tipoModel.Contains("Despesa_00"))
+            {
+                MessageInfo(tipoModel);
+                DALConnectionREST restConnection = new(URL);
+                objBLLDespesa = new(restConnection);
+                var listDespesa = await objBLLDespesa.GetAllDespesa();
+                if ((listDespesa != null) && (listDespesa.Count > 0))
+                {
+                    dgvGridPesquisa.DataSource = listDespesa;
                     CustomizeGridViewAndNameHeadersFromModels(dgvGridPesquisa);
                 }
             }
@@ -250,6 +262,32 @@ namespace Gear_Desktop.View
                     }
                 };
             }
+            else if (tipoModel.Contains("Despesa_00"))
+            {
+                foreach (DataGridViewColumn column in dataGridView.Columns)
+                {
+                    if (column.Name == "Des_codigo")
+                    {
+                        column.HeaderText = "Código";
+                    }
+                    if (column.Name == "Des_datalancamento")
+                    {
+                        column.HeaderText = "Data de Lançamento";
+                    }
+                    if (column.Name == "Dep_codigo")
+                    {
+                        column.HeaderText = "Cod. Deposito";
+                    }
+                    if (column.Name == "Des_valor")
+                    {
+                        column.HeaderText = "Valor Despesa";
+                    }
+                    if (column.Name == "Des_observacao")
+                    {
+                        column.HeaderText = "Observação da Despesa";
+                    }
+                };
+            }
         }
 
         private void dgvGridPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -288,6 +326,18 @@ namespace Gear_Desktop.View
                 this.ReturnEstoque.Etq_quantidade = Convert.ToDecimal(dgvGridPesquisa.CurrentRow.Cells["Etq_quantidade"].Value);
                 this.ReturnEstoque.Etq_valorcusto = Convert.ToDecimal(dgvGridPesquisa.CurrentRow.Cells["Etq_valorcusto"].Value);
                 this.ReturnEstoque.Etq_validade = Convert.ToDateTime(dgvGridPesquisa.CurrentRow.Cells["Etq_validade"].Value);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else if (tipoModel.Contains("Despesa_00"))
+            {
+                Despesa_00 despesaReturn = new();
+                this.ReturnDespesa = despesaReturn;
+                this.ReturnDespesa.Des_codigo = Convert.ToInt32(dgvGridPesquisa.CurrentRow.Cells["Des_codigo"].Value);
+                this.ReturnDespesa.Dep_codigo = Convert.ToInt32(dgvGridPesquisa.CurrentRow.Cells["Dep_codigo"].Value);
+                this.ReturnDespesa.Des_datalancamento = Convert.ToDateTime(dgvGridPesquisa.CurrentRow.Cells["Des_datalancamento"].Value);
+                this.ReturnDespesa.Des_valor = Convert.ToDecimal(dgvGridPesquisa.CurrentRow.Cells["Des_valor"].Value);
+                this.ReturnDespesa.Des_observacao = dgvGridPesquisa.CurrentRow.Cells["Des_observacao"].Value.ToString();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
