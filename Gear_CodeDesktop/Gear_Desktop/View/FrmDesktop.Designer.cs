@@ -148,6 +148,7 @@
             this.btnMovDespesa.TabIndex = 31;
             this.btnMovDespesa.Text = "Despesas";
             this.btnMovDespesa.UseVisualStyleBackColor = false;
+            this.btnMovDespesa.Click += new System.EventHandler(this.btnMovDespesa_Click);
             // 
             // panel7
             // 

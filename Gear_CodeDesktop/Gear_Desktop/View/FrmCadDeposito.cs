@@ -25,8 +25,8 @@ namespace Gear_Desktop.View
 
             txtCodigo.ReadOnly = true;
             txtNome.ReadOnly = true;
-            cbTipoCadastro.Enabled = true;
-            cbTipoPlantio.Enabled = true;
+            cbTipoCadastro.Enabled = false;
+            cbTipoPlantio.Enabled = false;
             txtTamanhoFazenda.ReadOnly = true;
 
             btnNovo.Enabled = true;
@@ -67,17 +67,24 @@ namespace Gear_Desktop.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            ClearMessageInfo();
-            txtNome.ReadOnly = false;
-            cbTipoCadastro.Enabled = true;
-            cbTipoPlantio.Enabled = true;
-            txtTamanhoFazenda.ReadOnly = false;
+            if (txtCodigo.Text.Length != 0)
+            {
+                ClearMessageInfo();
+                txtNome.ReadOnly = false;
+                cbTipoCadastro.Enabled = true;
+                cbTipoPlantio.Enabled = true;
+                txtTamanhoFazenda.ReadOnly = false;
 
-            btnNovo.Enabled = false;
-            btnAlterar.Enabled = false;
-            btnSalvar.Enabled = true;
-            btnCancelar.Enabled = true;
-            btnPesquisar.Enabled = false;
+                btnNovo.Enabled = false;
+                btnAlterar.Enabled = false;
+                btnSalvar.Enabled = true;
+                btnCancelar.Enabled = true;
+                btnPesquisar.Enabled = false;
+            }
+            else
+            {
+                MessageInfo("Não é permitido alterar cadastro em branco! \n Favor selecionar um através da pesquisa!!");
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -85,7 +92,7 @@ namespace Gear_Desktop.View
             ClearMessageInfo();
             if (txtCodigo.Text.Length > 0)
             {
-                //PutDeposito();
+                PutDeposito();
             }
             else
             {

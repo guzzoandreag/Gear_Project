@@ -38,7 +38,7 @@
             this.txtNomeDeposito = new System.Windows.Forms.TextBox();
             this.txtDes_datalancamento = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDes_valor = new System.Windows.Forms.TextBox();
+            this.txtDes_valor = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDep_codigo = new System.Windows.Forms.TextBox();
@@ -72,7 +72,8 @@
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtDep_codigo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCodigo);
-            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(800, 400);
+            this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(622, 288);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCodigo, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label2, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtDep_codigo, 0);
@@ -95,45 +96,55 @@
             // 
             // pnlRodape
             // 
-            this.pnlRodape.Location = new System.Drawing.Point(0, 430);
-            this.pnlRodape.Size = new System.Drawing.Size(800, 20);
+            this.pnlRodape.Location = new System.Drawing.Point(0, 318);
+            this.pnlRodape.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRodape.Size = new System.Drawing.Size(622, 20);
             // 
             // BaseFormRodape
             // 
-            this.BaseFormRodape.Size = new System.Drawing.Size(800, 20);
+            this.BaseFormRodape.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BaseFormRodape.Size = new System.Drawing.Size(622, 20);
             this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
             // 
             // pnlCenterMain
             // 
-            this.pnlCenterMain.Size = new System.Drawing.Size(800, 450);
+            this.pnlCenterMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCenterMain.Size = new System.Drawing.Size(622, 338);
             // 
             // pnlCabecalho
             // 
-            this.pnlCabecalho.Size = new System.Drawing.Size(800, 30);
+            this.pnlCabecalho.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCabecalho.Size = new System.Drawing.Size(622, 30);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(688, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(534, 0);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Size = new System.Drawing.Size(44, 30);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Location = new System.Drawing.Point(744, 0);
+            this.btnClose.Location = new System.Drawing.Point(578, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Size = new System.Drawing.Size(44, 30);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(678, 30);
+            this.BaseFormCabecalho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(524, 30);
             this.BaseFormCabecalho.Text = "Lançamento Despesas - Gear Project.";
             // 
             // lblMsg
             // 
-            this.lblMsg.Location = new System.Drawing.Point(0, 361);
-            this.lblMsg.Size = new System.Drawing.Size(800, 39);
+            this.lblMsg.Location = new System.Drawing.Point(0, 259);
+            this.lblMsg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMsg.Size = new System.Drawing.Size(622, 29);
             // 
             // btnPSQDeposito
             // 
@@ -145,10 +156,10 @@
             this.btnPSQDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSQDeposito.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPSQDeposito.ForeColor = System.Drawing.Color.White;
-            this.btnPSQDeposito.Location = new System.Drawing.Point(203, 85);
+            this.btnPSQDeposito.Location = new System.Drawing.Point(158, 64);
             this.btnPSQDeposito.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQDeposito.Name = "btnPSQDeposito";
-            this.btnPSQDeposito.Size = new System.Drawing.Size(55, 31);
+            this.btnPSQDeposito.Size = new System.Drawing.Size(43, 23);
             this.btnPSQDeposito.TabIndex = 83;
             this.btnPSQDeposito.Text = "...";
             this.btnPSQDeposito.UseVisualStyleBackColor = false;
@@ -163,10 +174,9 @@
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Location = new System.Drawing.Point(641, 266);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisar.Location = new System.Drawing.Point(499, 200);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(150, 47);
+            this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
             this.btnPesquisar.TabIndex = 81;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
@@ -182,10 +192,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(484, 266);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(376, 200);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(150, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(117, 35);
             this.btnCancelar.TabIndex = 80;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -201,10 +210,9 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(326, 266);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Location = new System.Drawing.Point(254, 200);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(150, 47);
+            this.btnSalvar.Size = new System.Drawing.Size(117, 35);
             this.btnSalvar.TabIndex = 79;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -219,10 +227,9 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(167, 266);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterar.Location = new System.Drawing.Point(130, 200);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(150, 47);
+            this.btnAlterar.Size = new System.Drawing.Size(117, 35);
             this.btnAlterar.TabIndex = 78;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
@@ -237,10 +244,9 @@
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(9, 266);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNovo.Location = new System.Drawing.Point(7, 200);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(150, 47);
+            this.btnNovo.Size = new System.Drawing.Size(117, 35);
             this.btnNovo.TabIndex = 77;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = false;
@@ -252,10 +258,9 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label8.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(262, 60);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(204, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 20);
+            this.label8.Size = new System.Drawing.Size(136, 17);
             this.label8.TabIndex = 76;
             this.label8.Text = "Nome do Déposito";
             // 
@@ -264,11 +269,10 @@
             this.txtNomeDeposito.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeDeposito.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNomeDeposito.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtNomeDeposito.Location = new System.Drawing.Point(262, 85);
-            this.txtNomeDeposito.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeDeposito.Location = new System.Drawing.Point(204, 64);
             this.txtNomeDeposito.Name = "txtNomeDeposito";
             this.txtNomeDeposito.ReadOnly = true;
-            this.txtNomeDeposito.Size = new System.Drawing.Size(349, 27);
+            this.txtNomeDeposito.Size = new System.Drawing.Size(272, 23);
             this.txtNomeDeposito.TabIndex = 75;
             this.txtNomeDeposito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -277,11 +281,10 @@
             this.txtDes_datalancamento.BackColor = System.Drawing.Color.DarkGray;
             this.txtDes_datalancamento.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDes_datalancamento.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtDes_datalancamento.Location = new System.Drawing.Point(414, 18);
-            this.txtDes_datalancamento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDes_datalancamento.Location = new System.Drawing.Point(322, 14);
             this.txtDes_datalancamento.Name = "txtDes_datalancamento";
             this.txtDes_datalancamento.ReadOnly = true;
-            this.txtDes_datalancamento.Size = new System.Drawing.Size(197, 27);
+            this.txtDes_datalancamento.Size = new System.Drawing.Size(154, 23);
             this.txtDes_datalancamento.TabIndex = 74;
             this.txtDes_datalancamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -291,10 +294,9 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label7.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(255, 21);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(198, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 20);
+            this.label7.Size = new System.Drawing.Size(128, 17);
             this.label7.TabIndex = 73;
             this.label7.Text = "Data Lançamento";
             // 
@@ -303,13 +305,13 @@
             this.txtDes_valor.BackColor = System.Drawing.Color.DarkGray;
             this.txtDes_valor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDes_valor.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtDes_valor.Location = new System.Drawing.Point(127, 134);
-            this.txtDes_valor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDes_valor.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.txtDes_valor.Location = new System.Drawing.Point(99, 100);
             this.txtDes_valor.Name = "txtDes_valor";
             this.txtDes_valor.ReadOnly = true;
-            this.txtDes_valor.Size = new System.Drawing.Size(197, 27);
+            this.txtDes_valor.Size = new System.Drawing.Size(154, 23);
             this.txtDes_valor.TabIndex = 72;
-            this.txtDes_valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDes_valor.Leave += new System.EventHandler(this.txtDes_valor_Leave);
             // 
             // label6
             // 
@@ -317,10 +319,9 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label6.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(57, 137);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(44, 103);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
+            this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 71;
             this.label6.Text = "Valor";
             // 
@@ -330,10 +331,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label4.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(30, 88);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(23, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 68;
             this.label4.Text = "Déposito";
             // 
@@ -342,13 +342,13 @@
             this.txtDep_codigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtDep_codigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDep_codigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtDep_codigo.Location = new System.Drawing.Point(127, 85);
-            this.txtDep_codigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDep_codigo.Location = new System.Drawing.Point(99, 64);
             this.txtDep_codigo.Name = "txtDep_codigo";
             this.txtDep_codigo.ReadOnly = true;
-            this.txtDep_codigo.Size = new System.Drawing.Size(72, 27);
+            this.txtDep_codigo.Size = new System.Drawing.Size(57, 23);
             this.txtDep_codigo.TabIndex = 67;
             this.txtDep_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDep_codigo.Leave += new System.EventHandler(this.txtDep_codigo_Leave);
             // 
             // label2
             // 
@@ -356,10 +356,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(37, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 62;
             this.label2.Text = "Código";
             // 
@@ -368,11 +367,10 @@
             this.txtCodigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCodigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtCodigo.Location = new System.Drawing.Point(127, 22);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Location = new System.Drawing.Point(99, 16);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(72, 27);
+            this.txtCodigo.Size = new System.Drawing.Size(57, 23);
             this.txtCodigo.TabIndex = 61;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -381,14 +379,12 @@
             this.txtDes_observacao.BackColor = System.Drawing.Color.DarkGray;
             this.txtDes_observacao.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDes_observacao.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtDes_observacao.Location = new System.Drawing.Point(127, 184);
-            this.txtDes_observacao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDes_observacao.Location = new System.Drawing.Point(99, 138);
             this.txtDes_observacao.Multiline = true;
             this.txtDes_observacao.Name = "txtDes_observacao";
             this.txtDes_observacao.ReadOnly = true;
-            this.txtDes_observacao.Size = new System.Drawing.Size(484, 54);
+            this.txtDes_observacao.Size = new System.Drawing.Size(377, 42);
             this.txtDes_observacao.TabIndex = 70;
-            this.txtDes_observacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -396,22 +392,24 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label5.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 187);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(9, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.Size = new System.Drawing.Size(88, 17);
             this.label5.TabIndex = 69;
             this.label5.Text = "Observação";
             // 
             // FrmMovDespesa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Lançamento Despesas - Gear Project.";
             this.CaptionMsgVisible = true;
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(622, 338);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(778, 675);
+            this.MinimumSize = new System.Drawing.Size(311, 225);
             this.Name = "FrmMovDespesa";
             this.Text = "FrmMovDespesa";
             this.pnlCenterCabecalhoRodape.ResumeLayout(false);
@@ -435,7 +433,7 @@
         public TextBox txtNomeDeposito;
         public TextBox txtDes_datalancamento;
         private Label label7;
-        public TextBox txtDes_valor;
+        public MaskedTextBox txtDes_valor;
         private Label label6;
         private Label label4;
         public TextBox txtDep_codigo;

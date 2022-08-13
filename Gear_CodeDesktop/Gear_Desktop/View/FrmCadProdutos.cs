@@ -78,7 +78,7 @@ namespace Gear_Desktop.View
             }
             else
             {
-                MessageInfo("Não é permitido alterar movimento em branco! \n Favor selecionar um através da pesquisa!!");
+                MessageInfo("Não é permitido alterar cadastro em branco! \n Favor selecionar um através da pesquisa!!");
             }
         }
 

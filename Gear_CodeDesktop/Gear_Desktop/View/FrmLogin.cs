@@ -26,8 +26,8 @@ namespace Gear_Desktop.View
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            txtEmail.Text = "guzzoandre.ag@outlook.com";
-            txtSenha.Text = "1234567";
+            //txtEmail.Text = "guzzoandre.ag@outlook.com";
+            //txtSenha.Text = "1234567";
             ClearMessageInfo();
             GetUsersByEmail();
         }

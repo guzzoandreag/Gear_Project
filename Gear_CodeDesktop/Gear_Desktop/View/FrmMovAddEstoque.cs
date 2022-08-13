@@ -28,58 +28,6 @@ namespace Gear_Desktop.View
             txtNomeDeposito.ReadOnly = true;
         }
 
-        private void txtPro_codigo_Leave(object sender, EventArgs e)
-        {
-            _produto = new();
-            GetProduto(_produto);
-        }
-
-        private async void GetProduto(Produto_00 produto)
-        {
-            DALConnectionREST restConnection = new DALConnectionREST(URL);
-            BLLProdutos objBLLProdutos = new(restConnection);
-            produto = await objBLLProdutos.GetProduto(Convert.ToInt32(txtPro_codigo.Text));
-            txtNomeProduto.Text = produto.Pro_nome;
-        }
-
-        private void btnPSQProduto_Click(object sender, EventArgs e)
-        {
-            using (FrmPSQ<Produto_00> frmPSQ = new FrmPSQ<Produto_00>(_produto = new(), URL))
-            {
-                DialogResult dialogResult = frmPSQ.ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    txtPro_codigo.Text = Convert.ToString(frmPSQ.ReturnProdutos.Pro_codigo);
-                    txtNomeProduto.Text = frmPSQ.ReturnProdutos.Pro_nome;
-                }
-            }
-        }
-
-        private void txtDep_codigo_Leave(object sender, EventArgs e)
-        {
-            txtNomeDeposito.Text = GetDeposito(Convert.ToInt32(txtDep_codigo.Text)).Result.Dep_nome;
-        }
-
-        private async Task<Deposito_00> GetDeposito(int deposito_id)
-        {
-            DALConnectionREST restConnection = new DALConnectionREST(URL);
-            BLLDeposito objBLLDeposito = new(restConnection);
-            return await objBLLDeposito.GetDeposito(deposito_id);
-        }
-
-        private void btnPSQDeposito_Click(object sender, EventArgs e)
-        {
-            using (FrmPSQ<Deposito_00> frmPSQ = new FrmPSQ<Deposito_00>(_deposito = new(), URL))
-            {
-                DialogResult dialogResult = frmPSQ.ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnDeposito.Dep_codigo);
-                    txtNomeDeposito.Text = frmPSQ.ReturnDeposito.Dep_nome;
-                }
-            }
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ClearMessageInfo();
@@ -102,23 +50,6 @@ namespace Gear_Desktop.View
             btnSalvar.Enabled = true;
             btnCancelar.Enabled = true;
             btnPesquisar.Enabled = false;
-        }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            using (FrmPSQ<Estoque_00> frmPSQ = new FrmPSQ<Estoque_00>(_estoque = new(), URL))
-            {
-                DialogResult dialogResult = frmPSQ.ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    txtCodigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_codigo);
-                    txtPro_codigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Pro_codigo);
-                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Dep_codigo);
-                    txtEtq_quantidade.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_quantidade);
-                    txtEtq_valorcusto.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_valorcusto);
-                    txtEtq_validade.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_validade);
-                }
-            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -156,7 +87,7 @@ namespace Gear_Desktop.View
             else
             {
                 PostEstoque();
-            }           
+            }
             txtPro_codigo.ReadOnly = true;
             txtDep_codigo.ReadOnly = true;
             txtEtq_quantidade.ReadOnly = true;
@@ -215,28 +146,41 @@ namespace Gear_Desktop.View
             }
         }
 
-        private async void PostEstoque()
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            using (FrmPSQ<Estoque_00> frmPSQ = new FrmPSQ<Estoque_00>(_estoque = new(), URL))
+            {
+                DialogResult dialogResult = frmPSQ.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    txtCodigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_codigo);
+                    txtPro_codigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Pro_codigo);
+                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnEstoque.Dep_codigo);
+                    txtEtq_quantidade.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_quantidade);
+                    txtEtq_valorcusto.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_valorcusto);
+                    txtEtq_validade.Text = Convert.ToString(frmPSQ.ReturnEstoque.Etq_validade);
+                }
+            }
+            _produto = new();
+            GetProduto(_produto);
+            _deposito = new();
+            GetDeposito(_deposito);
+        }
+
+        private async void GetProduto(Produto_00 produto)
         {
             DALConnectionREST restConnection = new DALConnectionREST(URL);
-            BLLEstoque objBLLEstoque = new(restConnection);
-            _estoque = new()
-            {                
-                Pro_codigo = Convert.ToInt32(txtPro_codigo.Text.Trim()),
-                Dep_codigo = Convert.ToInt32(txtDep_codigo.Text.Trim()),
-                Etq_quantidade = Convert.ToDecimal(txtEtq_quantidade.Text.Trim()),
-                Etq_valorcusto = Convert.ToDecimal(txtEtq_valorcusto.Text.Trim()),
-                Etq_validade = Convert.ToDateTime(txtEtq_validade.Text.Trim())
-            };
-            var result = await objBLLEstoque.PostEstoque(_estoque);
-            if (result.Etq_codigo.ToString().Length > 0)
-            {
-                MessageInfo("Movimento cadastrado com sucesso !! ", "Green");
-                txtCodigo.Text = result.Etq_codigo.ToString();
-            }
-            else
-            {
-                MessageInfo("Erro ao cadastar o movimento !!");
-            }
+            BLLProdutos objBLLProdutos = new(restConnection);
+            produto = await objBLLProdutos.GetProduto(Convert.ToInt32(txtPro_codigo.Text));
+            txtNomeProduto.Text = produto.Pro_nome;
+        }
+
+        private async void GetDeposito(Deposito_00 deposito)
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLDeposito objBLLDeposito = new(restConnection);
+            deposito = await objBLLDeposito.GetDeposito(Convert.ToInt32(txtDep_codigo.Text));
+            txtNomeDeposito.Text = deposito.Dep_nome;
         }
 
         private async void PutEstoque()
@@ -260,6 +204,68 @@ namespace Gear_Desktop.View
             {
                 MessageInfo("Erro ao alterar o movimento !! - " + result);
             }
+        }
+
+        private async void PostEstoque()
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLEstoque objBLLEstoque = new(restConnection);
+            _estoque = new()
+            {
+                Pro_codigo = Convert.ToInt32(txtPro_codigo.Text.Trim()),
+                Dep_codigo = Convert.ToInt32(txtDep_codigo.Text.Trim()),
+                Etq_quantidade = Convert.ToDecimal(txtEtq_quantidade.Text.Trim()),
+                Etq_valorcusto = Convert.ToDecimal(txtEtq_valorcusto.Text.Trim()),
+                Etq_validade = Convert.ToDateTime(txtEtq_validade.Text.Trim())
+            };
+            var result = await objBLLEstoque.PostEstoque(_estoque);
+            if (result.Etq_codigo.ToString().Length > 0)
+            {
+                MessageInfo("Movimento cadastrado com sucesso !! ", "Green");
+                txtCodigo.Text = result.Etq_codigo.ToString();
+            }
+            else
+            {
+                MessageInfo("Erro ao cadastar o movimento !!");
+            }
+        }
+
+        private void btnPSQProduto_Click(object sender, EventArgs e)
+        {
+            using (FrmPSQ<Produto_00> frmPSQ = new FrmPSQ<Produto_00>(_produto = new(), URL))
+            {
+                DialogResult dialogResult = frmPSQ.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    txtPro_codigo.Text = Convert.ToString(frmPSQ.ReturnProdutos.Pro_codigo);
+                    txtNomeProduto.Text = frmPSQ.ReturnProdutos.Pro_nome;
+                }
+            }
+        }
+
+        private void btnPSQDeposito_Click(object sender, EventArgs e)
+        {
+            using (FrmPSQ<Deposito_00> frmPSQ = new FrmPSQ<Deposito_00>(_deposito = new(), URL))
+            {
+                DialogResult dialogResult = frmPSQ.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnDeposito.Dep_codigo);
+                    txtNomeDeposito.Text = frmPSQ.ReturnDeposito.Dep_nome;
+                }
+            }
+        }
+
+        private void txtDep_codigo_Leave(object sender, EventArgs e)
+        {
+            _deposito = new();
+            GetDeposito(_deposito);
+        }
+
+        private void txtPro_codigo_Leave(object sender, EventArgs e)
+        {
+            _produto = new();
+            GetProduto(_produto);
         }
     }
 }

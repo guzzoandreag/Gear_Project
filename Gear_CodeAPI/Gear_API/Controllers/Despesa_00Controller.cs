@@ -12,55 +12,55 @@ namespace Gear_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Estoque_00Controller : ControllerBase
+    public class Despesa_00Controller : ControllerBase
     {
         private readonly DataContext _context;
 
-        public Estoque_00Controller(DataContext context)
+        public Despesa_00Controller(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Estoque_00
+        // GET: api/Despesa_00
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Estoque_00>>> GetEstoque_00()
+        public async Task<ActionResult<IEnumerable<Despesa_00>>> GetDespesa_00()
         {
-          if (_context.Estoque_00 == null)
+          if (_context.Despesa_00 == null)
           {
               return NotFound();
           }
-            return await _context.Estoque_00.ToListAsync();
+            return await _context.Despesa_00.ToListAsync();
         }
 
-        // GET: api/Estoque_00/5
+        // GET: api/Despesa_00/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Estoque_00>> GetEstoque_00(int id)
+        public async Task<ActionResult<Despesa_00>> GetDespesa_00(int id)
         {
-          if (_context.Estoque_00 == null)
+          if (_context.Despesa_00 == null)
           {
               return NotFound();
           }
-            var estoque_00 = await _context.Estoque_00.FindAsync(id);
+            var despesa_00 = await _context.Despesa_00.FindAsync(id);
 
-            if (estoque_00 == null)
+            if (despesa_00 == null)
             {
                 return NotFound();
             }
 
-            return estoque_00;
+            return despesa_00;
         }
 
-        // PUT: api/Estoque_00/5
+        // PUT: api/Despesa_00/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEstoque_00(int id, Estoque_00 estoque_00)
+        public async Task<IActionResult> PutDespesa_00(int id, Despesa_00 despesa_00)
         {
-            if (id != estoque_00.Etq_codigo)
+            if (id != despesa_00.Des_codigo)
             {
                 return BadRequest();
             }
 
-            _context.Entry(estoque_00).State = EntityState.Modified;
+            _context.Entry(despesa_00).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace Gear_API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Estoque_00Exists(id))
+                if (!Despesa_00Exists(id))
                 {
                     return NotFound();
                 }
@@ -81,44 +81,44 @@ namespace Gear_API.Controllers
             return NoContent();
         }
 
-        // POST: api/Estoque_00
+        // POST: api/Despesa_00
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Estoque_00>> PostEstoque_00(Estoque_00 estoque_00)
+        public async Task<ActionResult<Despesa_00>> PostDespesa_00(Despesa_00 despesa_00)
         {
-          if (_context.Estoque_00 == null)
+          if (_context.Despesa_00 == null)
           {
-              return Problem("Entity set 'DataContext.Estoque_00'  is null.");
+              return Problem("Entity set 'DataContext.Despesa_00'  is null.");
           }
-            _context.Estoque_00.Add(estoque_00);
+            _context.Despesa_00.Add(despesa_00);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEstoque_00", new { id = estoque_00.Etq_codigo }, estoque_00);
+            return CreatedAtAction("GetDespesa_00", new { id = despesa_00.Des_codigo }, despesa_00);
         }
 
-        // DELETE: api/Estoque_00/5
+        // DELETE: api/Despesa_00/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEstoque_00(int id)
+        public async Task<IActionResult> DeleteDespesa_00(int id)
         {
-            if (_context.Estoque_00 == null)
+            if (_context.Despesa_00 == null)
             {
                 return NotFound();
             }
-            var estoque_00 = await _context.Estoque_00.FindAsync(id);
-            if (estoque_00 == null)
+            var despesa_00 = await _context.Despesa_00.FindAsync(id);
+            if (despesa_00 == null)
             {
                 return NotFound();
             }
 
-            _context.Estoque_00.Remove(estoque_00);
+            _context.Despesa_00.Remove(despesa_00);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool Estoque_00Exists(int id)
+        private bool Despesa_00Exists(int id)
         {
-            return (_context.Estoque_00?.Any(e => e.Etq_codigo == id)).GetValueOrDefault();
+            return (_context.Despesa_00?.Any(e => e.Des_codigo == id)).GetValueOrDefault();
         }
     }
 }

@@ -106,6 +106,7 @@
             this.txtURL.Size = new System.Drawing.Size(231, 23);
             this.txtURL.TabIndex = 4;
             this.txtURL.Text = "http://localhost:8091/api/";
+            this.txtURL.Visible = false;
             // 
             // pnlCenterLogin
             // 

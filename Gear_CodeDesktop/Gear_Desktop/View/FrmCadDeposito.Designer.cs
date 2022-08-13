@@ -138,7 +138,7 @@
             this.cbTipoPlantio.Location = new System.Drawing.Point(168, 97);
             this.cbTipoPlantio.Name = "cbTipoPlantio";
             this.cbTipoPlantio.Size = new System.Drawing.Size(240, 23);
-            this.cbTipoPlantio.TabIndex = 5;
+            this.cbTipoPlantio.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -146,7 +146,7 @@
             this.txtNome.Location = new System.Drawing.Point(231, 39);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(396, 23);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 1;
             // 
             // label2
             // 
@@ -165,7 +165,7 @@
             this.txtTamanhoFazenda.Location = new System.Drawing.Point(168, 126);
             this.txtTamanhoFazenda.Name = "txtTamanhoFazenda";
             this.txtTamanhoFazenda.Size = new System.Drawing.Size(240, 23);
-            this.txtTamanhoFazenda.TabIndex = 8;
+            this.txtTamanhoFazenda.TabIndex = 4;
             // 
             // label3
             // 
@@ -201,7 +201,7 @@
             this.cbTipoCadastro.Location = new System.Drawing.Point(168, 68);
             this.cbTipoCadastro.Name = "cbTipoCadastro";
             this.cbTipoCadastro.Size = new System.Drawing.Size(240, 23);
-            this.cbTipoCadastro.TabIndex = 11;
+            this.cbTipoCadastro.TabIndex = 2;
             // 
             // btnPesquisar
             // 
@@ -215,7 +215,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(536, 278);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
-            this.btnPesquisar.TabIndex = 19;
+            this.btnPesquisar.TabIndex = 7;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -232,7 +232,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(414, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
-            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -249,7 +249,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(291, 278);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
-            this.btnSalvar.TabIndex = 17;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -266,7 +266,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(168, 278);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
-            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.TabIndex = 8;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -283,7 +283,7 @@
             this.btnNovo.Location = new System.Drawing.Point(45, 278);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(117, 35);
-            this.btnNovo.TabIndex = 15;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);

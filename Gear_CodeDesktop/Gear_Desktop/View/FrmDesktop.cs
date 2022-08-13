@@ -56,5 +56,11 @@ namespace Gear_Desktop.View
             DlgMovEstoque dlgEstoque = new(URL);
             dlgEstoque.ShowDialog();
         }
+
+        private void btnMovDespesa_Click(object sender, EventArgs e)
+        {
+            FrmMovDespesa frmMovDespesa = new(URL);
+            frmMovDespesa.ShowDialog();
+        }
     }
 }

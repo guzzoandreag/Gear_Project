@@ -2,6 +2,7 @@
 using Gear_Desktop.Controller.DAL;
 using Gear_Desktop.Models;
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,19 +24,7 @@ namespace Gear_Desktop.View
         {
             InitializeComponent();
             this.URL = URLParameter;
-        }
-
-        private void btnPSQDeposito_Click(object sender, EventArgs e)
-        {
-            using (FrmPSQ<Deposito_00> frmPSQ = new FrmPSQ<Deposito_00>(_deposito = new(), URL))
-            {
-                DialogResult dialogResult = frmPSQ.ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnDeposito.Dep_codigo);
-                    txtNomeDeposito.Text = frmPSQ.ReturnDeposito.Dep_nome;
-                }
-            }
+            txtNomeDeposito.ReadOnly = true;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -57,6 +46,8 @@ namespace Gear_Desktop.View
             btnSalvar.Enabled = true;
             btnCancelar.Enabled = true;
             btnPesquisar.Enabled = false;
+
+            txtDes_datalancamento.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -158,6 +149,16 @@ namespace Gear_Desktop.View
                     txtDes_observacao.Text = Convert.ToString(frmPSQ.ReturnDespesa.Des_observacao);
                 }
             }
+            _deposito = new();
+            GetDeposito(_deposito);
+        }
+
+        private async void GetDeposito(Deposito_00 deposito)
+        {
+            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            BLLDeposito objBLLDeposito = new(restConnection);
+            deposito = await objBLLDeposito.GetDeposito(Convert.ToInt32(txtDep_codigo.Text));
+            txtNomeDeposito.Text = deposito.Dep_nome;
         }
 
         private async void PutDespesa()
@@ -168,6 +169,7 @@ namespace Gear_Desktop.View
             {
                 Des_codigo = Convert.ToInt32(txtCodigo.Text.Trim()),
                 Des_datalancamento = Convert.ToDateTime(txtDes_datalancamento.Text.Trim()),
+                Dep_codigo = Convert.ToInt32(txtDep_codigo.Text.Trim()),
                 Des_valor = Convert.ToDecimal(txtDes_valor.Text.Trim()),
                 Des_observacao = txtDes_observacao.Text.Trim()
             };
@@ -188,7 +190,7 @@ namespace Gear_Desktop.View
             BLLDespesa objBLLDespesa = new(restConnection);
             _despesa = new()
             {
-                Des_codigo = Convert.ToInt32(txtCodigo.Text.Trim()),
+                //Des_codigo = Convert.ToInt32(txtCodigo.Text.Trim()),
                 Des_datalancamento = Convert.ToDateTime(txtDes_datalancamento.Text.Trim()),
                 Des_valor = Convert.ToDecimal(txtDes_valor.Text.Trim()),
                 Des_observacao = txtDes_observacao.Text.Trim()
@@ -203,6 +205,30 @@ namespace Gear_Desktop.View
             {
                 MessageInfo("Erro ao salvar Despesa !!");
             }
+        }
+
+        private void btnPSQDeposito_Click(object sender, EventArgs e)
+        {
+            using (FrmPSQ<Deposito_00> frmPSQ = new FrmPSQ<Deposito_00>(_deposito = new(), URL))
+            {
+                DialogResult dialogResult = frmPSQ.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    txtDep_codigo.Text = Convert.ToString(frmPSQ.ReturnDeposito.Dep_codigo);
+                    txtNomeDeposito.Text = frmPSQ.ReturnDeposito.Dep_nome;
+                }
+            }
+        }
+
+        private void txtDes_valor_Leave(object sender, EventArgs e)
+        {
+            //txtDes_valor.Text = Convert.ToDecimal(txtDes_valor.Text).ToString("C", CultureInfo.CurrentCulture);
+        }
+
+        private void txtDep_codigo_Leave(object sender, EventArgs e)
+        {
+            _deposito = new();
+            GetDeposito(_deposito);
         }
     }
 }
