@@ -43,5 +43,6 @@ namespace Gear_API.Data
         public DbSet<Produto_00> Produtos_00 { get; set; }
         public DbSet<Estoque_00> Estoque_00 { get; set; }
         public DbSet<Deposito_00> Deposito_00 { get; set; }
+        public DbSet<Despesa_00> Despesa_00 { get; set; }
     }
 }

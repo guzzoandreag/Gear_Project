@@ -63,16 +63,23 @@ namespace Gear_Desktop.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            ClearMessageInfo();
-            txtNome.ReadOnly = false;
-            cbMedida.Enabled = true;
-            cbGrupo.Enabled = true;
+            if (txtCodigo.Text.Length != 0)
+            {
+                ClearMessageInfo();
+                txtNome.ReadOnly = false;
+                cbMedida.Enabled = true;
+                cbGrupo.Enabled = true;
 
-            btnNovo.Enabled = false;
-            btnAlterar.Enabled = false;
-            btnSalvar.Enabled = true;
-            btnCancelar.Enabled = true;
-            btnPesquisar.Enabled = false;
+                btnNovo.Enabled = false;
+                btnAlterar.Enabled = false;
+                btnSalvar.Enabled = true;
+                btnCancelar.Enabled = true;
+                btnPesquisar.Enabled = false;
+            }
+            else
+            {
+                MessageInfo("Não é permitido alterar cadastro em branco! \n Favor selecionar um através da pesquisa!!");
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

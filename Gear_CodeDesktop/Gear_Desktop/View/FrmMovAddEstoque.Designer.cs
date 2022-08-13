@@ -82,7 +82,7 @@
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtPro_codigo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCodigo);
-            this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(695, 284);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCodigo, 0);
@@ -112,7 +112,7 @@
             // pnlRodape
             // 
             this.pnlRodape.Location = new System.Drawing.Point(0, 314);
-            this.pnlRodape.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRodape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlRodape.Size = new System.Drawing.Size(695, 20);
             // 
             // BaseFormRodape
@@ -123,12 +123,12 @@
             // 
             // pnlCenterMain
             // 
-            this.pnlCenterMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCenterMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCenterMain.Size = new System.Drawing.Size(695, 334);
             // 
             // pnlCabecalho
             // 
-            this.pnlCabecalho.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCabecalho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCabecalho.Size = new System.Drawing.Size(695, 30);
             // 
             // btnMinimizar
@@ -137,7 +137,7 @@
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnMinimizar.Location = new System.Drawing.Point(597, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Size = new System.Drawing.Size(49, 30);
             // 
             // btnClose
@@ -146,14 +146,15 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnClose.Location = new System.Drawing.Point(646, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Size = new System.Drawing.Size(49, 30);
             // 
             // BaseFormCabecalho
             // 
+            this.BaseFormCabecalho.Location = new System.Drawing.Point(8, 0);
             this.BaseFormCabecalho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(587, 30);
-            this.BaseFormCabecalho.Text = "Adiciona Estoque - Gear Project.";
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(589, 30);
+            this.BaseFormCabecalho.Text = "Adicionar Estoque - Gear Project.";
             // 
             // lblMsg
             // 
@@ -177,10 +178,10 @@
             // 
             this.txtNomeDeposito.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeDeposito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNomeDeposito.Enabled = false;
             this.txtNomeDeposito.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtNomeDeposito.Location = new System.Drawing.Point(229, 93);
             this.txtNomeDeposito.Name = "txtNomeDeposito";
+            this.txtNomeDeposito.ReadOnly = true;
             this.txtNomeDeposito.Size = new System.Drawing.Size(272, 23);
             this.txtNomeDeposito.TabIndex = 52;
             this.txtNomeDeposito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -189,10 +190,10 @@
             // 
             this.txtEtq_validade.BackColor = System.Drawing.Color.DarkGray;
             this.txtEtq_validade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEtq_validade.Enabled = false;
             this.txtEtq_validade.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtEtq_validade.Location = new System.Drawing.Point(495, 149);
             this.txtEtq_validade.Name = "txtEtq_validade";
+            this.txtEtq_validade.ReadOnly = true;
             this.txtEtq_validade.Size = new System.Drawing.Size(154, 23);
             this.txtEtq_validade.TabIndex = 51;
             this.txtEtq_validade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -213,10 +214,10 @@
             // 
             this.txtEtq_valorcusto.BackColor = System.Drawing.Color.DarkGray;
             this.txtEtq_valorcusto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEtq_valorcusto.Enabled = false;
             this.txtEtq_valorcusto.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtEtq_valorcusto.Location = new System.Drawing.Point(315, 149);
             this.txtEtq_valorcusto.Name = "txtEtq_valorcusto";
+            this.txtEtq_valorcusto.ReadOnly = true;
             this.txtEtq_valorcusto.Size = new System.Drawing.Size(154, 23);
             this.txtEtq_valorcusto.TabIndex = 49;
             this.txtEtq_valorcusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -237,10 +238,10 @@
             // 
             this.txtEtq_quantidade.BackColor = System.Drawing.Color.DarkGray;
             this.txtEtq_quantidade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEtq_quantidade.Enabled = false;
             this.txtEtq_quantidade.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtEtq_quantidade.Location = new System.Drawing.Point(124, 149);
             this.txtEtq_quantidade.Name = "txtEtq_quantidade";
+            this.txtEtq_quantidade.ReadOnly = true;
             this.txtEtq_quantidade.Size = new System.Drawing.Size(154, 23);
             this.txtEtq_quantidade.TabIndex = 47;
             this.txtEtq_quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -273,10 +274,10 @@
             // 
             this.txtDep_codigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtDep_codigo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDep_codigo.Enabled = false;
             this.txtDep_codigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtDep_codigo.Location = new System.Drawing.Point(124, 93);
             this.txtDep_codigo.Name = "txtDep_codigo";
+            this.txtDep_codigo.ReadOnly = true;
             this.txtDep_codigo.Size = new System.Drawing.Size(57, 23);
             this.txtDep_codigo.TabIndex = 44;
             this.txtDep_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -298,10 +299,10 @@
             // 
             this.txtNomeProduto.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNomeProduto.Enabled = false;
             this.txtNomeProduto.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtNomeProduto.Location = new System.Drawing.Point(229, 50);
             this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.ReadOnly = true;
             this.txtNomeProduto.Size = new System.Drawing.Size(272, 23);
             this.txtNomeProduto.TabIndex = 42;
             this.txtNomeProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -322,10 +323,10 @@
             // 
             this.txtPro_codigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtPro_codigo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPro_codigo.Enabled = false;
             this.txtPro_codigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtPro_codigo.Location = new System.Drawing.Point(124, 51);
             this.txtPro_codigo.Name = "txtPro_codigo";
+            this.txtPro_codigo.ReadOnly = true;
             this.txtPro_codigo.Size = new System.Drawing.Size(57, 23);
             this.txtPro_codigo.TabIndex = 40;
             this.txtPro_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -347,10 +348,10 @@
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtCodigo.Location = new System.Drawing.Point(124, 14);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(57, 23);
             this.txtCodigo.TabIndex = 38;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -484,12 +485,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CaptionCabecalho = "Adiciona Estoque - Gear Project.";
+            this.CaptionCabecalho = "Adicionar Estoque - Gear Project.";
             this.CaptionMsgVisible = true;
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
             this.ClientSize = new System.Drawing.Size(695, 334);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximumSize = new System.Drawing.Size(875, 675);
             this.MinimumSize = new System.Drawing.Size(350, 225);
             this.Name = "FrmMovAddEstoque";

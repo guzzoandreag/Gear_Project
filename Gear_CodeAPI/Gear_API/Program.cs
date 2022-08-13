@@ -13,6 +13,17 @@ builder.Services.AddScoped<DataContext, DataContext>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            //.WithMethods("GET", "PUT", "DELETE", "POST", "PATCH") //not really necessary when AllowAnyMethods is used.
+        );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,5 +38,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseRouting();
+
+app.UseCors("CorsPolicy");
 
 app.Run();

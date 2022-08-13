@@ -46,7 +46,7 @@ namespace Gear_API.Controllers
         // PUT: api/Produto_00/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduto_00(int id, Produto_00 produto_00)
+        public async Task<IActionResult> PutProduto_00(int id, [FromBody] Produto_00 produto_00)
         {
             if (id != produto_00.Pro_codigo)
             {
