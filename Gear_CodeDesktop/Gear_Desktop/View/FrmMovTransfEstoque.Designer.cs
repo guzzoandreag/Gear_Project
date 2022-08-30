@@ -84,6 +84,7 @@
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCodigo);
             this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(622, 288);
+            this.pnlCenterCabecalhoRodape.TabIndex = 0;
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCodigo, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label2, 0);
@@ -175,7 +176,7 @@
             this.btnPSQDeposito.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQDeposito.Name = "btnPSQDeposito";
             this.btnPSQDeposito.Size = new System.Drawing.Size(43, 23);
-            this.btnPSQDeposito.TabIndex = 83;
+            this.btnPSQDeposito.TabIndex = 4;
             this.btnPSQDeposito.Text = "...";
             this.btnPSQDeposito.UseVisualStyleBackColor = false;
             this.btnPSQDeposito.Click += new System.EventHandler(this.btnPSQDeposito_Click);
@@ -194,7 +195,7 @@
             this.btnPSQProduto.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQProduto.Name = "btnPSQProduto";
             this.btnPSQProduto.Size = new System.Drawing.Size(43, 23);
-            this.btnPSQProduto.TabIndex = 82;
+            this.btnPSQProduto.TabIndex = 2;
             this.btnPSQProduto.Text = "...";
             this.btnPSQProduto.UseVisualStyleBackColor = false;
             this.btnPSQProduto.Click += new System.EventHandler(this.btnPSQProduto_Click);
@@ -211,7 +212,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(498, 191);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
-            this.btnPesquisar.TabIndex = 81;
+            this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -229,7 +230,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(376, 191);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
-            this.btnCancelar.TabIndex = 80;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -247,7 +248,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(253, 191);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
-            this.btnSalvar.TabIndex = 79;
+            this.btnSalvar.TabIndex = 8;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -264,7 +265,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(130, 191);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
-            this.btnAlterar.TabIndex = 78;
+            this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -281,7 +282,7 @@
             this.btnNovo.Location = new System.Drawing.Point(7, 191);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(117, 35);
-            this.btnNovo.TabIndex = 77;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -319,7 +320,7 @@
             this.txtEtq_validade.Name = "txtEtq_validade";
             this.txtEtq_validade.ReadOnly = true;
             this.txtEtq_validade.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_validade.TabIndex = 74;
+            this.txtEtq_validade.TabIndex = 7;
             this.txtEtq_validade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -343,7 +344,7 @@
             this.txtEtq_valorcusto.Name = "txtEtq_valorcusto";
             this.txtEtq_valorcusto.ReadOnly = true;
             this.txtEtq_valorcusto.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_valorcusto.TabIndex = 72;
+            this.txtEtq_valorcusto.TabIndex = 6;
             this.txtEtq_valorcusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -367,7 +368,7 @@
             this.txtEtq_quantidade.Name = "txtEtq_quantidade";
             this.txtEtq_quantidade.ReadOnly = true;
             this.txtEtq_quantidade.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_quantidade.TabIndex = 70;
+            this.txtEtq_quantidade.TabIndex = 5;
             this.txtEtq_quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -403,7 +404,7 @@
             this.txtDep_codigo.Name = "txtDep_codigo";
             this.txtDep_codigo.ReadOnly = true;
             this.txtDep_codigo.Size = new System.Drawing.Size(57, 23);
-            this.txtDep_codigo.TabIndex = 67;
+            this.txtDep_codigo.TabIndex = 3;
             this.txtDep_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -451,7 +452,7 @@
             this.txtPro_codigo.Name = "txtPro_codigo";
             this.txtPro_codigo.ReadOnly = true;
             this.txtPro_codigo.Size = new System.Drawing.Size(57, 23);
-            this.txtPro_codigo.TabIndex = 63;
+            this.txtPro_codigo.TabIndex = 1;
             this.txtPro_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2

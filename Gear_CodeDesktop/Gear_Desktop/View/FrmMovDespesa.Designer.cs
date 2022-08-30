@@ -160,7 +160,7 @@
             this.btnPSQDeposito.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQDeposito.Name = "btnPSQDeposito";
             this.btnPSQDeposito.Size = new System.Drawing.Size(43, 23);
-            this.btnPSQDeposito.TabIndex = 83;
+            this.btnPSQDeposito.TabIndex = 3;
             this.btnPSQDeposito.Text = "...";
             this.btnPSQDeposito.UseVisualStyleBackColor = false;
             this.btnPSQDeposito.Click += new System.EventHandler(this.btnPSQDeposito_Click);
@@ -177,7 +177,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(499, 200);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
-            this.btnPesquisar.TabIndex = 81;
+            this.btnPesquisar.TabIndex = 8;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -195,7 +195,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(376, 200);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
-            this.btnCancelar.TabIndex = 80;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -213,7 +213,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(254, 200);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
-            this.btnSalvar.TabIndex = 79;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -230,7 +230,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(130, 200);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
-            this.btnAlterar.TabIndex = 78;
+            this.btnAlterar.TabIndex = 9;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -247,7 +247,7 @@
             this.btnNovo.Location = new System.Drawing.Point(7, 200);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(117, 35);
-            this.btnNovo.TabIndex = 77;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -273,7 +273,7 @@
             this.txtNomeDeposito.Name = "txtNomeDeposito";
             this.txtNomeDeposito.ReadOnly = true;
             this.txtNomeDeposito.Size = new System.Drawing.Size(272, 23);
-            this.txtNomeDeposito.TabIndex = 75;
+            this.txtNomeDeposito.TabIndex = 2;
             this.txtNomeDeposito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDes_datalancamento
@@ -285,7 +285,7 @@
             this.txtDes_datalancamento.Name = "txtDes_datalancamento";
             this.txtDes_datalancamento.ReadOnly = true;
             this.txtDes_datalancamento.Size = new System.Drawing.Size(154, 23);
-            this.txtDes_datalancamento.TabIndex = 74;
+            this.txtDes_datalancamento.TabIndex = 1;
             this.txtDes_datalancamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -310,7 +310,7 @@
             this.txtDes_valor.Name = "txtDes_valor";
             this.txtDes_valor.ReadOnly = true;
             this.txtDes_valor.Size = new System.Drawing.Size(154, 23);
-            this.txtDes_valor.TabIndex = 72;
+            this.txtDes_valor.TabIndex = 4;
             this.txtDes_valor.Leave += new System.EventHandler(this.txtDes_valor_Leave);
             // 
             // label6
@@ -346,7 +346,7 @@
             this.txtDep_codigo.Name = "txtDep_codigo";
             this.txtDep_codigo.ReadOnly = true;
             this.txtDep_codigo.Size = new System.Drawing.Size(57, 23);
-            this.txtDep_codigo.TabIndex = 67;
+            this.txtDep_codigo.TabIndex = 2;
             this.txtDep_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDep_codigo.Leave += new System.EventHandler(this.txtDep_codigo_Leave);
             // 
@@ -384,7 +384,7 @@
             this.txtDes_observacao.Name = "txtDes_observacao";
             this.txtDes_observacao.ReadOnly = true;
             this.txtDes_observacao.Size = new System.Drawing.Size(377, 42);
-            this.txtDes_observacao.TabIndex = 70;
+            this.txtDes_observacao.TabIndex = 5;
             // 
             // label5
             // 

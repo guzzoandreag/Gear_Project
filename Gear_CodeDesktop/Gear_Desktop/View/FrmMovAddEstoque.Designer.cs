@@ -82,7 +82,7 @@
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtPro_codigo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label2);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtCodigo);
-            this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(695, 284);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtCodigo, 0);
@@ -112,7 +112,7 @@
             // pnlRodape
             // 
             this.pnlRodape.Location = new System.Drawing.Point(0, 314);
-            this.pnlRodape.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRodape.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRodape.Size = new System.Drawing.Size(695, 20);
             // 
             // BaseFormRodape
@@ -123,12 +123,12 @@
             // 
             // pnlCenterMain
             // 
-            this.pnlCenterMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCenterMain.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCenterMain.Size = new System.Drawing.Size(695, 334);
             // 
             // pnlCabecalho
             // 
-            this.pnlCabecalho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCabecalho.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCabecalho.Size = new System.Drawing.Size(695, 30);
             // 
             // btnMinimizar
@@ -137,7 +137,7 @@
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.btnMinimizar.Location = new System.Drawing.Point(597, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Size = new System.Drawing.Size(49, 30);
             // 
             // btnClose
@@ -146,14 +146,13 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnClose.Location = new System.Drawing.Point(646, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Size = new System.Drawing.Size(49, 30);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Location = new System.Drawing.Point(8, 0);
             this.BaseFormCabecalho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(589, 30);
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(587, 30);
             this.BaseFormCabecalho.Text = "Adicionar Estoque - Gear Project.";
             // 
             // lblMsg
@@ -195,7 +194,7 @@
             this.txtEtq_validade.Name = "txtEtq_validade";
             this.txtEtq_validade.ReadOnly = true;
             this.txtEtq_validade.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_validade.TabIndex = 51;
+            this.txtEtq_validade.TabIndex = 7;
             this.txtEtq_validade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -219,7 +218,7 @@
             this.txtEtq_valorcusto.Name = "txtEtq_valorcusto";
             this.txtEtq_valorcusto.ReadOnly = true;
             this.txtEtq_valorcusto.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_valorcusto.TabIndex = 49;
+            this.txtEtq_valorcusto.TabIndex = 6;
             this.txtEtq_valorcusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -243,7 +242,7 @@
             this.txtEtq_quantidade.Name = "txtEtq_quantidade";
             this.txtEtq_quantidade.ReadOnly = true;
             this.txtEtq_quantidade.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_quantidade.TabIndex = 47;
+            this.txtEtq_quantidade.TabIndex = 5;
             this.txtEtq_quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -279,7 +278,7 @@
             this.txtDep_codigo.Name = "txtDep_codigo";
             this.txtDep_codigo.ReadOnly = true;
             this.txtDep_codigo.Size = new System.Drawing.Size(57, 23);
-            this.txtDep_codigo.TabIndex = 44;
+            this.txtDep_codigo.TabIndex = 3;
             this.txtDep_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDep_codigo.Leave += new System.EventHandler(this.txtDep_codigo_Leave);
             // 
@@ -328,7 +327,7 @@
             this.txtPro_codigo.Name = "txtPro_codigo";
             this.txtPro_codigo.ReadOnly = true;
             this.txtPro_codigo.Size = new System.Drawing.Size(57, 23);
-            this.txtPro_codigo.TabIndex = 40;
+            this.txtPro_codigo.TabIndex = 1;
             this.txtPro_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPro_codigo.Leave += new System.EventHandler(this.txtPro_codigo_Leave);
             // 
@@ -368,7 +367,7 @@
             this.btnNovo.Location = new System.Drawing.Point(43, 182);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(117, 35);
-            this.btnNovo.TabIndex = 54;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -385,7 +384,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(166, 182);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
-            this.btnAlterar.TabIndex = 55;
+            this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -403,7 +402,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(289, 182);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
-            this.btnSalvar.TabIndex = 56;
+            this.btnSalvar.TabIndex = 8;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -421,7 +420,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(412, 182);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
-            this.btnCancelar.TabIndex = 57;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -438,7 +437,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(534, 182);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
-            this.btnPesquisar.TabIndex = 58;
+            this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -457,7 +456,7 @@
             this.btnPSQProduto.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQProduto.Name = "btnPSQProduto";
             this.btnPSQProduto.Size = new System.Drawing.Size(43, 23);
-            this.btnPSQProduto.TabIndex = 59;
+            this.btnPSQProduto.TabIndex = 2;
             this.btnPSQProduto.Text = "...";
             this.btnPSQProduto.UseVisualStyleBackColor = false;
             this.btnPSQProduto.Click += new System.EventHandler(this.btnPSQProduto_Click);
@@ -476,7 +475,7 @@
             this.btnPSQDeposito.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQDeposito.Name = "btnPSQDeposito";
             this.btnPSQDeposito.Size = new System.Drawing.Size(43, 23);
-            this.btnPSQDeposito.TabIndex = 60;
+            this.btnPSQDeposito.TabIndex = 4;
             this.btnPSQDeposito.Text = "...";
             this.btnPSQDeposito.UseVisualStyleBackColor = false;
             this.btnPSQDeposito.Click += new System.EventHandler(this.btnPSQDeposito_Click);
@@ -490,7 +489,7 @@
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
             this.ClientSize = new System.Drawing.Size(695, 334);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(875, 675);
             this.MinimumSize = new System.Drawing.Size(350, 225);
             this.Name = "FrmMovAddEstoque";

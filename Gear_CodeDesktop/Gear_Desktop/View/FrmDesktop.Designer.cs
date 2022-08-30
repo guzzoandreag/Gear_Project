@@ -145,7 +145,7 @@
             this.btnMovDespesa.Margin = new System.Windows.Forms.Padding(0);
             this.btnMovDespesa.Name = "btnMovDespesa";
             this.btnMovDespesa.Size = new System.Drawing.Size(155, 38);
-            this.btnMovDespesa.TabIndex = 31;
+            this.btnMovDespesa.TabIndex = 0;
             this.btnMovDespesa.Text = "Despesas";
             this.btnMovDespesa.UseVisualStyleBackColor = false;
             this.btnMovDespesa.Click += new System.EventHandler(this.btnMovDespesa_Click);
@@ -174,7 +174,7 @@
             this.btnMovTransferencia.Margin = new System.Windows.Forms.Padding(0);
             this.btnMovTransferencia.Name = "btnMovTransferencia";
             this.btnMovTransferencia.Size = new System.Drawing.Size(155, 38);
-            this.btnMovTransferencia.TabIndex = 30;
+            this.btnMovTransferencia.TabIndex = 0;
             this.btnMovTransferencia.Text = "Transferencia Depositos";
             this.btnMovTransferencia.UseVisualStyleBackColor = false;
             this.btnMovTransferencia.Click += new System.EventHandler(this.btnMovTransferencia_Click);
@@ -228,7 +228,7 @@
             this.btnCadProduto.Margin = new System.Windows.Forms.Padding(0);
             this.btnCadProduto.Name = "btnCadProduto";
             this.btnCadProduto.Size = new System.Drawing.Size(155, 38);
-            this.btnCadProduto.TabIndex = 31;
+            this.btnCadProduto.TabIndex = 0;
             this.btnCadProduto.Text = "Produto";
             this.btnCadProduto.UseVisualStyleBackColor = false;
             this.btnCadProduto.Click += new System.EventHandler(this.btnCadProduto_Click);
@@ -257,7 +257,7 @@
             this.btnCadDeposito.Margin = new System.Windows.Forms.Padding(0);
             this.btnCadDeposito.Name = "btnCadDeposito";
             this.btnCadDeposito.Size = new System.Drawing.Size(155, 38);
-            this.btnCadDeposito.TabIndex = 30;
+            this.btnCadDeposito.TabIndex = 0;
             this.btnCadDeposito.Text = "Deposito \\n Fazenda";
             this.btnCadDeposito.UseVisualStyleBackColor = false;
             this.btnCadDeposito.Click += new System.EventHandler(this.btnCadDeposito_Click);
@@ -288,7 +288,7 @@
             this.btnLogout.Location = new System.Drawing.Point(0, 600);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(165, 50);
-            this.btnLogout.TabIndex = 2;
+            this.btnLogout.TabIndex = 0;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 

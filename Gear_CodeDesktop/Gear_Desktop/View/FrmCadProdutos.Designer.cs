@@ -153,7 +153,7 @@
             this.cbGrupo.Location = new System.Drawing.Point(169, 114);
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(192, 23);
-            this.cbGrupo.TabIndex = 8;
+            this.cbGrupo.TabIndex = 3;
             // 
             // cbMedida
             // 
@@ -168,7 +168,7 @@
             this.cbMedida.Location = new System.Drawing.Point(169, 85);
             this.cbMedida.Name = "cbMedida";
             this.cbMedida.Size = new System.Drawing.Size(192, 23);
-            this.cbMedida.TabIndex = 7;
+            this.cbMedida.TabIndex = 2;
             // 
             // txtNome
             // 
@@ -177,7 +177,7 @@
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(360, 23);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 1;
             // 
             // label3
             // 
@@ -215,7 +215,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(537, 293);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
-            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.TabIndex = 6;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -232,7 +232,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(415, 293);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
-            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -249,7 +249,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(292, 293);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
-            this.btnSalvar.TabIndex = 2;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -266,7 +266,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(169, 293);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
-            this.btnAlterar.TabIndex = 1;
+            this.btnAlterar.TabIndex = 7;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
