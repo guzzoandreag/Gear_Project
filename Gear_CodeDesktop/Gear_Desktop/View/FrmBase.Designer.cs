@@ -221,11 +221,13 @@
             this.Controls.Add(this.pTop);
             this.Controls.Add(this.pnlCenterMain);
             this.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(1000, 900);
             this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "FrmBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBase";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmBase_KeyDown);
             this.pnlCenterMain.ResumeLayout(false);
             this.pnlCenterCabecalhoRodape.ResumeLayout(false);
             this.pnlRodape.ResumeLayout(false);
