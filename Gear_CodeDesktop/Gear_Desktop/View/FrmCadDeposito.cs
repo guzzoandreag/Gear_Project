@@ -33,6 +33,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = true;
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnExcluir.Enabled = true;
             btnPesquisar.Enabled = true;
         }
 
@@ -40,8 +41,8 @@ namespace Gear_Desktop.View
         {
             txtCodigo.Clear();
             txtNome.Clear();
-            cbTipoCadastro.ResetText();
-            cbTipoPlantio.ResetText();
+            cbTipoCadastro.SelectedIndex = -1;
+            cbTipoPlantio.SelectedIndex = -1;            
             txtTamanhoFazenda.Clear();
         }
 
@@ -52,9 +53,9 @@ namespace Gear_Desktop.View
             txtNome.ReadOnly = false;
             txtNome.Clear();
             cbTipoCadastro.Enabled = true;
-            cbTipoCadastro.ResetText();
+            cbTipoCadastro.SelectedIndex = -1;
             cbTipoPlantio.Enabled = true;
-            cbTipoPlantio.ResetText();
+            cbTipoPlantio.SelectedIndex = -1;
             txtTamanhoFazenda.ReadOnly = false;
             txtTamanhoFazenda.Clear();
 
@@ -62,6 +63,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = false;
             btnSalvar.Enabled = true;
             btnCancelar.Enabled = true;
+            btnExcluir.Enabled = false;
             btnPesquisar.Enabled = false;
         }
 
@@ -79,6 +81,7 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = false;
                 btnSalvar.Enabled = true;
                 btnCancelar.Enabled = true;
+                btnExcluir.Enabled = false;
                 btnPesquisar.Enabled = false;
             }
             else
@@ -107,6 +110,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = true;
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnExcluir.Enabled = true;
             btnPesquisar.Enabled = true;
         }
 
@@ -119,9 +123,9 @@ namespace Gear_Desktop.View
                 txtNome.ReadOnly = true;
                 txtNome.Clear();
                 cbTipoCadastro.Enabled = false;
-                cbTipoCadastro.ResetText();
+                cbTipoCadastro.SelectedIndex = -1;
                 cbTipoPlantio.Enabled = false;
-                cbTipoPlantio.ResetText();
+                cbTipoPlantio.SelectedIndex = -1;
                 txtTamanhoFazenda.ReadOnly = true;
                 txtTamanhoFazenda.Clear();
 
@@ -129,6 +133,7 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = true;
                 btnSalvar.Enabled = false;
                 btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
                 btnPesquisar.Enabled = true;
             }
             else
@@ -142,7 +147,35 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = true;
                 btnSalvar.Enabled = false;
                 btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
                 btnPesquisar.Enabled = true;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length != 0)
+            {
+                ClearMessageInfo();
+                txtNome.ReadOnly = true;
+                cbTipoCadastro.Enabled = false;
+                cbTipoPlantio.Enabled = false;
+                txtTamanhoFazenda.ReadOnly = true;
+
+                btnNovo.Enabled = true;
+                btnAlterar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
+                btnPesquisar.Enabled = true;
+
+                DeleteDeposito(Convert.ToInt32(txtCodigo.Text.Trim()));
+
+                ClearFields();
+            }
+            else
+            {
+                MessageInfo("Não é permitido excluir um cadastro em branco! \n Favor selecionar um através da pesquisa!!");
             }
         }
 
@@ -206,6 +239,21 @@ namespace Gear_Desktop.View
             else
             {
                 MessageInfo("Erro ao cadastar Deposito !!");
+            }
+        }
+
+        private async void DeleteDeposito(int depCodigo)
+        {
+            DALConnectionREST restConnection = new(URL);
+            BLLDeposito objBLLDeposito = new(restConnection);
+            var result = await objBLLDeposito.DeleteDeposito(depCodigo);
+            if (result == "Ok")
+            {
+                MessageInfo("Deposito excluido com sucesso !! ", "Green");
+            }
+            else
+            {
+                MessageInfo("Erro ao excluido o Deposito !! - " + result);
             }
         }
     }

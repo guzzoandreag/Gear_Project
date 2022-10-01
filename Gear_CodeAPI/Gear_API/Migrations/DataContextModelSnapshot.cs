@@ -17,7 +17,7 @@ namespace Gear_API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -47,7 +47,7 @@ namespace Gear_API.Migrations
 
                     b.HasKey("Dep_codigo");
 
-                    b.ToTable("Deposito_00");
+                    b.ToTable("Deposito_00", (string)null);
                 });
 
             modelBuilder.Entity("Gear_API.Models.Despesa_00", b =>
@@ -73,7 +73,7 @@ namespace Gear_API.Migrations
 
                     b.HasKey("Des_codigo");
 
-                    b.ToTable("Despesa_00");
+                    b.ToTable("Despesa_00", (string)null);
                 });
 
             modelBuilder.Entity("Gear_API.Models.Estoque_00", b =>
@@ -87,11 +87,11 @@ namespace Gear_API.Migrations
                     b.Property<int>("Dep_codigo")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Etq_datalancamento")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("Etq_quantidade")
                         .HasColumnType("decimal(18,10)");
-
-                    b.Property<DateTime?>("Etq_validade")
-                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("Etq_valorcusto")
                         .HasColumnType("decimal(18,10)");
@@ -101,7 +101,7 @@ namespace Gear_API.Migrations
 
                     b.HasKey("Etq_codigo");
 
-                    b.ToTable("Estoque_00");
+                    b.ToTable("Estoque_00", (string)null);
                 });
 
             modelBuilder.Entity("Gear_API.Models.Produto_00", b =>
@@ -125,7 +125,7 @@ namespace Gear_API.Migrations
 
                     b.HasKey("Pro_codigo");
 
-                    b.ToTable("Produtos_00");
+                    b.ToTable("Produtos_00", (string)null);
                 });
 
             modelBuilder.Entity("Gear_API.Models.Users", b =>
@@ -153,7 +153,7 @@ namespace Gear_API.Migrations
 
                     b.HasKey("Use_codigo");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

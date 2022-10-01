@@ -75,7 +75,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // BaseFormCabecalho
             // 
@@ -83,8 +83,10 @@
             // 
             // lblMsg
             // 
-            this.lblMsg.Location = new System.Drawing.Point(166, 541);
-            this.lblMsg.Size = new System.Drawing.Size(834, 109);
+            this.lblMsg.Enabled = false;
+            this.lblMsg.Location = new System.Drawing.Point(166, 610);
+            this.lblMsg.Size = new System.Drawing.Size(834, 40);
+            this.lblMsg.Visible = false;
             // 
             // splitter1
             // 
@@ -148,7 +150,7 @@
             this.btnMovDespesa.TabIndex = 0;
             this.btnMovDespesa.Text = "Despesas";
             this.btnMovDespesa.UseVisualStyleBackColor = false;
-            this.btnMovDespesa.Click += new System.EventHandler(this.btnMovDespesa_Click);
+            this.btnMovDespesa.Click += new System.EventHandler(this.BtnMovDespesa_Click);
             // 
             // panel7
             // 
@@ -177,7 +179,7 @@
             this.btnMovTransferencia.TabIndex = 0;
             this.btnMovTransferencia.Text = "Transferencia Depositos";
             this.btnMovTransferencia.UseVisualStyleBackColor = false;
-            this.btnMovTransferencia.Click += new System.EventHandler(this.btnMovTransferencia_Click);
+            this.btnMovTransferencia.Click += new System.EventHandler(this.BtnMovTransferencia_Click);
             // 
             // label2
             // 
@@ -231,7 +233,7 @@
             this.btnCadProduto.TabIndex = 0;
             this.btnCadProduto.Text = "Produto";
             this.btnCadProduto.UseVisualStyleBackColor = false;
-            this.btnCadProduto.Click += new System.EventHandler(this.btnCadProduto_Click);
+            this.btnCadProduto.Click += new System.EventHandler(this.BtnCadProduto_Click);
             // 
             // panel4
             // 
@@ -260,7 +262,7 @@
             this.btnCadDeposito.TabIndex = 0;
             this.btnCadDeposito.Text = "Deposito \\n Fazenda";
             this.btnCadDeposito.UseVisualStyleBackColor = false;
-            this.btnCadDeposito.Click += new System.EventHandler(this.btnCadDeposito_Click);
+            this.btnCadDeposito.Click += new System.EventHandler(this.BtnCadDeposito_Click);
             // 
             // label1
             // 
@@ -290,7 +292,7 @@
             this.btnLogout.Size = new System.Drawing.Size(165, 50);
             this.btnLogout.TabIndex = 0;
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // FrmDesktop
             // 

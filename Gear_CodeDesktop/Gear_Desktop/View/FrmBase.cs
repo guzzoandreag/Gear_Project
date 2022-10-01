@@ -15,11 +15,30 @@ namespace Gear_Desktop.View
         int X = 0;
         int Y = 0;
 
-        private string captionRodape;
+        // Propriedade para descrever titulo e rodapé do formulario.
+        // E personalização de visibilidade do rodape e botão minimizar.
         private string captionCabecalho;
+        private string captionRodape;
+        private bool captionRodapeVisible = true;
+        private bool buttonMinimizarVisible = true;
+
+        // Propriedade para manipular evento de movimentação do formulario.
+        private bool frmNotMove = false;
+
+        // Propriedades para manipulação do campo de mensagem.
         private bool captionMsgVisible;
         private string captionMsg;
         private Color captionMsgColor;
+
+        // Metodos Get's / Set's das propriedades.
+        public string CaptionCabecalho
+        {
+            get => captionCabecalho = this.BaseFormCabecalho.Text;
+            set
+            {
+                this.BaseFormCabecalho.Text = value;
+            }
+        }
 
         public string CaptionRodape
         {
@@ -30,13 +49,28 @@ namespace Gear_Desktop.View
             }
         }
 
-        public string CaptionCabecalho
+        public bool CaptionRodapeVisible
         {
-            get => captionCabecalho = this.BaseFormCabecalho.Text;
+            get => captionRodapeVisible = this.pnlRodape.Visible;
             set
             {
-                this.BaseFormCabecalho.Text = value;
+                if (value)
+                {
+                    this.pnlRodape.Visible = value;
+                    this.pnlRodape.Size = new Size(984, 30);
+                }
+                else
+                {
+                    this.pnlRodape.Visible = value;
+                    this.pnlRodape.Size = new Size(984, 0);
+                }
             }
+        }
+
+        public bool ButtonMinimizeVisible
+        {
+            get => buttonMinimizarVisible = this.btnMinimizar.Visible;
+            set => btnMinimizar.Visible = value;
         }
 
         public string CaptionMsg 
@@ -50,13 +84,31 @@ namespace Gear_Desktop.View
 
         public bool CaptionMsgVisible 
         { 
-            get => captionMsgVisible = this.lblMsg.Visible; 
-            set => this.lblMsg.Visible = value; 
+            get => captionMsgVisible = this.lblMsg.Visible;
+            set 
+            {
+                if (value)
+                {
+                    this.lblMsg.Visible = value;
+                    this.lblMsg.Size = new Size(984, 40);
+                }
+                else
+                {
+                    this.lblMsg.Visible = value;
+                    this.lblMsg.Size = new Size(984, 0);
+                }                
+            } 
         }
         public Color CaptionMsgColor 
         { 
             get => captionMsgColor = this.lblMsg.ForeColor; 
             set => this.lblMsg.ForeColor = value; 
+        }
+
+        public bool FrmNotMove
+        {
+            get => frmNotMove;
+            set => frmNotMove = value;
         }
 
         public void MessageInfo(string message, string messageColor = "Yellow")
@@ -77,6 +129,23 @@ namespace Gear_Desktop.View
             }
         }
 
+        public void CreateFormInPanel(Panel pPanel, object pForm)
+        {
+            if (pPanel.Controls.Count > 0)
+            {
+                pPanel.Controls.RemoveAt(0);
+            }
+            FrmBase frm = pForm as FrmBase;
+            frm.TopLevel = false;
+            frm.FrmNotMove = true;
+            frm.CaptionRodapeVisible = false;
+            frm.ButtonMinimizeVisible = false;
+            pPanel.Controls.Add(frm);
+            pPanel.Tag = frm;
+            frm.BringToFront();
+            frm.Show();
+        }
+
         public void ClearMessageInfo()
         {
             this.CaptionMsgVisible = false;
@@ -87,8 +156,6 @@ namespace Gear_Desktop.View
         {
             // Construtor
             InitializeComponent();
-            this.MouseDown += new MouseEventHandler(FrmBase_MouseDown);
-            this.MouseMove += new MouseEventHandler(FrmBase_MouseMove);
             this.Load += new EventHandler(FrmBase_Load);
         }
 
@@ -108,27 +175,32 @@ namespace Gear_Desktop.View
 
         public void FrmBase_Load(object sender, EventArgs e)
         {
+            if (!FrmNotMove)
+            {
+                this.MouseDown += new MouseEventHandler(FrmBase_MouseDown);
+                this.MouseMove += new MouseEventHandler(FrmBase_MouseMove);
+            }
             this.FormBorderStyle = FormBorderStyle.None;
             string year = DateTime.Now.ToString("yyyy");
             BaseFormRodape.Text = year + " © Gear Project - All Rights Reserved.";
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnMinimizar_MouseDown(object sender, MouseEventArgs e)
+        private void BtnMinimizar_MouseDown(object sender, MouseEventArgs e)
         {
             FrmBase_MouseDown(sender, e);
         }
 
-        private void btnMinimizar_MouseMove(object sender, MouseEventArgs e)
+        private void BtnMinimizar_MouseMove(object sender, MouseEventArgs e)
         {
             FrmBase_MouseMove(sender, e);
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -140,29 +212,36 @@ namespace Gear_Desktop.View
             }
         }
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void Panel2_MouseDown(object sender, MouseEventArgs e)
         {
-            FrmBase_MouseDown(sender, e);
+            if (!FrmNotMove)
+            {
+                FrmBase_MouseDown(sender, e);
+            }
         }
 
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        private void Panel2_MouseMove(object sender, MouseEventArgs e)
         {
-            FrmBase_MouseMove(sender, e);
+            if (!FrmNotMove)
+            {
+                FrmBase_MouseMove(sender, e);
+            }
         }
 
         private void BaseFormCabecalho_MouseDown(object sender, MouseEventArgs e)
         {
-            FrmBase_MouseDown(sender, e);
+            if (!FrmNotMove)
+            {
+                FrmBase_MouseDown(sender, e);
+            }
         }
 
         private void BaseFormCabecalho_MouseMove(object sender, MouseEventArgs e)
         {
-            FrmBase_MouseMove(sender, e);
-        }
-
-        ~FrmBase()
-        {
-            // Destroyer
+            if (!FrmNotMove)
+            {
+                FrmBase_MouseMove(sender, e);
+            }
         }
 
         private void FrmBase_KeyDown(object sender, KeyEventArgs e)
@@ -172,5 +251,10 @@ namespace Gear_Desktop.View
                 this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
             }
         }
+
+        //~FrmBase()
+        //{
+        // Destroyer
+        //}
     }
 }

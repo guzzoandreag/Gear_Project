@@ -103,7 +103,7 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<Despesa_00> PostDespesa(Despesa_00 DespesaParameter)
+        public async Task<Despesa_00?> PostDespesa(Despesa_00 DespesaParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -125,9 +125,27 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        ~DALDespesa()
+        public async Task<string> DeleteDespesa(int desCodigo)
         {
-            //Destroyer
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + desCodigo;
+            HttpResponseMessage response = await client.DeleteAsync(URL);
+            if (response.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Erro : " + response.StatusCode;
+            }
         }
+
+        //~DALDespesa()
+        //{
+        //Destroyer
+        //}
     }
 }

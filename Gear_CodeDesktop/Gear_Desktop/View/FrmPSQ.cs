@@ -16,7 +16,7 @@ namespace Gear_Desktop.View
     public partial class FrmPSQ<T> : FrmBase
     {
         private readonly string URL;
-        T _objectModel;
+        readonly T _objectModel;
 
         private BLLDeposito objBLLDeposito;
         private BLLUsers objBLLUsers;
@@ -256,9 +256,9 @@ namespace Gear_Desktop.View
                     {
                         column.HeaderText = "Valor Custo Produto";
                     }
-                    if (column.Name == "Etq_validade")
+                    if (column.Name == "Etq_datalancamento")
                     {
-                        column.HeaderText = "Data Validade Produto";
+                        column.HeaderText = "Data de Lancamento Produto";
                     }
                 };
             }
@@ -290,7 +290,7 @@ namespace Gear_Desktop.View
             }
         }
 
-        private void dgvGridPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvGridPesquisa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var tipoModel = Convert.ToString(_objectModel.GetType());
             if (tipoModel.Contains("Deposito_00"))
@@ -325,7 +325,7 @@ namespace Gear_Desktop.View
                 this.ReturnEstoque.Dep_codigo = Convert.ToInt32(dgvGridPesquisa.CurrentRow.Cells["Dep_codigo"].Value);
                 this.ReturnEstoque.Etq_quantidade = Convert.ToDecimal(dgvGridPesquisa.CurrentRow.Cells["Etq_quantidade"].Value);
                 this.ReturnEstoque.Etq_valorcusto = Convert.ToDecimal(dgvGridPesquisa.CurrentRow.Cells["Etq_valorcusto"].Value);
-                this.ReturnEstoque.Etq_validade = Convert.ToDateTime(dgvGridPesquisa.CurrentRow.Cells["Etq_validade"].Value);
+                this.ReturnEstoque.Etq_datalancamento = Convert.ToDateTime(dgvGridPesquisa.CurrentRow.Cells["Etq_datalancamento"].Value);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

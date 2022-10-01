@@ -103,7 +103,7 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<Produto_00> PostProduto(Produto_00 ProdutoParameter)
+        public async Task<Produto_00?> PostProduto(Produto_00 ProdutoParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -125,9 +125,27 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        ~DALProdutos()
+        public async Task<string> DeleteProduto(int proCodigo)
         {
-            //Destroyer
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + proCodigo;
+            HttpResponseMessage response = await client.DeleteAsync(URL);
+            if (response.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Erro : " + response.StatusCode;
+            }
         }
+
+        //~DALProdutos()
+        //{
+        //Destroyer
+        //}
     }
 }

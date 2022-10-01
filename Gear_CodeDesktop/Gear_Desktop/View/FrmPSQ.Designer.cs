@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGridPesquisa = new System.Windows.Forms.DataGridView();
+            this.pnlMenuPSQ = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -40,63 +42,56 @@
             // pnlCenterCabecalhoRodape
             // 
             this.pnlCenterCabecalhoRodape.Controls.Add(this.dgvGridPesquisa);
-            this.pnlCenterCabecalhoRodape.Location = new System.Drawing.Point(0, 40);
-            this.pnlCenterCabecalhoRodape.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(1000, 533);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.panel1);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.pnlMenuPSQ);
+            this.pnlCenterCabecalhoRodape.Size = new System.Drawing.Size(778, 400);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.lblMsg, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.pnlMenuPSQ, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.panel1, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.dgvGridPesquisa, 0);
             // 
             // pnlRodape
             // 
-            this.pnlRodape.Location = new System.Drawing.Point(0, 573);
-            this.pnlRodape.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlRodape.Size = new System.Drawing.Size(1000, 27);
+            this.pnlRodape.Location = new System.Drawing.Point(0, 430);
+            this.pnlRodape.Size = new System.Drawing.Size(778, 20);
             // 
             // BaseFormRodape
             // 
-            this.BaseFormRodape.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.BaseFormRodape.Size = new System.Drawing.Size(1000, 27);
+            this.BaseFormRodape.Size = new System.Drawing.Size(778, 20);
             this.BaseFormRodape.Text = "2022 © Gear Project - All Rights Reserved.";
             // 
             // pnlCenterMain
             // 
-            this.pnlCenterMain.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlCenterMain.Size = new System.Drawing.Size(1000, 600);
+            this.pnlCenterMain.Size = new System.Drawing.Size(778, 450);
             // 
             // pnlCabecalho
             // 
-            this.pnlCabecalho.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlCabecalho.Size = new System.Drawing.Size(1000, 40);
+            this.pnlCabecalho.Size = new System.Drawing.Size(778, 30);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(856, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMinimizar.Size = new System.Drawing.Size(72, 40);
+            this.btnMinimizar.Location = new System.Drawing.Point(666, 0);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Location = new System.Drawing.Point(928, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Size = new System.Drawing.Size(72, 40);
+            this.btnClose.Location = new System.Drawing.Point(722, 0);
             // 
             // BaseFormCabecalho
             // 
-            this.BaseFormCabecalho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.BaseFormCabecalho.Size = new System.Drawing.Size(846, 40);
+            this.BaseFormCabecalho.Location = new System.Drawing.Point(8, 0);
+            this.BaseFormCabecalho.Size = new System.Drawing.Size(658, 30);
             this.BaseFormCabecalho.Text = "Pesquisa - Gear Project";
             // 
             // lblMsg
             // 
-            this.lblMsg.Location = new System.Drawing.Point(0, 482);
-            this.lblMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMsg.Size = new System.Drawing.Size(1000, 51);
+            this.lblMsg.Location = new System.Drawing.Point(0, 362);
+            this.lblMsg.Size = new System.Drawing.Size(778, 38);
             // 
             // dgvGridPesquisa
             // 
@@ -116,28 +111,40 @@
             this.dgvGridPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGridPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGridPesquisa.GridColor = System.Drawing.Color.Black;
-            this.dgvGridPesquisa.Location = new System.Drawing.Point(0, 0);
-            this.dgvGridPesquisa.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGridPesquisa.Location = new System.Drawing.Point(75, 37);
             this.dgvGridPesquisa.Name = "dgvGridPesquisa";
             this.dgvGridPesquisa.ReadOnly = true;
             this.dgvGridPesquisa.RowHeadersWidth = 51;
             this.dgvGridPesquisa.RowTemplate.Height = 25;
-            this.dgvGridPesquisa.Size = new System.Drawing.Size(1000, 482);
+            this.dgvGridPesquisa.Size = new System.Drawing.Size(703, 325);
             this.dgvGridPesquisa.TabIndex = 5;
-            this.dgvGridPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGridPesquisa_CellDoubleClick);
+            this.dgvGridPesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGridPesquisa_CellDoubleClick);
+            // 
+            // pnlMenuPSQ
+            // 
+            this.pnlMenuPSQ.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenuPSQ.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuPSQ.Name = "pnlMenuPSQ";
+            this.pnlMenuPSQ.Size = new System.Drawing.Size(75, 362);
+            this.pnlMenuPSQ.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(75, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(703, 37);
+            this.panel1.TabIndex = 7;
             // 
             // FrmPSQ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionCabecalho = "Pesquisa - Gear Project";
             this.CaptionMsgVisible = true;
             this.CaptionRodape = "2022 © Gear Project - All Rights Reserved.";
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(778, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1286, 1200);
-            this.MinimumSize = new System.Drawing.Size(514, 400);
             this.Name = "FrmPSQ";
             this.Text = "FrmPSQ";
             this.pnlCenterCabecalhoRodape.ResumeLayout(false);
@@ -152,5 +159,7 @@
         #endregion
 
         private DataGridView dgvGridPesquisa;
+        private Panel panel1;
+        private Panel pnlMenuPSQ;
     }
 }

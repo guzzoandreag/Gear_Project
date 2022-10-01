@@ -23,9 +23,9 @@ namespace Gear_Desktop.Controller.DAL
             Url = url;
         }
 
-        ~DALConnectionREST()
-        {
+        //~DALConnectionREST()
+        //{
             // Destroyer
-        }
+        //}
     }
 }

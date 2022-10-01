@@ -73,9 +73,9 @@
             this.lblMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblMsg.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(0, 531);
+            this.lblMsg.Location = new System.Drawing.Point(0, 591);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(984, 100);
+            this.lblMsg.Size = new System.Drawing.Size(984, 40);
             this.lblMsg.TabIndex = 4;
             this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMsg.Visible = false;
@@ -132,8 +132,8 @@
             this.pnlSpaceRightCaption.Name = "pnlSpaceRightCaption";
             this.pnlSpaceRightCaption.Size = new System.Drawing.Size(10, 30);
             this.pnlSpaceRightCaption.TabIndex = 3;
-            this.pnlSpaceRightCaption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            this.pnlSpaceRightCaption.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.pnlSpaceRightCaption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel2_MouseDown);
+            this.pnlSpaceRightCaption.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel2_MouseMove);
             // 
             // btnMinimizar
             // 
@@ -151,9 +151,9 @@
             this.btnMinimizar.TabIndex = 1;
             this.btnMinimizar.Text = "—";
             this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            this.btnMinimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMinimizar_MouseDown);
-            this.btnMinimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMinimizar_MouseMove);
+            this.btnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            this.btnMinimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnMinimizar_MouseDown);
+            this.btnMinimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BtnMinimizar_MouseMove);
             // 
             // btnClose
             // 
@@ -171,7 +171,7 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // pTop
             // 
@@ -223,7 +223,7 @@
             this.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(1000, 900);
-            this.MinimumSize = new System.Drawing.Size(400, 300);
+            this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "FrmBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBase";

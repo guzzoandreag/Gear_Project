@@ -61,7 +61,7 @@ namespace Gear_Desktop.Controller.BLL
             return await objDALProduto.PutProduto(ProdutoParameter);
         }
 
-        public async Task<Produto_00> PostProdutos(Produto_00 ProdutoParameter)
+        public async Task<Produto_00?> PostProdutos(Produto_00 ProdutoParameter)
         {
             if (ProdutoParameter.Pro_nome.Trim().Length == 0)
             {
@@ -81,6 +81,17 @@ namespace Gear_Desktop.Controller.BLL
 
             DALProdutos objDALProduto = new(restConnection);
             return await objDALProduto.PostProduto(ProdutoParameter);
+        }
+
+        public async Task<string> DeleteProduto(int proCodigo)
+        {
+            if (Convert.ToString(proCodigo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Codigo do Produto!!");
+            }
+            DALProdutos objDALProdutos = new(restConnection);
+            return await objDALProdutos.DeleteProduto(proCodigo);
         }
 
         ~BLLProdutos()

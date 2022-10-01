@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Gear_Desktop.View
 {
     public partial class FrmDesktop : FrmBaseDesktop
     {
-        string URL;
+        readonly string URL;
         public FrmDesktop(string URLParameter)
         {
             InitializeComponent();
@@ -28,39 +29,38 @@ namespace Gear_Desktop.View
             //
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void BtnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnCadDeposito_Click(object sender, EventArgs e)
+        private void BtnCadDeposito_Click(object sender, EventArgs e)
         {
-            FrmCadDeposito frmDeposito = new(URL);
-            frmDeposito.ShowDialog();
+            CreateFormInPanel(this.pnlCenterMenu, new FrmCadDeposito(URL));
         }
 
-        private void btnCadProduto_Click(object sender, EventArgs e)
+        private void BtnCadProduto_Click(object sender, EventArgs e)
         {
-            FrmCadProdutos frmProdutos = new(URL);
-            frmProdutos.ShowDialog();
-
+            CreateFormInPanel(this.pnlCenterMenu, new FrmCadProdutos(URL));
         }
 
-        private void btnMovTransferencia_Click(object sender, EventArgs e)
+        private void BtnMovTransferencia_Click(object sender, EventArgs e)
         {
-            DlgMovEstoque dlgEstoque = new(URL);
+            DlgMovEstoque dlgEstoque = new(this.pnlCenterMenu, URL);
+            dlgEstoque.FrmNotMove = true;
+            dlgEstoque.CaptionRodapeVisible = false;
+            dlgEstoque.ButtonMinimizeVisible = false;
             dlgEstoque.ShowDialog();
         }
 
-        private void btnMovDespesa_Click(object sender, EventArgs e)
+        private void BtnMovDespesa_Click(object sender, EventArgs e)
         {
-            FrmMovDespesa frmMovDespesa = new(URL);
-            frmMovDespesa.ShowDialog();
+            CreateFormInPanel(this.pnlCenterMenu, new FrmMovDespesa(URL));
         }
     }
 }

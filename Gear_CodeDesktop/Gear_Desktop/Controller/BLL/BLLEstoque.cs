@@ -20,9 +20,8 @@ namespace Gear_Desktop.Controller.BLL
 
         public async Task<List<Estoque_00>> GetAllEstoque()
         {
-            List<Estoque_00> listEstoque = new();
             DALEstoque objDALEstoque = new(restConnection);
-            listEstoque = await objDALEstoque.GetAllEstoque();
+            List<Estoque_00> listEstoque = await objDALEstoque.GetAllEstoque();
             return listEstoque;
         }
 
@@ -41,7 +40,6 @@ namespace Gear_Desktop.Controller.BLL
 
         public async Task<string> PutEstoque(Estoque_00 EstoqueParameter)
         {
-            var result = "";
             if (Convert.ToString(EstoqueParameter.Pro_codigo).Trim().Length == 0)
             {
                 // resultar a exceção com a mensagem para o formulario
@@ -62,10 +60,10 @@ namespace Gear_Desktop.Controller.BLL
                 // resultar a exceção com a mensagem para o formulario
                 throw new Exception("Favor inserir o custo do Produto !!");
             }
-            if (Convert.ToString(EstoqueParameter.Etq_validade).Trim().Length == 0)
+            if (Convert.ToString(EstoqueParameter.Etq_datalancamento).Trim().Length == 0)
             {
                 // resultar a exceção com a mensagem para o formulario
-                throw new Exception("Favor inserir a data de validade do Produto !!");
+                throw new Exception("Favor inserir a data de lancamento do Produto !!");
             }
 
             DALEstoque objDALEstoque = new(restConnection);
@@ -74,7 +72,6 @@ namespace Gear_Desktop.Controller.BLL
 
         public async Task<Estoque_00> PostEstoque(Estoque_00 EstoqueParameter)
         {
-            var result = "";
             if (Convert.ToString(EstoqueParameter.Pro_codigo).Trim().Length == 0)
             {
                 // resultar a exceção com a mensagem para o formulario
@@ -95,15 +92,25 @@ namespace Gear_Desktop.Controller.BLL
                 // resultar a exceção com a mensagem para o formulario
                 throw new Exception("Favor inserir o custo do Produto !!");
             }
-            if (Convert.ToString(EstoqueParameter.Etq_validade).Trim().Length == 0)
+            if (Convert.ToString(EstoqueParameter.Etq_datalancamento).Trim().Length == 0)
             {
                 // resultar a exceção com a mensagem para o formulario
-                throw new Exception("Favor inserir a data de validade do Produto !!");
+                throw new Exception("Favor inserir a data de lancamento do Produto !!");
             }
 
             DALEstoque objDALEstoque = new(restConnection);
             return await objDALEstoque.PostEstoque(EstoqueParameter);
         }
 
+        public async Task<string> DeleteEstoque(int etqCodigo)
+        {
+            if (Convert.ToString(etqCodigo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Codigo do Estoque!!");
+            }
+            DALEstoque objDALEstoque = new(restConnection);
+            return await objDALEstoque.DeleteEstoque(etqCodigo);
+        }
     }
 }

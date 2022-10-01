@@ -20,9 +20,8 @@ namespace Gear_Desktop.Controller.BLL
 
         public async Task<List<Users>> GetAllUsers()
         {
-            List<Users> listUsers = new();
             DALUsers objDALUsers = new(restConnection);
-            listUsers = await objDALUsers.GetAllUsers();
+            List<Users> listUsers = await objDALUsers.GetAllUsers();
             return listUsers;
         }
 
@@ -67,9 +66,9 @@ namespace Gear_Desktop.Controller.BLL
             return Convert.ToString(result);
         }
 
-        ~BLLUsers()
-        {
+        //~BLLUsers()
+        //{
             // Destroyer
-        }
+        //}
     }
 }

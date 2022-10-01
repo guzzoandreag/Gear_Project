@@ -168,7 +168,7 @@
             this.txtSenha.Size = new System.Drawing.Size(272, 23);
             this.txtSenha.TabIndex = 26;
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
+            this.txtSenha.Enter += new System.EventHandler(this.TxtSenha_Enter);
             // 
             // txtEmail
             // 
@@ -180,7 +180,7 @@
             this.txtEmail.Size = new System.Drawing.Size(272, 23);
             this.txtEmail.TabIndex = 25;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Enter += new System.EventHandler(this.TxtEmail_Enter);
             // 
             // btnEntrar
             // 
@@ -198,7 +198,7 @@
             this.btnEntrar.TabIndex = 27;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = false;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
             // btnCadastrar
             // 
@@ -215,7 +215,7 @@
             this.btnCadastrar.TabIndex = 28;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // FrmLogin
             // 

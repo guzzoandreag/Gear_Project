@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Gear_Desktop.Controller.DAL;
 using Gear_Desktop.Controller.BLL;
 using Gear_Desktop.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gear_Desktop.View
 {
@@ -25,6 +26,8 @@ namespace Gear_Desktop.View
            
             txtCodigo.ReadOnly = true;
             txtNome.ReadOnly = true;
+            //cbMedida.FlatStyle = FlatStyle.Popup;
+            //cbMedida.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMedida.Enabled = false;
             cbGrupo.Enabled = false;
 
@@ -32,6 +35,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = true;
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnExcluir.Enabled = true;
             btnPesquisar.Enabled = true;
         }
 
@@ -39,8 +43,8 @@ namespace Gear_Desktop.View
         {
             txtCodigo.Clear();
             txtNome.Clear();
-            cbMedida.ResetText();
-            cbGrupo.ResetText();
+            cbMedida.SelectedIndex = -1;
+            cbGrupo.SelectedIndex = -1;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -50,14 +54,15 @@ namespace Gear_Desktop.View
             txtNome.ReadOnly = false;
             txtNome.Clear();
             cbMedida.Enabled = true;
-            cbMedida.ResetText();
+            cbMedida.SelectedIndex = -1;
             cbGrupo.Enabled = true;
-            cbGrupo.ResetText();
+            cbGrupo.SelectedIndex = -1;
 
             btnNovo.Enabled = false;
             btnAlterar.Enabled = false;
             btnSalvar.Enabled = true;
             btnCancelar.Enabled = true;
+            btnExcluir.Enabled = false;
             btnPesquisar.Enabled = false;
         }
 
@@ -74,6 +79,7 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = false;
                 btnSalvar.Enabled = true;
                 btnCancelar.Enabled = true;
+                btnExcluir.Enabled = false;
                 btnPesquisar.Enabled = false;
             }
             else
@@ -101,6 +107,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = true;
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnExcluir.Enabled = true;
             btnPesquisar.Enabled = true;
         }
 
@@ -113,14 +120,15 @@ namespace Gear_Desktop.View
                 txtNome.ReadOnly = true;
                 txtNome.Clear();
                 cbMedida.Enabled = false;
-                cbMedida.ResetText();
+                cbMedida.SelectedIndex = -1;
                 cbGrupo.Enabled = false;
-                cbGrupo.ResetText();
+                cbGrupo.SelectedIndex = -1;
 
                 btnNovo.Enabled = true;
                 btnAlterar.Enabled = true;
                 btnSalvar.Enabled = false;
                 btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
                 btnPesquisar.Enabled = true;
             }
             else
@@ -133,7 +141,34 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = true;
                 btnSalvar.Enabled = false;
                 btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
                 btnPesquisar.Enabled = true;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length != 0)
+            {
+                ClearMessageInfo();
+                txtNome.ReadOnly = true;               
+                cbMedida.Enabled = false;
+                cbGrupo.Enabled = false;                
+
+                btnNovo.Enabled = true;
+                btnAlterar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
+                btnPesquisar.Enabled = true;
+
+                DeleteProduto(Convert.ToInt32(txtCodigo.Text.Trim()));
+
+                ClearFields();
+            }
+            else
+            {
+                MessageInfo("Não é permitido excluir um cadastro em branco! \n Favor selecionar um através da pesquisa!!");
             }
         }
 
@@ -194,6 +229,21 @@ namespace Gear_Desktop.View
             else
             {
                 MessageInfo("Erro ao cadastar Produto !!");
+            }
+        }
+
+        private async void DeleteProduto(int proCodigo)
+        {
+            DALConnectionREST restConnection = new(URL);
+            BLLProdutos objBLLProdutos = new(restConnection);
+            var result = await objBLLProdutos.DeleteProduto(proCodigo);
+            if (result == "Ok")
+            {
+                MessageInfo("Produto excluido com sucesso !! ", "Green");
+            }
+            else
+            {
+                MessageInfo("Erro ao excluido o Produto !! - " + result);
             }
         }
     }

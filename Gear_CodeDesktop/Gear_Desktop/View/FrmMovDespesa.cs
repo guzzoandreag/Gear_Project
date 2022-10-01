@@ -27,6 +27,16 @@ namespace Gear_Desktop.View
             txtNomeDeposito.ReadOnly = true;
         }
 
+        private void ClearFields()
+        {
+            txtCodigo.Clear();
+            txtDes_datalancamento.Clear();
+            txtDep_codigo.Clear();
+            txtNomeDeposito.Clear();
+            txtDes_valor.Clear();
+            txtDes_observacao.Clear();
+        }
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ClearMessageInfo();
@@ -45,6 +55,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = false;
             btnSalvar.Enabled = true;
             btnCancelar.Enabled = true;
+            btnExcluir.Enabled = false;
             btnPesquisar.Enabled = false;
 
             txtDes_datalancamento.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -65,6 +76,7 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = false;
                 btnSalvar.Enabled = true;
                 btnCancelar.Enabled = true;
+                btnExcluir.Enabled = false;
                 btnPesquisar.Enabled = false;
             }
             else
@@ -94,6 +106,7 @@ namespace Gear_Desktop.View
             btnAlterar.Enabled = true;
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnExcluir.Enabled = true;
             btnPesquisar.Enabled = true;
         }
 
@@ -117,6 +130,7 @@ namespace Gear_Desktop.View
                 btnAlterar.Enabled = true;
                 btnSalvar.Enabled = false;
                 btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
                 btnPesquisar.Enabled = true;
             }
             else
@@ -135,6 +149,34 @@ namespace Gear_Desktop.View
             }
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length != 0)
+            {
+                ClearMessageInfo();
+                //txtCodigo.Clear();
+                txtDes_datalancamento.ReadOnly = true;
+                txtDep_codigo.ReadOnly = true;
+                txtDes_valor.ReadOnly = true;
+                txtDes_observacao.ReadOnly = true;
+
+                btnNovo.Enabled = true;
+                btnAlterar.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
+                btnPesquisar.Enabled = true;
+
+                DeleteDespesa(Convert.ToInt32(txtCodigo.Text.Trim()));
+
+                ClearFields();
+            }
+            else
+            {
+                MessageInfo("Não é permitido excluir um cadastro em branco! \n Favor selecionar um através da pesquisa!!");
+            }
+        }
+
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             using (FrmPSQ<Despesa_00> frmPSQ = new FrmPSQ<Despesa_00>(_despesa = new(), URL))
@@ -149,13 +191,21 @@ namespace Gear_Desktop.View
                     txtDes_observacao.Text = Convert.ToString(frmPSQ.ReturnDespesa.Des_observacao);
                 }
             }
-            _deposito = new();
-            GetDeposito(_deposito);
+            if (txtDep_codigo.Text.Length > 0)
+            {
+                _deposito = new();
+                GetDeposito(_deposito);
+            }
         }
 
         private async void GetDeposito(Deposito_00 deposito)
         {
-            DALConnectionREST restConnection = new DALConnectionREST(URL);
+            if (deposito is null)
+            {
+                throw new ArgumentNullException(nameof(deposito));
+            }
+
+            DALConnectionREST restConnection = new(URL);
             BLLDeposito objBLLDeposito = new(restConnection);
             deposito = await objBLLDeposito.GetDeposito(Convert.ToInt32(txtDep_codigo.Text));
             txtNomeDeposito.Text = deposito.Dep_nome;
@@ -207,6 +257,21 @@ namespace Gear_Desktop.View
             }
         }
 
+        private async void DeleteDespesa(int desCodigo)
+        {
+            DALConnectionREST restConnection = new(URL);
+            BLLDespesa objBLLDespesa = new(restConnection);
+            var result = await objBLLDespesa.DeleteDespesa(desCodigo);
+            if (result == "Ok")
+            {
+                MessageInfo("Despesa excluido com sucesso !! ", "Green");
+            }
+            else
+            {
+                MessageInfo("Erro ao excluido a Despesa !! - " + result);
+            }
+        }
+
         private void btnPSQDeposito_Click(object sender, EventArgs e)
         {
             using (FrmPSQ<Deposito_00> frmPSQ = new FrmPSQ<Deposito_00>(_deposito = new(), URL))
@@ -226,9 +291,8 @@ namespace Gear_Desktop.View
         }
 
         private void txtDep_codigo_Leave(object sender, EventArgs e)
-        {
-            _deposito = new();
-            GetDeposito(_deposito);
+        {            
+            GetDeposito(_deposito = new());
         }
     }
 }

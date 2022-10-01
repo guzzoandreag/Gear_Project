@@ -13,23 +13,28 @@ namespace Gear_Desktop.View
     public partial class DlgMovEstoque : FrmBase
     {
         string URL;
+        Panel pnlCenterMenu;
 
-        public DlgMovEstoque(string URLParameter)
+        public DlgMovEstoque(Panel pPanelCenterMenu, string URLParameter)
         {
             InitializeComponent();
             this.URL = URLParameter;
+            this.pnlCenterMenu = pPanelCenterMenu;
+            this.CaptionCabecalho = "Tipo Movto";
+            //this.Size = new System.Drawing.Size(230, 200);
+            this.lblMsg.Size = new System.Drawing.Size(230, 0);
         }
 
         private void btnAdicionarETQ_Click(object sender, EventArgs e)
         {
-            FrmMovAddEstoque frmMovAddEstoque = new(URL);
-            frmMovAddEstoque.ShowDialog();
+            CreateFormInPanel(pnlCenterMenu, new FrmMovAddEstoque(URL));
+            this.Close();
         }
 
         private void btnTransferirETQ_Click(object sender, EventArgs e)
         {
-            FrmMovTransfEstoque frmMovTransfEstoque = new(URL);
-            frmMovTransfEstoque.ShowDialog();
+            CreateFormInPanel(pnlCenterMenu, new FrmMovAddEstoque(URL));
+            this.Close();
         }
     }
 }

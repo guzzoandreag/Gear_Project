@@ -37,8 +37,6 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNomeDeposito = new System.Windows.Forms.TextBox();
-            this.txtEtq_validade = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtEtq_valorcusto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEtq_quantidade = new System.Windows.Forms.TextBox();
@@ -51,6 +49,8 @@
             this.txtPro_codigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtEtq_datalancamento = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlCenterCabecalhoRodape.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlCenterMain.SuspendLayout();
@@ -59,6 +59,8 @@
             // 
             // pnlCenterCabecalhoRodape
             // 
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtEtq_datalancamento);
+            this.pnlCenterCabecalhoRodape.Controls.Add(this.label7);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnPSQDeposito);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnPSQProduto);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnPesquisar);
@@ -68,8 +70,6 @@
             this.pnlCenterCabecalhoRodape.Controls.Add(this.btnNovo);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label8);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtNomeDeposito);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.txtEtq_validade);
-            this.pnlCenterCabecalhoRodape.Controls.Add(this.label7);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtEtq_valorcusto);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.label6);
             this.pnlCenterCabecalhoRodape.Controls.Add(this.txtEtq_quantidade);
@@ -98,8 +98,6 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtEtq_quantidade, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label6, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtEtq_valorcusto, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label7, 0);
-            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtEtq_validade, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtNomeDeposito, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label8, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnNovo, 0);
@@ -109,6 +107,8 @@
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnPesquisar, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnPSQProduto, 0);
             this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.btnPSQDeposito, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.label7, 0);
+            this.pnlCenterCabecalhoRodape.Controls.SetChildIndex(this.txtEtq_datalancamento, 0);
             // 
             // pnlRodape
             // 
@@ -172,14 +172,14 @@
             this.btnPSQDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSQDeposito.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPSQDeposito.ForeColor = System.Drawing.Color.White;
-            this.btnPSQDeposito.Location = new System.Drawing.Point(147, 102);
+            this.btnPSQDeposito.Location = new System.Drawing.Point(189, 125);
             this.btnPSQDeposito.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQDeposito.Name = "btnPSQDeposito";
             this.btnPSQDeposito.Size = new System.Drawing.Size(43, 23);
             this.btnPSQDeposito.TabIndex = 4;
             this.btnPSQDeposito.Text = "...";
             this.btnPSQDeposito.UseVisualStyleBackColor = false;
-            this.btnPSQDeposito.Click += new System.EventHandler(this.btnPSQDeposito_Click);
+            this.btnPSQDeposito.Click += new System.EventHandler(this.BtnPSQDeposito_Click);
             // 
             // btnPSQProduto
             // 
@@ -191,14 +191,14 @@
             this.btnPSQProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSQProduto.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPSQProduto.ForeColor = System.Drawing.Color.White;
-            this.btnPSQProduto.Location = new System.Drawing.Point(147, 60);
+            this.btnPSQProduto.Location = new System.Drawing.Point(189, 83);
             this.btnPSQProduto.Margin = new System.Windows.Forms.Padding(0);
             this.btnPSQProduto.Name = "btnPSQProduto";
             this.btnPSQProduto.Size = new System.Drawing.Size(43, 23);
             this.btnPSQProduto.TabIndex = 2;
             this.btnPSQProduto.Text = "...";
             this.btnPSQProduto.UseVisualStyleBackColor = false;
-            this.btnPSQProduto.Click += new System.EventHandler(this.btnPSQProduto_Click);
+            this.btnPSQProduto.Click += new System.EventHandler(this.BtnPSQProduto_Click);
             // 
             // btnPesquisar
             // 
@@ -209,13 +209,13 @@
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Location = new System.Drawing.Point(498, 191);
+            this.btnPesquisar.Location = new System.Drawing.Point(498, 216);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(117, 35);
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // btnCancelar
             // 
@@ -227,13 +227,13 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(376, 191);
+            this.btnCancelar.Location = new System.Drawing.Point(376, 216);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 35);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -245,13 +245,13 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(253, 191);
+            this.btnSalvar.Location = new System.Drawing.Point(253, 216);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 35);
             this.btnSalvar.TabIndex = 8;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // btnAlterar
             // 
@@ -262,13 +262,13 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(130, 191);
+            this.btnAlterar.Location = new System.Drawing.Point(130, 216);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(117, 35);
             this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -279,13 +279,13 @@
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(7, 191);
+            this.btnNovo.Location = new System.Drawing.Point(7, 216);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(117, 35);
             this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.btnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
             // label8
             // 
@@ -293,7 +293,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label8.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(193, 83);
+            this.label8.Location = new System.Drawing.Point(235, 106);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(136, 17);
             this.label8.TabIndex = 76;
@@ -304,43 +304,19 @@
             this.txtNomeDeposito.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeDeposito.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNomeDeposito.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtNomeDeposito.Location = new System.Drawing.Point(193, 102);
+            this.txtNomeDeposito.Location = new System.Drawing.Point(235, 125);
             this.txtNomeDeposito.Name = "txtNomeDeposito";
             this.txtNomeDeposito.ReadOnly = true;
             this.txtNomeDeposito.Size = new System.Drawing.Size(272, 23);
             this.txtNomeDeposito.TabIndex = 75;
             this.txtNomeDeposito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtEtq_validade
-            // 
-            this.txtEtq_validade.BackColor = System.Drawing.Color.DarkGray;
-            this.txtEtq_validade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEtq_validade.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtEtq_validade.Location = new System.Drawing.Point(459, 158);
-            this.txtEtq_validade.Name = "txtEtq_validade";
-            this.txtEtq_validade.ReadOnly = true;
-            this.txtEtq_validade.Size = new System.Drawing.Size(154, 23);
-            this.txtEtq_validade.TabIndex = 7;
-            this.txtEtq_validade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.label7.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(459, 140);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
-            this.label7.TabIndex = 73;
-            this.label7.Text = "Validade";
-            // 
             // txtEtq_valorcusto
             // 
             this.txtEtq_valorcusto.BackColor = System.Drawing.Color.DarkGray;
             this.txtEtq_valorcusto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEtq_valorcusto.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtEtq_valorcusto.Location = new System.Drawing.Point(279, 158);
+            this.txtEtq_valorcusto.Location = new System.Drawing.Point(353, 181);
             this.txtEtq_valorcusto.Name = "txtEtq_valorcusto";
             this.txtEtq_valorcusto.ReadOnly = true;
             this.txtEtq_valorcusto.Size = new System.Drawing.Size(154, 23);
@@ -353,7 +329,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label6.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(279, 140);
+            this.label6.Location = new System.Drawing.Point(353, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 17);
             this.label6.TabIndex = 71;
@@ -364,7 +340,7 @@
             this.txtEtq_quantidade.BackColor = System.Drawing.Color.DarkGray;
             this.txtEtq_quantidade.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEtq_quantidade.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtEtq_quantidade.Location = new System.Drawing.Point(88, 158);
+            this.txtEtq_quantidade.Location = new System.Drawing.Point(130, 181);
             this.txtEtq_quantidade.Name = "txtEtq_quantidade";
             this.txtEtq_quantidade.ReadOnly = true;
             this.txtEtq_quantidade.Size = new System.Drawing.Size(154, 23);
@@ -377,7 +353,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label5.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(88, 140);
+            this.label5.Location = new System.Drawing.Point(130, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(176, 17);
             this.label5.TabIndex = 69;
@@ -389,7 +365,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label4.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 104);
+            this.label4.Location = new System.Drawing.Point(52, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 68;
@@ -400,7 +376,7 @@
             this.txtDep_codigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtDep_codigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDep_codigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtDep_codigo.Location = new System.Drawing.Point(88, 102);
+            this.txtDep_codigo.Location = new System.Drawing.Point(130, 125);
             this.txtDep_codigo.Name = "txtDep_codigo";
             this.txtDep_codigo.ReadOnly = true;
             this.txtDep_codigo.Size = new System.Drawing.Size(57, 23);
@@ -413,7 +389,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label3.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(193, 40);
+            this.label3.Location = new System.Drawing.Point(235, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 66;
@@ -424,7 +400,7 @@
             this.txtNomeProduto.BackColor = System.Drawing.Color.DarkGray;
             this.txtNomeProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNomeProduto.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtNomeProduto.Location = new System.Drawing.Point(193, 59);
+            this.txtNomeProduto.Location = new System.Drawing.Point(235, 82);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.ReadOnly = true;
             this.txtNomeProduto.Size = new System.Drawing.Size(272, 23);
@@ -437,7 +413,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 62);
+            this.label1.Location = new System.Drawing.Point(60, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 64;
@@ -448,7 +424,7 @@
             this.txtPro_codigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtPro_codigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPro_codigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtPro_codigo.Location = new System.Drawing.Point(88, 60);
+            this.txtPro_codigo.Location = new System.Drawing.Point(130, 83);
             this.txtPro_codigo.Name = "txtPro_codigo";
             this.txtPro_codigo.ReadOnly = true;
             this.txtPro_codigo.Size = new System.Drawing.Size(57, 23);
@@ -461,7 +437,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.label2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(26, 26);
+            this.label2.Location = new System.Drawing.Point(68, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 62;
@@ -472,12 +448,36 @@
             this.txtCodigo.BackColor = System.Drawing.Color.DarkGray;
             this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCodigo.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtCodigo.Location = new System.Drawing.Point(88, 23);
+            this.txtCodigo.Location = new System.Drawing.Point(130, 37);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(57, 23);
             this.txtCodigo.TabIndex = 61;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtEtq_datalancamento
+            // 
+            this.txtEtq_datalancamento.BackColor = System.Drawing.Color.DarkGray;
+            this.txtEtq_datalancamento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEtq_datalancamento.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txtEtq_datalancamento.Location = new System.Drawing.Point(353, 37);
+            this.txtEtq_datalancamento.Name = "txtEtq_datalancamento";
+            this.txtEtq_datalancamento.ReadOnly = true;
+            this.txtEtq_datalancamento.Size = new System.Drawing.Size(154, 23);
+            this.txtEtq_datalancamento.TabIndex = 77;
+            this.txtEtq_datalancamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.label7.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(219, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 17);
+            this.label7.TabIndex = 78;
+            this.label7.Text = "Data Lançamento";
             // 
             // FrmMovTransfEstoque
             // 
@@ -513,8 +513,6 @@
         public Button btnNovo;
         private Label label8;
         public TextBox txtNomeDeposito;
-        public TextBox txtEtq_validade;
-        private Label label7;
         public TextBox txtEtq_valorcusto;
         private Label label6;
         public TextBox txtEtq_quantidade;
@@ -527,5 +525,7 @@
         public TextBox txtPro_codigo;
         private Label label2;
         public TextBox txtCodigo;
+        public TextBox txtEtq_datalancamento;
+        private Label label7;
     }
 }

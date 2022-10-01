@@ -27,6 +27,8 @@ namespace Gear_Desktop.Models
         [DefaultValue(0)]
         public decimal Etq_valorcusto { get; set; }
 
-        public DateTime? Etq_validade { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime Etq_datalancamento { get; set; }
     }
 }

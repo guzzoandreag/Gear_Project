@@ -98,6 +98,17 @@ namespace Gear_Desktop.Controller.BLL
             return await objDALDespesa.PostDespesa(DespesaParameter);
         }
 
+        public async Task<string> DeleteDespesa(int desCodigo)
+        {
+            if (Convert.ToString(desCodigo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Codigo da Despesa!!");
+            }
+            DALDespesa objDALDespesa = new(restConnection);
+            return await objDALDespesa.DeleteDespesa(desCodigo);
+        }
+
         ~BLLDespesa()
         {
             // Destroyer

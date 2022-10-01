@@ -105,7 +105,7 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<Deposito_00> PostDeposito(Deposito_00 DepositoParameter)
+        public async Task<Deposito_00?> PostDeposito(Deposito_00 DepositoParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -127,9 +127,27 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        ~DALDeposito()
+        public async Task<string> DeleteDeposito(int depCodigo)
         {
-            //Destroyer
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + depCodigo;
+            HttpResponseMessage response = await client.DeleteAsync(URL);
+            if (response.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Erro : " + response.StatusCode;
+            }
         }
+
+        //~DALDeposito()
+        //{
+        //Destroyer
+        //}
     }
 }

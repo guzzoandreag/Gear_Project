@@ -15,7 +15,7 @@ namespace Gear_Desktop.View
 {
     public partial class FrmCadUsers : FrmBase
     {
-        string URL;
+        readonly string URL;
         Users _users;
 
         public FrmCadUsers(string URLParameter, string emailCadastrarParameter)
@@ -25,7 +25,9 @@ namespace Gear_Desktop.View
             txtName.Text = "";
             txtEmail.Text = emailCadastrarParameter;
             txtSenha.Text = "";
-
+            #if DEBUG
+                btnPesquisar.Visible = true;
+            #endif
         }
 
         private void ClearFields()
@@ -35,7 +37,7 @@ namespace Gear_Desktop.View
             txtSenha.Clear();
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             ClearMessageInfo();
             PostUser();
@@ -43,15 +45,17 @@ namespace Gear_Desktop.View
 
         private async void PostUser()
         {
-            DALConnectionREST restConnection = new DALConnectionREST(URL);
-            BLLUsers objBLLUsers = new BLLUsers(restConnection);
+            DALConnectionREST restConnection = new(URL);
+            BLLUsers objBLLUsers = new(restConnection);
             _users = await objBLLUsers.GetUsersByEmail(txtEmail.Text.Trim());
             if (_users == null)
             {
-                _users = new Users();
-                _users.Use_nome = txtName.Text.Trim();
-                _users.Use_email = txtEmail.Text.Trim();
-                _users.Usu_senha = txtSenha.Text.Trim();
+                _users = new Users
+                {
+                    Use_nome = txtName.Text.Trim(),
+                    Use_email = txtEmail.Text.Trim(),
+                    Usu_senha = txtSenha.Text.Trim()
+                };
                 var result = await objBLLUsers.PostUser(_users);
                 if (result == "Ok")
                 {
@@ -69,22 +73,22 @@ namespace Gear_Desktop.View
             }
         }
 
-        private void txtName_Enter(object sender, EventArgs e)
+        private void TxtName_Enter(object sender, EventArgs e)
         {
             ClearMessageInfo();
         }
 
-        private void txtEmail_Enter(object sender, EventArgs e)
+        private void TxtEmail_Enter(object sender, EventArgs e)
         {
             ClearMessageInfo();
         }
 
-        private void txtSenha_Enter(object sender, EventArgs e)
+        private void TxtSenha_Enter(object sender, EventArgs e)
         {
             ClearMessageInfo();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnPesquisar_Click(object sender, EventArgs e)
         {
             FrmPSQ<Users> frmPSQ = new(_users = new(), URL);
             frmPSQ.ShowDialog();

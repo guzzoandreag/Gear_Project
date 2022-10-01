@@ -20,9 +20,8 @@ namespace Gear_Desktop.Controller.BLL
 
         public async Task<List<Deposito_00>> GetAllDeposito()
         {
-            List<Deposito_00> listDeposito= new();
             DALDeposito objDALDeposito = new(restConnection);
-            listDeposito = await objDALDeposito.GetAllDeposito();
+            List<Deposito_00> listDeposito = await objDALDeposito.GetAllDeposito();
             return listDeposito;
         }
 
@@ -96,9 +95,20 @@ namespace Gear_Desktop.Controller.BLL
             return await objDALDeposito.PostDeposito(depositoParameter);
         }
 
-        ~BLLDeposito()
+        public async Task<string> DeleteDeposito(int depCodigo)
         {
-            // Destroyer
+            if (Convert.ToString(depCodigo).Trim().Length == 0)
+            {
+                // resultar a exceção com a mensagem para o formulario
+                throw new Exception("Favor inserir o Codigo do Deposito!!");
+            }
+            DALDeposito objDALDeposito = new(restConnection);
+            return await objDALDeposito.DeleteDeposito(depCodigo);
         }
+
+        //~BLLDeposito()
+        //{
+        // Destroyer
+        //}
     }
 }

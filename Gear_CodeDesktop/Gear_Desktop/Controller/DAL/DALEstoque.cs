@@ -105,7 +105,7 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        public async Task<Estoque_00> PostEstoque(Estoque_00 EstoqueParameter)
+        public async Task<Estoque_00?> PostEstoque(Estoque_00 EstoqueParameter)
         {
             HttpClientHandler clientHandler = new();
             clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -127,10 +127,28 @@ namespace Gear_Desktop.Controller.DAL
             }
         }
 
-        ~DALEstoque()
+        public async Task<string> DeleteEstoque(int etqCodigo)
         {
-            //Destroyer
+            HttpClientHandler clientHandler = new();
+            clientHandler.ServerCertificateCustomValidationCallback += (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            HttpClient client = new(clientHandler);
+            var URL = restConnection.Url + "/" + etqCodigo;
+            HttpResponseMessage response = await client.DeleteAsync(URL);
+            if (response.IsSuccessStatusCode)
+            {
+                return "Ok";
+            }
+            else
+            {
+                return "Erro : " + response.StatusCode;
+            }
         }
+
+        //~DALEstoque()
+        //{
+        //Destroyer
+        //}
 
     }
 }
