@@ -52,8 +52,8 @@ namespace Gear_Desktop.View
             txtEtq_quantidade.Clear();
             txtEtq_valorcusto.ReadOnly = false;
             txtEtq_valorcusto.Clear();
-            txtEtq_datalancamento.ReadOnly = false;
-            txtEtq_datalancamento.Clear();
+            //txtEtq_datalancamento.ReadOnly = false;
+            //txtEtq_datalancamento.Clear();
 
             btnPSQProduto.Enabled = true;
             btnPSQDeposito.Enabled = true;
@@ -76,7 +76,7 @@ namespace Gear_Desktop.View
                 txtDep_codigo.ReadOnly = false;
                 txtEtq_quantidade.ReadOnly = false;
                 txtEtq_valorcusto.ReadOnly = false;
-                txtEtq_datalancamento.ReadOnly = false;
+                //txtEtq_datalancamento.ReadOnly = false;
 
                 btnPSQProduto.Enabled = true;
                 btnPSQDeposito.Enabled = true;
@@ -135,7 +135,7 @@ namespace Gear_Desktop.View
                 txtEtq_valorcusto.ReadOnly = true;
                 txtEtq_valorcusto.Clear();
                 //txtEtq_datalancamento.ReadOnly = true;
-                //txtEtq_datalancamento.Clear();
+                txtEtq_datalancamento.Clear();
 
                 btnPSQProduto.Enabled = false;
                 btnPSQDeposito.Enabled = false;
@@ -208,14 +208,12 @@ namespace Gear_Desktop.View
                 }
             }
             if (txtPro_codigo.Text.Length > 0)
-            {
-                _produto = new();
-                GetProduto(_produto);
+            {                
+                GetProduto(_produto = new());
             }
             if (txtDep_codigo.Text.Length > 0)
-            {
-                _deposito = new();
-                GetDeposito(_deposito);
+            {                
+                GetDeposito(_deposito = new());
             }
         }
 
@@ -307,7 +305,7 @@ namespace Gear_Desktop.View
             }
         }
 
-        private void btnPSQProduto_Click(object sender, EventArgs e)
+        private void BtnPSQProduto_Click(object sender, EventArgs e)
         {
             using FrmPSQ<Produto_00> frmPSQ = new FrmPSQ<Produto_00>(_produto = new(), URL);
             DialogResult dialogResult = frmPSQ.ShowDialog();
@@ -318,7 +316,7 @@ namespace Gear_Desktop.View
             }
         }
 
-        private void btnPSQDeposito_Click(object sender, EventArgs e)
+        private void BtnPSQDeposito_Click(object sender, EventArgs e)
         {
             using FrmPSQ<Deposito_00> frmPSQ = new FrmPSQ<Deposito_00>(_deposito = new(), URL);
             DialogResult dialogResult = frmPSQ.ShowDialog();

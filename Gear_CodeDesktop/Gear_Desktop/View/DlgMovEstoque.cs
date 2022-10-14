@@ -33,7 +33,7 @@ namespace Gear_Desktop.View
 
         private void btnTransferirETQ_Click(object sender, EventArgs e)
         {
-            CreateFormInPanel(pnlCenterMenu, new FrmMovAddEstoque(URL));
+            CreateFormInPanel(pnlCenterMenu, new FrmMovTransfEstoque(URL));
             this.Close();
         }
     }

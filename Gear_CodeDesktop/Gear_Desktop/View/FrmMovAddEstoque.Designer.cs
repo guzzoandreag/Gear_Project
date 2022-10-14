@@ -351,7 +351,7 @@
             this.btnPSQProduto.TabIndex = 2;
             this.btnPSQProduto.Text = "...";
             this.btnPSQProduto.UseVisualStyleBackColor = false;
-            this.btnPSQProduto.Click += new System.EventHandler(this.btnPSQProduto_Click);
+            this.btnPSQProduto.Click += new System.EventHandler(this.BtnPSQProduto_Click);
             // 
             // btnPSQDeposito
             // 
@@ -370,7 +370,6 @@
             this.btnPSQDeposito.TabIndex = 4;
             this.btnPSQDeposito.Text = "...";
             this.btnPSQDeposito.UseVisualStyleBackColor = false;
-            this.btnPSQDeposito.Click += new System.EventHandler(this.btnPSQDeposito_Click);
             // 
             // txtEtq_datalancamento
             // 
